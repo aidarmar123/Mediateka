@@ -58,7 +58,8 @@ namespace Mediateka.Pages
                 }
                 else
                 {
-                    MessageBox.Show("Пользователь не найден");
+                    Xceed.Wpf.Toolkit.MessageBox.Show("Пользователь не найден", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+
                 }
             }
         }
@@ -72,20 +73,46 @@ namespace Mediateka.Pages
         // Обработчик событий для кнопки входа Модератора и Администратора
         private void BLoginModerator_Click(object sender, RoutedEventArgs e)
         {
+            if (ValidationLine())
+            {
+                var moderator = App.Db.Moderators.FirstOrDefault(ex => ex.Login == Login && ex.Password == Password);
+                if (moderator != null)
+                {
+                    App.contextModerator = moderator;
+                    NavigationService.Navigate(new ListEvent());
+                }
+                else
+                {
+                    Xceed.Wpf.Toolkit.MessageBox.Show("Пользователь не найден", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 
+                }
+            }
         }
 
         // Обработчик событий для кнопки регестрации Модератора и Администратора
         private void BRegestrationModerator_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new RegestrationPage(new Moderators()));
+            NavigationService.Navigate(new RegestrationModerator(new Moderators()));
 
         }
 
         // Обработчик событий для кнопки входа Организатора
         private void BLoginPlanning_Click(object sender, RoutedEventArgs e)
         {
+            if (ValidationLine())
+            {
+               EventPlanner eventPlanner = App.Db.EventPlanner.FirstOrDefault(ex => ex.Email == Login && ex.Password == Password);
+                if (eventPlanner != null)
+                {
+                    App.contextEventPlanner = eventPlanner;
+                    NavigationService.Navigate(new ListEvent());
+                }
+                else
+                {
+                    Xceed.Wpf.Toolkit.MessageBox.Show("Пользователь не найден", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 
+                }
+            }
         }
         // Обработчик событий для кнопки регестрации Организатора
         private void BRegestrationPlanning_Click(object sender, RoutedEventArgs e)

@@ -1,0 +1,40 @@
+﻿<Page x:Class="Mediateka.Pages.RegestrationModerator"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Mediateka.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegestrationModerator">
+
+    <Grid Margin="5">
+        <ScrollViewer>
+            <StackPanel>
+               
+                <TextBlock Text="Логин"/>
+                <TextBox Text="{Binding Login}"/>
+
+                <TextBlock Text="Пароль"/>
+                <TextBox Text="{Binding Password}"/>
+                
+                <TextBlock Text="Ваша роль"/>
+                <ComboBox x:Name="CbRole"
+                          DisplayMemberPath="Name"
+                          SelectedItem="{Binding Role}"/>
+                <Button x:Name="Regestr"
+                    Margin="0, 5"
+                    Click="Regestr_Click"
+                    Content="Зарегестрироваться"
+                    />
+                <Button x:Name="BBack"
+     Click="BBack_Click"
+     Content="Назад"
+     />
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+    </Grid>
+</Page>

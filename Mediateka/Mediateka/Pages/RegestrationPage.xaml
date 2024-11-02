@@ -4,20 +4,27 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Mediateka.Pages"
+      
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RegestrationPage">
 
-    <Grid>
+    <Grid Margin="5">
         <ScrollViewer>
             <StackPanel>
                 <TextBlock Text="Фото"/>
                 <StackPanel HorizontalAlignment="Left">
-                    <Border CornerRadius="20">
-                        <Image Source="{Binding Avatar}"
-Height="100"
-Width="100"
-/>
+                    <Border CornerRadius="40"
+                            Margin="3"
+                            Width="100"
+                            Height="100"
+                            BorderThickness="2"
+                            BorderBrush="DeepSkyBlue">
+                        <Border.Background>
+                            <ImageBrush Stretch="Fill"
+                                        RenderOptions.BitmapScalingMode="Fant"
+                                        ImageSource="{Binding Avatar}"/>
+                        </Border.Background>
                     </Border>
 
                     <Button x:Name="BAddImage"
@@ -28,19 +35,29 @@ Width="100"
                 <TextBlock Text="Имя"/>
                 <TextBox Text="{Binding Name}"/>
                 <TextBlock Text="Фамилия"/>
-                <TextBox Text="{Binding Name}"/>
+                <TextBox Text="{Binding Surname}"/>
 
                 <TextBlock Text="Отчество"/>
-                <TextBox Text="{Binding Name}"/>
+                <TextBox Text="{Binding Patronymic}"/>
 
                 <TextBlock Text="Телефон"/>
-                <TextBox Text="{Binding Name}"/>
+                <TextBox Text="{Binding Phone}"
+                         MaxLength="11"/>
 
                 <TextBlock Text="E-mail"/>
-                <TextBox Text="{Binding Name}"/>
+                <TextBox Text="{Binding Email}"/>
 
                 <TextBlock Text="Password"/>
-                <TextBox Text="{Binding Name}"/>
+                <TextBox Text="{Binding Password}"/>
+                <Button x:Name="Regestr"
+                        Margin="0, 5"
+                        Click="Regestr_Click"
+                        Content="Зарегестрироваться"
+                        />
+                <Button x:Name="BBack"
+         Click="BBack_Click"
+         Content="Назад"
+         />
 
             </StackPanel>
             
