@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediateka", "Mediateka\Mediateka.csproj", "{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC70B7FD-1FE0-4441-96EB-C7E87C955D36}
+	EndGlobalSection
+EndGlobal
