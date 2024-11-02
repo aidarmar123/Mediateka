@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mediateka.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,10 @@ namespace Mediateka
     /// </summary>
     public partial class App : Application
     {
+        public static MediatekaEntities Db = new MediatekaEntities();
+
+        public static Executor contextExecutor;
+        public static EventPlanner contextEventPlanner;
+        public static Moderators contextModerator;
     }
 }

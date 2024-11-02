@@ -1,0 +1,807 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище MediatekaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="Deadline" Type="datetime" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StatusId" Type="int" Nullable="false" />
+          <Property Name="EventPlannerId" Type="int" Nullable="false" />
+          <Property Name="CommentModerator" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EventExecutor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventId" Type="int" Nullable="false" />
+          <Property Name="ExecutorId" Type="int" Nullable="false" />
+          <Property Name="StatusExecutorId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EventPlanner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Avatar" Type="image" Nullable="false" />
+          <Property Name="Phone" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Executor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Avatar" Type="image" Nullable="false" />
+          <Property Name="Phone" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MaterialEvent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventId" Type="int" Nullable="false" />
+          <Property Name="DateTimeSend" Type="datetime" Nullable="false" />
+          <Property Name="ExecutorId" Type="int" Nullable="false" />
+          <Property Name="Data" Type="varbinary(max)" Nullable="false" />
+          <Property Name="FormatFile" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Moderators">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reviews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContentMsg" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="EvenPlannerId" Type="int" Nullable="false" />
+          <Property Name="ExecutorId" Type="int" Nullable="false" />
+          <Property Name="TypeMsgId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusEvent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusExecutor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TypeMsg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Event_EventPlanner">
+          <End Role="EventPlanner" Type="Self.EventPlanner" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventPlanner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="EventPlannerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_StatusEvent">
+          <End Role="StatusEvent" Type="Self.StatusEvent" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusEvent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventExecutor_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="EventExecutor" Type="Self.EventExecutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventExecutor">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventExecutor_Executor">
+          <End Role="Executor" Type="Self.Executor" Multiplicity="1" />
+          <End Role="EventExecutor" Type="Self.EventExecutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Executor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventExecutor">
+              <PropertyRef Name="ExecutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventExecutor_StatusExecutor">
+          <End Role="StatusExecutor" Type="Self.StatusExecutor" Multiplicity="1" />
+          <End Role="EventExecutor" Type="Self.EventExecutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusExecutor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventExecutor">
+              <PropertyRef Name="StatusExecutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialEvent_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="MaterialEvent" Type="Self.MaterialEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MaterialEvent">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialEvent_Executor">
+          <End Role="Executor" Type="Self.Executor" Multiplicity="1" />
+          <End Role="MaterialEvent" Type="Self.MaterialEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Executor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MaterialEvent">
+              <PropertyRef Name="ExecutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Moderators_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Moderators" Type="Self.Moderators" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Moderators">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_EventPlanner">
+          <End Role="EventPlanner" Type="Self.EventPlanner" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventPlanner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="EvenPlannerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_Executor">
+          <End Role="Executor" Type="Self.Executor" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Executor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="ExecutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_TypeMsg">
+          <End Role="TypeMsg" Type="Self.TypeMsg" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeMsg">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="TypeMsgId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище MediatekaModelContainer">
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventExecutor" EntityType="Self.EventExecutor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventPlanner" EntityType="Self.EventPlanner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Executor" EntityType="Self.Executor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialEvent" EntityType="Self.MaterialEvent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Moderators" EntityType="Self.Moderators" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusEvent" EntityType="Self.StatusEvent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusExecutor" EntityType="Self.StatusExecutor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeMsg" EntityType="Self.TypeMsg" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Event_EventPlanner" Association="Self.FK_Event_EventPlanner">
+            <End Role="EventPlanner" EntitySet="EventPlanner" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_StatusEvent" Association="Self.FK_Event_StatusEvent">
+            <End Role="StatusEvent" EntitySet="StatusEvent" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventExecutor_Event" Association="Self.FK_EventExecutor_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="EventExecutor" EntitySet="EventExecutor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventExecutor_Executor" Association="Self.FK_EventExecutor_Executor">
+            <End Role="Executor" EntitySet="Executor" />
+            <End Role="EventExecutor" EntitySet="EventExecutor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventExecutor_StatusExecutor" Association="Self.FK_EventExecutor_StatusExecutor">
+            <End Role="StatusExecutor" EntitySet="StatusExecutor" />
+            <End Role="EventExecutor" EntitySet="EventExecutor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialEvent_Event" Association="Self.FK_MaterialEvent_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="MaterialEvent" EntitySet="MaterialEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialEvent_Executor" Association="Self.FK_MaterialEvent_Executor">
+            <End Role="Executor" EntitySet="Executor" />
+            <End Role="MaterialEvent" EntitySet="MaterialEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Moderators_Role" Association="Self.FK_Moderators_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Moderators" EntitySet="Moderators" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_EventPlanner" Association="Self.FK_Reviews_EventPlanner">
+            <End Role="EventPlanner" EntitySet="EventPlanner" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_Executor" Association="Self.FK_Reviews_Executor">
+            <End Role="Executor" EntitySet="Executor" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_TypeMsg" Association="Self.FK_Reviews_TypeMsg">
+            <End Role="TypeMsg" EntitySet="TypeMsg" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MediatekaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deadline" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <Property Name="EventPlannerId" Type="Int32" Nullable="false" />
+          <Property Name="CommentModerator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EventPlanner" Relationship="Self.FK_Event_EventPlanner" FromRole="Event" ToRole="EventPlanner" />
+          <NavigationProperty Name="StatusEvent" Relationship="Self.FK_Event_StatusEvent" FromRole="Event" ToRole="StatusEvent" />
+          <NavigationProperty Name="EventExecutor" Relationship="Self.FK_EventExecutor_Event" FromRole="Event" ToRole="EventExecutor" />
+          <NavigationProperty Name="MaterialEvent" Relationship="Self.FK_MaterialEvent_Event" FromRole="Event" ToRole="MaterialEvent" />
+        </EntityType>
+        <EntityType Name="EventExecutor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventId" Type="Int32" Nullable="false" />
+          <Property Name="ExecutorId" Type="Int32" Nullable="false" />
+          <Property Name="StatusExecutorId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="Self.FK_EventExecutor_Event" FromRole="EventExecutor" ToRole="Event" />
+          <NavigationProperty Name="Executor" Relationship="Self.FK_EventExecutor_Executor" FromRole="EventExecutor" ToRole="Executor" />
+          <NavigationProperty Name="StatusExecutor" Relationship="Self.FK_EventExecutor_StatusExecutor" FromRole="EventExecutor" ToRole="StatusExecutor" />
+        </EntityType>
+        <EntityType Name="EventPlanner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Avatar" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="Self.FK_Event_EventPlanner" FromRole="EventPlanner" ToRole="Event" />
+          <NavigationProperty Name="Reviews" Relationship="Self.FK_Reviews_EventPlanner" FromRole="EventPlanner" ToRole="Reviews" />
+        </EntityType>
+        <EntityType Name="Executor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Avatar" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="EventExecutor" Relationship="Self.FK_EventExecutor_Executor" FromRole="Executor" ToRole="EventExecutor" />
+          <NavigationProperty Name="MaterialEvent" Relationship="Self.FK_MaterialEvent_Executor" FromRole="Executor" ToRole="MaterialEvent" />
+          <NavigationProperty Name="Reviews" Relationship="Self.FK_Reviews_Executor" FromRole="Executor" ToRole="Reviews" />
+        </EntityType>
+        <EntityType Name="MaterialEvent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventId" Type="Int32" Nullable="false" />
+          <Property Name="DateTimeSend" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExecutorId" Type="Int32" Nullable="false" />
+          <Property Name="Data" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="FormatFile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="Self.FK_MaterialEvent_Event" FromRole="MaterialEvent" ToRole="Event" />
+          <NavigationProperty Name="Executor" Relationship="Self.FK_MaterialEvent_Executor" FromRole="MaterialEvent" ToRole="Executor" />
+        </EntityType>
+        <EntityType Name="Moderators">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Moderators_Role" FromRole="Moderators" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="Reviews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContentMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EvenPlannerId" Type="Int32" Nullable="false" />
+          <Property Name="ExecutorId" Type="Int32" Nullable="false" />
+          <Property Name="TypeMsgId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EventPlanner" Relationship="Self.FK_Reviews_EventPlanner" FromRole="Reviews" ToRole="EventPlanner" />
+          <NavigationProperty Name="Executor" Relationship="Self.FK_Reviews_Executor" FromRole="Reviews" ToRole="Executor" />
+          <NavigationProperty Name="TypeMsg" Relationship="Self.FK_Reviews_TypeMsg" FromRole="Reviews" ToRole="TypeMsg" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Moderators" Relationship="Self.FK_Moderators_Role" FromRole="Role" ToRole="Moderators" />
+        </EntityType>
+        <EntityType Name="StatusEvent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="Self.FK_Event_StatusEvent" FromRole="StatusEvent" ToRole="Event" />
+        </EntityType>
+        <EntityType Name="StatusExecutor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="EventExecutor" Relationship="Self.FK_EventExecutor_StatusExecutor" FromRole="StatusExecutor" ToRole="EventExecutor" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TypeMsg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Reviews" Relationship="Self.FK_Reviews_TypeMsg" FromRole="TypeMsg" ToRole="Reviews" />
+        </EntityType>
+        <Association Name="FK_Event_EventPlanner">
+          <End Role="EventPlanner" Type="Self.EventPlanner" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventPlanner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="EventPlannerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_StatusEvent">
+          <End Role="StatusEvent" Type="Self.StatusEvent" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusEvent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventExecutor_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="EventExecutor" Type="Self.EventExecutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventExecutor">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialEvent_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="MaterialEvent" Type="Self.MaterialEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MaterialEvent">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventExecutor_Executor">
+          <End Role="Executor" Type="Self.Executor" Multiplicity="1" />
+          <End Role="EventExecutor" Type="Self.EventExecutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Executor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventExecutor">
+              <PropertyRef Name="ExecutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventExecutor_StatusExecutor">
+          <End Role="StatusExecutor" Type="Self.StatusExecutor" Multiplicity="1" />
+          <End Role="EventExecutor" Type="Self.EventExecutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusExecutor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventExecutor">
+              <PropertyRef Name="StatusExecutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_EventPlanner">
+          <End Role="EventPlanner" Type="Self.EventPlanner" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventPlanner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="EvenPlannerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialEvent_Executor">
+          <End Role="Executor" Type="Self.Executor" Multiplicity="1" />
+          <End Role="MaterialEvent" Type="Self.MaterialEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Executor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MaterialEvent">
+              <PropertyRef Name="ExecutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_Executor">
+          <End Role="Executor" Type="Self.Executor" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Executor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="ExecutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Moderators_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Moderators" Type="Self.Moderators" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Moderators">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_TypeMsg">
+          <End Role="TypeMsg" Type="Self.TypeMsg" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeMsg">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="TypeMsgId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MediatekaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Event" EntityType="Self.Event" />
+          <EntitySet Name="EventExecutor" EntityType="Self.EventExecutor" />
+          <EntitySet Name="EventPlanner" EntityType="Self.EventPlanner" />
+          <EntitySet Name="Executor" EntityType="Self.Executor" />
+          <EntitySet Name="MaterialEvent" EntityType="Self.MaterialEvent" />
+          <EntitySet Name="Moderators" EntityType="Self.Moderators" />
+          <EntitySet Name="Reviews" EntityType="Self.Reviews" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="StatusEvent" EntityType="Self.StatusEvent" />
+          <EntitySet Name="StatusExecutor" EntityType="Self.StatusExecutor" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TypeMsg" EntityType="Self.TypeMsg" />
+          <AssociationSet Name="FK_Event_EventPlanner" Association="Self.FK_Event_EventPlanner">
+            <End Role="EventPlanner" EntitySet="EventPlanner" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_StatusEvent" Association="Self.FK_Event_StatusEvent">
+            <End Role="StatusEvent" EntitySet="StatusEvent" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventExecutor_Event" Association="Self.FK_EventExecutor_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="EventExecutor" EntitySet="EventExecutor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialEvent_Event" Association="Self.FK_MaterialEvent_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="MaterialEvent" EntitySet="MaterialEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventExecutor_Executor" Association="Self.FK_EventExecutor_Executor">
+            <End Role="Executor" EntitySet="Executor" />
+            <End Role="EventExecutor" EntitySet="EventExecutor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventExecutor_StatusExecutor" Association="Self.FK_EventExecutor_StatusExecutor">
+            <End Role="StatusExecutor" EntitySet="StatusExecutor" />
+            <End Role="EventExecutor" EntitySet="EventExecutor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_EventPlanner" Association="Self.FK_Reviews_EventPlanner">
+            <End Role="EventPlanner" EntitySet="EventPlanner" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialEvent_Executor" Association="Self.FK_MaterialEvent_Executor">
+            <End Role="Executor" EntitySet="Executor" />
+            <End Role="MaterialEvent" EntitySet="MaterialEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_Executor" Association="Self.FK_Reviews_Executor">
+            <End Role="Executor" EntitySet="Executor" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Moderators_Role" Association="Self.FK_Moderators_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Moderators" EntitySet="Moderators" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_TypeMsg" Association="Self.FK_Reviews_TypeMsg">
+            <End Role="TypeMsg" EntitySet="TypeMsg" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище MediatekaModelContainer" CdmEntityContainer="MediatekaEntities">
+          <EntitySetMapping Name="Event">
+            <EntityTypeMapping TypeName="MediatekaModel.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="EventPlannerId" ColumnName="EventPlannerId" />
+                <ScalarProperty Name="CommentModerator" ColumnName="CommentModerator" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventExecutor">
+            <EntityTypeMapping TypeName="MediatekaModel.EventExecutor">
+              <MappingFragment StoreEntitySet="EventExecutor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="ExecutorId" ColumnName="ExecutorId" />
+                <ScalarProperty Name="StatusExecutorId" ColumnName="StatusExecutorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventPlanner">
+            <EntityTypeMapping TypeName="MediatekaModel.EventPlanner">
+              <MappingFragment StoreEntitySet="EventPlanner">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Executor">
+            <EntityTypeMapping TypeName="MediatekaModel.Executor">
+              <MappingFragment StoreEntitySet="Executor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialEvent">
+            <EntityTypeMapping TypeName="MediatekaModel.MaterialEvent">
+              <MappingFragment StoreEntitySet="MaterialEvent">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="DateTimeSend" ColumnName="DateTimeSend" />
+                <ScalarProperty Name="ExecutorId" ColumnName="ExecutorId" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="FormatFile" ColumnName="FormatFile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Moderators">
+            <EntityTypeMapping TypeName="MediatekaModel.Moderators">
+              <MappingFragment StoreEntitySet="Moderators">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="MediatekaModel.Reviews">
+              <MappingFragment StoreEntitySet="Reviews">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ContentMsg" ColumnName="ContentMsg" />
+                <ScalarProperty Name="EvenPlannerId" ColumnName="EvenPlannerId" />
+                <ScalarProperty Name="ExecutorId" ColumnName="ExecutorId" />
+                <ScalarProperty Name="TypeMsgId" ColumnName="TypeMsgId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="MediatekaModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusEvent">
+            <EntityTypeMapping TypeName="MediatekaModel.StatusEvent">
+              <MappingFragment StoreEntitySet="StatusEvent">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusExecutor">
+            <EntityTypeMapping TypeName="MediatekaModel.StatusExecutor">
+              <MappingFragment StoreEntitySet="StatusExecutor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MediatekaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeMsg">
+            <EntityTypeMapping TypeName="MediatekaModel.TypeMsg">
+              <MappingFragment StoreEntitySet="TypeMsg">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

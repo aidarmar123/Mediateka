@@ -1,0 +1,70 @@
+﻿<Page x:Class="Mediateka.Pages.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Mediateka.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LoginPage">
+
+    <Grid>
+        <TabControl>
+            <TabItem Header="Организатор">
+                <StackPanel Margin="10">
+                    <TextBlock Text="E-mail:"/>
+                    <TextBox Text="{Binding Login}"/>
+                    <TextBlock Text="Пароль:"/>
+                    <TextBox Text="{Binding Password}"/>
+                    <Button x:Name="BLoginPlanning"
+            Content="Войти"
+            Margin="0,5"
+            Click="BLoginPlanning_Click"/>
+                    <Button x:Name="BRegestrationPlanning"
+            Margin="0,5"
+            Content="Зарегестрироваться"
+            Click="BRegestrationPlanning_Click"/>
+
+
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Исполнитель">
+                <StackPanel Margin="10">
+                    <TextBlock Text="E-mail:"/>
+                    <TextBox Text="{Binding Login}"/>
+                    <TextBlock Text="Пароль:"/>
+                    <TextBox Text="{Binding Password}"/>
+                    <Button x:Name="BLoginExecutor"
+            Content="Войти"
+            Margin="0,5"
+            Click="BLoginExecutor_Click"/>
+                    <Button x:Name="BRegestrationExecutor"
+            Margin="0,5"
+            Content="Зарегестрироваться"
+            Click="BRegestrationExecutor_Click"/>
+
+
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Модератор">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Логин:"/>
+                    <TextBox Text="{Binding Login}"/>
+                    <TextBlock Text="Пароль:"/>
+                    <TextBox Text="{Binding Password}"/>
+                    <Button x:Name="BLoginModerator"
+Content="Войти"
+Margin="0,5"
+Click="BLoginModerator_Click"/>
+                    <Button x:Name="BRegestrationModerator"
+Margin="0,5"
+Content="Зарегестрироваться"
+Click="BRegestrationModerator_Click"/>
+
+
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Page>
