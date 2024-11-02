@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Mediateka.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для ListEvent.xaml
+    /// Логика взаимодействия для AddEventPage.xaml
     /// </summary>
-    public partial class ListEvent : Page
+    public partial class AddEventPage : Page
     {
-        public ListEvent()
+        public AddEventPage()
         {
             InitializeComponent();
         }

@@ -13,6 +13,7 @@
           <ScalarProperty Name="StatusId" ColumnName="StatusId" />
           <ScalarProperty Name="EventPlannerId" ColumnName="EventPlannerId" />
           <ScalarProperty Name="CommentModerator" ColumnName="CommentModerator" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -40,6 +41,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="EventSkill">
+      <EntityTypeMapping TypeName="MediatekaModel.EventSkill">
+        <MappingFragment StoreEntitySet="EventSkill">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SkillId" ColumnName="SkillId" />
+          <ScalarProperty Name="EventIdint" ColumnName="EventIdint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Executor">
       <EntityTypeMapping TypeName="MediatekaModel.Executor">
         <MappingFragment StoreEntitySet="Executor">
@@ -51,6 +61,15 @@
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExecutorSkill">
+      <EntityTypeMapping TypeName="MediatekaModel.ExecutorSkill">
+        <MappingFragment StoreEntitySet="ExecutorSkill">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SkillId" ColumnName="SkillId" />
+          <ScalarProperty Name="ExecutorId" ColumnName="ExecutorId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -90,6 +109,14 @@
     <EntitySetMapping Name="Role">
       <EntityTypeMapping TypeName="MediatekaModel.Role">
         <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skill">
+      <EntityTypeMapping TypeName="MediatekaModel.Skill">
+        <MappingFragment StoreEntitySet="Skill">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>

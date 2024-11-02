@@ -79,7 +79,7 @@ namespace Mediateka.Pages
                 if (moderator != null)
                 {
                     App.contextModerator = moderator;
-                    NavigationService.Navigate(new ListEvent());
+                    NavigationService.Navigate(new WaitingEventList());
                 }
                 else
                 {
@@ -105,7 +105,7 @@ namespace Mediateka.Pages
                 if (eventPlanner != null)
                 {
                     App.contextEventPlanner = eventPlanner;
-                    NavigationService.Navigate(new ListEvent());
+                    NavigationService.Navigate(new ListEventPlanner());
                 }
                 else
                 {

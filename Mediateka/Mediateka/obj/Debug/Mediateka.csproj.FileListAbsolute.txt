@@ -58,9 +58,7 @@ C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Mediateka.csproj.
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Mediateka.csproj.Up2Date
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Mediateka.exe
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Mediateka.pdb
-C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\ListEvent.g.cs
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\ListOrdersExecutors.g.cs
-C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\ListEvent.baml
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\ListOrdersExecutors.baml
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\bin\Debug\Xceed.Wpf.AvalonDock.dll
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
@@ -83,3 +81,9 @@ C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\bin\Debug\sv\Xceed.Wpf.Aval
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\RegestrationModerator.g.cs
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\RegestrationModerator.baml
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\ListEventPlanner.g.cs
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\WaitingEventList.g.cs
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\ListEventPlanner.baml
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\WaitingEventList.baml
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\AddEventPage.g.cs
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\AddEventPage.baml

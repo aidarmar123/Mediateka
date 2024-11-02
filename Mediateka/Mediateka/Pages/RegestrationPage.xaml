@@ -4,9 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Mediateka.Pages"
-      
+      xmlns:xcd ="http://schemas.xceed.com/wpf/xaml/toolkit"      
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+
       Title="RegestrationPage">
 
     <Grid Margin="5">
@@ -49,6 +50,12 @@
 
                 <TextBlock Text="Password"/>
                 <TextBox Text="{Binding Password}"/>
+                <StackPanel x:Name="SPSkillsExecutor"
+            Visibility="Collapsed">
+                    <TextBlock Text="Твои навыки"/>
+                    <xcd:CheckComboBox x:Name="CCBSkils"
+                       DisplayMemberPath="Name"/>
+                </StackPanel>
                 <Button x:Name="Regestr"
                         Margin="0, 5"
                         Click="Regestr_Click"
@@ -58,7 +65,7 @@
          Click="BBack_Click"
          Content="Назад"
          />
-
+                
             </StackPanel>
             
         </ScrollViewer>

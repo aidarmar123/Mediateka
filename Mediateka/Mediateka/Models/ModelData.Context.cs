@@ -28,11 +28,14 @@ namespace Mediateka.Models
         public virtual DbSet<Event> Event { get; set; }
         public virtual DbSet<EventExecutor> EventExecutor { get; set; }
         public virtual DbSet<EventPlanner> EventPlanner { get; set; }
+        public virtual DbSet<EventSkill> EventSkill { get; set; }
         public virtual DbSet<Executor> Executor { get; set; }
+        public virtual DbSet<ExecutorSkill> ExecutorSkill { get; set; }
         public virtual DbSet<MaterialEvent> MaterialEvent { get; set; }
         public virtual DbSet<Moderators> Moderators { get; set; }
         public virtual DbSet<Reviews> Reviews { get; set; }
         public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<Skill> Skill { get; set; }
         public virtual DbSet<StatusEvent> StatusEvent { get; set; }
         public virtual DbSet<StatusExecutor> StatusExecutor { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }

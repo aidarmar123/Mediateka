@@ -36,6 +36,8 @@ namespace Mediateka.Pages
             }
             else if (user.GetType() == typeof(Executor))
             {
+                SPSkillsExecutor.Visibility = Visibility.Visible;
+                CCBSkils.ItemsSource = App.Db.Skill.ToList();
                 contextExecutor = user as Executor;
                 DataContext = contextExecutor;
             }
@@ -86,6 +88,15 @@ namespace Mediateka.Pages
                         App.Db.Executor.Add(contextExecutor);
                 }
                 App.Db.SaveChanges();
+                if (contextExecutor != null)
+                {
+                    foreach(Skill skill in CCBSkils.SelectedItems)
+                    {
+                        App.Db.ExecutorSkill.Add(new ExecutorSkill() { SkillId = skill.Id, ExecutorId = contextExecutor.Id});
+                        App.Db.SaveChanges();
+                    }
+                }
+
                 Xceed.Wpf.Toolkit.MessageBox.Show("Вы успешно зарегестрированы");
                 NavigationService.GoBack();
             }

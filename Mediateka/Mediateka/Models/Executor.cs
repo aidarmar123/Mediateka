@@ -18,6 +18,7 @@ namespace Mediateka.Models
         public Executor()
         {
             this.EventExecutor = new HashSet<EventExecutor>();
+            this.ExecutorSkill = new HashSet<ExecutorSkill>();
             this.MaterialEvent = new HashSet<MaterialEvent>();
             this.Reviews = new HashSet<Reviews>();
         }
@@ -33,6 +34,8 @@ namespace Mediateka.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EventExecutor> EventExecutor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ExecutorSkill> ExecutorSkill { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaterialEvent> MaterialEvent { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

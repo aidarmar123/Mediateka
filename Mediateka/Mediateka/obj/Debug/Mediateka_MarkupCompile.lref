@@ -1,9 +1,11 @@
 ﻿
 FC:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\App.xaml;;
 FC:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\MainWindow.xaml;;
-FC:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\Pages\ListEvent.xaml;;
+FC:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\Pages\ListEventPlanner.xaml;;
 FC:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\Pages\ListOrdersExecutors.xaml;;
 FC:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\Pages\LoginPage.xaml;;
-FC:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\Pages\RegestrationPage.xaml;;
 FC:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\Pages\RegestrationModerator.xaml;;
+FC:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\Pages\RegestrationPage.xaml;;
+FC:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\Pages\WaitingEventList.xaml;;
+FC:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\Pages\AddEventPage.xaml;;
 

@@ -18,6 +18,7 @@
           <Property Name="StatusId" Type="int" Nullable="false" />
           <Property Name="EventPlannerId" Type="int" Nullable="false" />
           <Property Name="CommentModerator" Type="nvarchar(max)" />
+          <Property Name="Salary" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="EventExecutor">
           <Key>
@@ -41,6 +42,14 @@
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="EventSkill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SkillId" Type="int" Nullable="false" />
+          <Property Name="EventIdint" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Executor">
           <Key>
             <PropertyRef Name="Id" />
@@ -53,6 +62,14 @@
           <Property Name="Phone" Type="char" MaxLength="11" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExecutorSkill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SkillId" Type="int" Nullable="false" />
+          <Property Name="ExecutorId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="MaterialEvent">
           <Key>
@@ -85,6 +102,13 @@
           <Property Name="TypeMsgId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Skill">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -182,6 +206,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_EventSkill_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="EventSkill" Type="Self.EventSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventSkill">
+              <PropertyRef Name="EventIdint" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventSkill_Skill">
+          <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+          <End Role="EventSkill" Type="Self.EventSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventSkill">
+              <PropertyRef Name="SkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExecutorSkill_Executor">
+          <End Role="Executor" Type="Self.Executor" Multiplicity="1" />
+          <End Role="ExecutorSkill" Type="Self.ExecutorSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Executor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExecutorSkill">
+              <PropertyRef Name="ExecutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExecutorSkill_Skill">
+          <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+          <End Role="ExecutorSkill" Type="Self.ExecutorSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExecutorSkill">
+              <PropertyRef Name="SkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MaterialEvent_Event">
           <End Role="Event" Type="Self.Event" Multiplicity="1" />
           <End Role="MaterialEvent" Type="Self.MaterialEvent" Multiplicity="*" />
@@ -258,11 +330,14 @@
           <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EventExecutor" EntityType="Self.EventExecutor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EventPlanner" EntityType="Self.EventPlanner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventSkill" EntityType="Self.EventSkill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Executor" EntityType="Self.Executor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExecutorSkill" EntityType="Self.ExecutorSkill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MaterialEvent" EntityType="Self.MaterialEvent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Moderators" EntityType="Self.Moderators" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StatusEvent" EntityType="Self.StatusEvent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StatusExecutor" EntityType="Self.StatusExecutor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -286,6 +361,22 @@
           <AssociationSet Name="FK_EventExecutor_StatusExecutor" Association="Self.FK_EventExecutor_StatusExecutor">
             <End Role="StatusExecutor" EntitySet="StatusExecutor" />
             <End Role="EventExecutor" EntitySet="EventExecutor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventSkill_Event" Association="Self.FK_EventSkill_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="EventSkill" EntitySet="EventSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventSkill_Skill" Association="Self.FK_EventSkill_Skill">
+            <End Role="Skill" EntitySet="Skill" />
+            <End Role="EventSkill" EntitySet="EventSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExecutorSkill_Executor" Association="Self.FK_ExecutorSkill_Executor">
+            <End Role="Executor" EntitySet="Executor" />
+            <End Role="ExecutorSkill" EntitySet="ExecutorSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExecutorSkill_Skill" Association="Self.FK_ExecutorSkill_Skill">
+            <End Role="Skill" EntitySet="Skill" />
+            <End Role="ExecutorSkill" EntitySet="ExecutorSkill" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialEvent_Event" Association="Self.FK_MaterialEvent_Event">
             <End Role="Event" EntitySet="Event" />
@@ -330,9 +421,11 @@
           <Property Name="StatusId" Type="Int32" Nullable="false" />
           <Property Name="EventPlannerId" Type="Int32" Nullable="false" />
           <Property Name="CommentModerator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Salary" Type="Int32" Nullable="false" />
           <NavigationProperty Name="EventPlanner" Relationship="Self.FK_Event_EventPlanner" FromRole="Event" ToRole="EventPlanner" />
           <NavigationProperty Name="StatusEvent" Relationship="Self.FK_Event_StatusEvent" FromRole="Event" ToRole="StatusEvent" />
           <NavigationProperty Name="EventExecutor" Relationship="Self.FK_EventExecutor_Event" FromRole="Event" ToRole="EventExecutor" />
+          <NavigationProperty Name="EventSkill" Relationship="Self.FK_EventSkill_Event" FromRole="Event" ToRole="EventSkill" />
           <NavigationProperty Name="MaterialEvent" Relationship="Self.FK_MaterialEvent_Event" FromRole="Event" ToRole="MaterialEvent" />
         </EntityType>
         <EntityType Name="EventExecutor">
@@ -362,6 +455,16 @@
           <NavigationProperty Name="Event" Relationship="Self.FK_Event_EventPlanner" FromRole="EventPlanner" ToRole="Event" />
           <NavigationProperty Name="Reviews" Relationship="Self.FK_Reviews_EventPlanner" FromRole="EventPlanner" ToRole="Reviews" />
         </EntityType>
+        <EntityType Name="EventSkill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SkillId" Type="Int32" Nullable="false" />
+          <Property Name="EventIdint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="Self.FK_EventSkill_Event" FromRole="EventSkill" ToRole="Event" />
+          <NavigationProperty Name="Skill" Relationship="Self.FK_EventSkill_Skill" FromRole="EventSkill" ToRole="Skill" />
+        </EntityType>
         <EntityType Name="Executor">
           <Key>
             <PropertyRef Name="Id" />
@@ -375,8 +478,19 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="EventExecutor" Relationship="Self.FK_EventExecutor_Executor" FromRole="Executor" ToRole="EventExecutor" />
+          <NavigationProperty Name="ExecutorSkill" Relationship="Self.FK_ExecutorSkill_Executor" FromRole="Executor" ToRole="ExecutorSkill" />
           <NavigationProperty Name="MaterialEvent" Relationship="Self.FK_MaterialEvent_Executor" FromRole="Executor" ToRole="MaterialEvent" />
           <NavigationProperty Name="Reviews" Relationship="Self.FK_Reviews_Executor" FromRole="Executor" ToRole="Reviews" />
+        </EntityType>
+        <EntityType Name="ExecutorSkill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SkillId" Type="Int32" Nullable="false" />
+          <Property Name="ExecutorId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Executor" Relationship="Self.FK_ExecutorSkill_Executor" FromRole="ExecutorSkill" ToRole="Executor" />
+          <NavigationProperty Name="Skill" Relationship="Self.FK_ExecutorSkill_Skill" FromRole="ExecutorSkill" ToRole="Skill" />
         </EntityType>
         <EntityType Name="MaterialEvent">
           <Key>
@@ -421,6 +535,15 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Moderators" Relationship="Self.FK_Moderators_Role" FromRole="Role" ToRole="Moderators" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="EventSkill" Relationship="Self.FK_EventSkill_Skill" FromRole="Skill" ToRole="EventSkill" />
+          <NavigationProperty Name="ExecutorSkill" Relationship="Self.FK_ExecutorSkill_Skill" FromRole="Skill" ToRole="ExecutorSkill" />
         </EntityType>
         <EntityType Name="StatusEvent">
           <Key>
@@ -492,6 +615,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_EventSkill_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="EventSkill" Type="Self.EventSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventSkill">
+              <PropertyRef Name="EventIdint" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MaterialEvent_Event">
           <End Role="Event" Type="Self.Event" Multiplicity="1" />
           <End Role="MaterialEvent" Type="Self.MaterialEvent" Multiplicity="*" />
@@ -540,6 +675,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_EventSkill_Skill">
+          <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+          <End Role="EventSkill" Type="Self.EventSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventSkill">
+              <PropertyRef Name="SkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExecutorSkill_Executor">
+          <End Role="Executor" Type="Self.Executor" Multiplicity="1" />
+          <End Role="ExecutorSkill" Type="Self.ExecutorSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Executor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExecutorSkill">
+              <PropertyRef Name="ExecutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MaterialEvent_Executor">
           <End Role="Executor" Type="Self.Executor" Multiplicity="1" />
           <End Role="MaterialEvent" Type="Self.MaterialEvent" Multiplicity="*" />
@@ -561,6 +720,18 @@
             </Principal>
             <Dependent Role="Reviews">
               <PropertyRef Name="ExecutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExecutorSkill_Skill">
+          <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+          <End Role="ExecutorSkill" Type="Self.ExecutorSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExecutorSkill">
+              <PropertyRef Name="SkillId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -592,11 +763,14 @@
           <EntitySet Name="Event" EntityType="Self.Event" />
           <EntitySet Name="EventExecutor" EntityType="Self.EventExecutor" />
           <EntitySet Name="EventPlanner" EntityType="Self.EventPlanner" />
+          <EntitySet Name="EventSkill" EntityType="Self.EventSkill" />
           <EntitySet Name="Executor" EntityType="Self.Executor" />
+          <EntitySet Name="ExecutorSkill" EntityType="Self.ExecutorSkill" />
           <EntitySet Name="MaterialEvent" EntityType="Self.MaterialEvent" />
           <EntitySet Name="Moderators" EntityType="Self.Moderators" />
           <EntitySet Name="Reviews" EntityType="Self.Reviews" />
           <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Skill" EntityType="Self.Skill" />
           <EntitySet Name="StatusEvent" EntityType="Self.StatusEvent" />
           <EntitySet Name="StatusExecutor" EntityType="Self.StatusExecutor" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
@@ -612,6 +786,10 @@
           <AssociationSet Name="FK_EventExecutor_Event" Association="Self.FK_EventExecutor_Event">
             <End Role="Event" EntitySet="Event" />
             <End Role="EventExecutor" EntitySet="EventExecutor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventSkill_Event" Association="Self.FK_EventSkill_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="EventSkill" EntitySet="EventSkill" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialEvent_Event" Association="Self.FK_MaterialEvent_Event">
             <End Role="Event" EntitySet="Event" />
@@ -629,6 +807,14 @@
             <End Role="EventPlanner" EntitySet="EventPlanner" />
             <End Role="Reviews" EntitySet="Reviews" />
           </AssociationSet>
+          <AssociationSet Name="FK_EventSkill_Skill" Association="Self.FK_EventSkill_Skill">
+            <End Role="Skill" EntitySet="Skill" />
+            <End Role="EventSkill" EntitySet="EventSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExecutorSkill_Executor" Association="Self.FK_ExecutorSkill_Executor">
+            <End Role="Executor" EntitySet="Executor" />
+            <End Role="ExecutorSkill" EntitySet="ExecutorSkill" />
+          </AssociationSet>
           <AssociationSet Name="FK_MaterialEvent_Executor" Association="Self.FK_MaterialEvent_Executor">
             <End Role="Executor" EntitySet="Executor" />
             <End Role="MaterialEvent" EntitySet="MaterialEvent" />
@@ -636,6 +822,10 @@
           <AssociationSet Name="FK_Reviews_Executor" Association="Self.FK_Reviews_Executor">
             <End Role="Executor" EntitySet="Executor" />
             <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExecutorSkill_Skill" Association="Self.FK_ExecutorSkill_Skill">
+            <End Role="Skill" EntitySet="Skill" />
+            <End Role="ExecutorSkill" EntitySet="ExecutorSkill" />
           </AssociationSet>
           <AssociationSet Name="FK_Moderators_Role" Association="Self.FK_Moderators_Role">
             <End Role="Role" EntitySet="Role" />
@@ -664,6 +854,7 @@
                 <ScalarProperty Name="StatusId" ColumnName="StatusId" />
                 <ScalarProperty Name="EventPlannerId" ColumnName="EventPlannerId" />
                 <ScalarProperty Name="CommentModerator" ColumnName="CommentModerator" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -691,6 +882,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="EventSkill">
+            <EntityTypeMapping TypeName="MediatekaModel.EventSkill">
+              <MappingFragment StoreEntitySet="EventSkill">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SkillId" ColumnName="SkillId" />
+                <ScalarProperty Name="EventIdint" ColumnName="EventIdint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Executor">
             <EntityTypeMapping TypeName="MediatekaModel.Executor">
               <MappingFragment StoreEntitySet="Executor">
@@ -702,6 +902,15 @@
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExecutorSkill">
+            <EntityTypeMapping TypeName="MediatekaModel.ExecutorSkill">
+              <MappingFragment StoreEntitySet="ExecutorSkill">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SkillId" ColumnName="SkillId" />
+                <ScalarProperty Name="ExecutorId" ColumnName="ExecutorId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -741,6 +950,14 @@
           <EntitySetMapping Name="Role">
             <EntityTypeMapping TypeName="MediatekaModel.Role">
               <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skill">
+            <EntityTypeMapping TypeName="MediatekaModel.Skill">
+              <MappingFragment StoreEntitySet="Skill">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
