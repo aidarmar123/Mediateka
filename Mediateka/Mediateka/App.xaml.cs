@@ -29,6 +29,7 @@ namespace Mediateka
             RegestrDescriptor<Executor,MetaUser>();
             RegestrDescriptor<EventPlanner,MetaUser>();
             RegestrDescriptor<Moderators,MetaModerator>();
+            RegestrDescriptor<Event,MetaEvent>();
         }
 
         private void RegestrDescriptor<T1, T2>()

@@ -33,7 +33,7 @@ namespace Mediateka.Pages
 
         private void BAddEvent_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AddEventPage(new Models.Event() { EventPlannerId=App.contextEventPlanner.Id}));
         }
 
         private void TBSearch_TextChanged(object sender, TextChangedEventArgs e)
@@ -47,6 +47,16 @@ namespace Mediateka.Pages
             {
                 LVEvents.ItemsSource = App.Db.Event.Where(ev => ev.EventPlannerId == App.contextEventPlanner.Id && ev.Name.Contains(text)).ToList();
             }
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void BEdit_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

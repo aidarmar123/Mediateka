@@ -4,22 +4,40 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Mediateka.Pages"
+      xmlns:xcd="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddEventPage">
 
-    <Grid>
+    <Grid Margin="5">
         <ScrollViewer>
             <StackPanel>
-                <TextBlock Text=""/>
+                <TextBlock Text="Название"/>
                 <TextBox Text="{Binding Name}"/>
-                <TextBlock Text=""/>
-                <TextBlock Text="{Binding Description}"/>
-                <TextBlock Text=""/>
-                <TextBlock Text="{Binding City}"/>
+                <TextBlock Text="Описание"/>
+                <TextBox Text="{Binding Description}"/>
+                <TextBlock Text="Город проведения"/>
+                <TextBox Text="{Binding City}"/>
 
-                <TextBlock Text=""/>
-                <TextBlock Text=""/>
+                <TextBlock Text="Плата"/>
+                <TextBox Text="{Binding Salary}"/>
+                <TextBlock Text="Какие специалисты нужны"/>
+                <xcd:CheckComboBox x:Name="CCBSkills"
+                                   DisplayMemberPath="Name"/>
+                <TextBlock Text="Время проведения"/>
+                <xcd:DateTimePicker Value="{Binding DateTime}"
+                                    DefaultValue="01.01.2024"/>
+                <TextBlock Text="Крайний срок сдачи"/>
+                <xcd:DateTimePicker Value="{Binding Deadline}"
+                    DefaultValue="01.01.2024"/>
+                <Button x:Name="BSave"
+                        Margin="0,5"
+                        Content="Сохранить"
+                        Click="BSave_Click"/>
+                 <Button x:Name="BBack"
+                        Content="Назад"
+                        Click="BBack_Click"/>
+                
             </StackPanel>
         </ScrollViewer>
     </Grid>

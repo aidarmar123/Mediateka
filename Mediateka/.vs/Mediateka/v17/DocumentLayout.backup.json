@@ -3,40 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\pages\\regestrationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\pages\\regestrationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\pages\\regestrationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\pages\\regestrationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\pages\\addeventpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\pages\\addeventpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\pages\\addeventpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\models\\modeldata.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\models\\modeldata.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\pages\\addeventpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\pages\\addeventpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\pages\\listeventplanner.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\pages\\listeventplanner.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\pages\\listeventplanner.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\pages\\listeventplanner.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\pages\\listeventplanner.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\pages\\listeventplanner.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\pages\\waitingeventlist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\windows\\addcommentevent.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\windows\\addcommentevent.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\windows\\addcommentevent.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\windows\\addcommentevent.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\pages\\waitingeventlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\pages\\waitingeventlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\pages\\waitingeventlist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\pages\\waitingeventlist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\pages\\regestrationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\pages\\regestrationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -47,6 +47,30 @@
       "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\pages\\addeventpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\pages\\addeventpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\models\\metadata\\metaevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\models\\metadata\\metaevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\pages\\regestrationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\pages\\regestrationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\models\\modeldata.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\models\\modeldata.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,7 +79,7 @@
       "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|c:\\users\\aidar\\desktop\\mediateka\\mediateka\\mediateka\\pages\\regestrationmoderator.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\pages\\regestrationmoderator.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\pages\\regestrationmoderator.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -75,10 +99,6 @@
       "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\models\\metadata\\metauser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\mediateka\\service\\validationline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AEB3A6C-856D-4FFF-9A9D-3D9DE12A152D}|Mediateka\\Mediateka.csproj|solutionrelative:mediateka\\service\\validationline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -94,7 +114,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -103,43 +123,44 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ModelData.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Models\\ModelData.edmx",
-              "RelativeDocumentMoniker": "Mediateka\\Models\\ModelData.edmx",
-              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Models\\ModelData.edmx [Diagram1]",
-              "RelativeToolTip": "Mediateka\\Models\\ModelData.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-11-02T13:47:50.393Z",
-              "EditorCaption": " [Diagram1]"
+              "Title": "Windows\\AddCommentEvent.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Windows\\AddCommentEvent.xaml.cs",
+              "RelativeDocumentMoniker": "Mediateka\\Windows\\AddCommentEvent.xaml.cs",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Windows\\AddCommentEvent.xaml.cs",
+              "RelativeToolTip": "Mediateka\\Windows\\AddCommentEvent.xaml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T15:44:23.435Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\App.config",
-              "RelativeDocumentMoniker": "Mediateka\\App.config",
-              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\App.config",
-              "RelativeToolTip": "Mediateka\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-11-02T13:40:02.033Z",
+              "Title": "AddCommentEvent.xaml",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Windows\\AddCommentEvent.xaml",
+              "RelativeDocumentMoniker": "Mediateka\\Windows\\AddCommentEvent.xaml",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Windows\\AddCommentEvent.xaml",
+              "RelativeToolTip": "Mediateka\\Windows\\AddCommentEvent.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-02T15:43:26.869Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "AddEventPage.xaml",
-              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\AddEventPage.xaml",
-              "RelativeDocumentMoniker": "Mediateka\\Pages\\AddEventPage.xaml",
-              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\AddEventPage.xaml",
-              "RelativeToolTip": "Mediateka\\Pages\\AddEventPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-02T13:24:57.362Z",
+              "Title": "WaitingEventList.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\WaitingEventList.xaml.cs",
+              "RelativeDocumentMoniker": "Mediateka\\Pages\\WaitingEventList.xaml.cs",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\WaitingEventList.xaml.cs",
+              "RelativeToolTip": "Mediateka\\Pages\\WaitingEventList.xaml.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAcwEsAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T15:37:39.863Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "ListEventPlanner.xaml",
               "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\ListEventPlanner.xaml",
               "RelativeDocumentMoniker": "Mediateka\\Pages\\ListEventPlanner.xaml",
@@ -151,58 +172,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "LoginPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\LoginPage.xaml.cs",
-              "RelativeDocumentMoniker": "Mediateka\\Pages\\LoginPage.xaml.cs",
-              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\LoginPage.xaml.cs",
-              "RelativeToolTip": "Mediateka\\Pages\\LoginPage.xaml.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAjwGEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T09:20:22.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RegestrationPage.xaml",
-              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationPage.xaml",
-              "RelativeDocumentMoniker": "Mediateka\\Pages\\RegestrationPage.xaml",
-              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationPage.xaml*",
-              "RelativeToolTip": "Mediateka\\Pages\\RegestrationPage.xaml*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-02T09:17:16.257Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "AddEventPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\AddEventPage.xaml.cs",
               "RelativeDocumentMoniker": "Mediateka\\Pages\\AddEventPage.xaml.cs",
               "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\AddEventPage.xaml.cs",
               "RelativeToolTip": "Mediateka\\Pages\\AddEventPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAswDcAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T13:48:36.952Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RegestrationPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationPage.xaml.cs",
-              "RelativeDocumentMoniker": "Mediateka\\Pages\\RegestrationPage.xaml.cs",
-              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationPage.xaml.cs*",
-              "RelativeToolTip": "Mediateka\\Pages\\RegestrationPage.xaml.cs*",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAAwF8AAAAtAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ListEventPlanner.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\ListEventPlanner.xaml.cs",
+              "RelativeDocumentMoniker": "Mediateka\\Pages\\ListEventPlanner.xaml.cs",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\ListEventPlanner.xaml.cs",
+              "RelativeToolTip": "Mediateka\\Pages\\ListEventPlanner.xaml.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAwDAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T09:24:59.151Z",
+              "WhenOpened": "2024-11-02T12:27:14.494Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "WaitingEventList.xaml",
               "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\WaitingEventList.xaml",
               "RelativeDocumentMoniker": "Mediateka\\Pages\\WaitingEventList.xaml",
@@ -214,53 +210,114 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Pages\\ListEventPlanner.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\ListEventPlanner.xaml.cs",
-              "RelativeDocumentMoniker": "Mediateka\\Pages\\ListEventPlanner.xaml.cs",
-              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\ListEventPlanner.xaml.cs",
-              "RelativeToolTip": "Mediateka\\Pages\\ListEventPlanner.xaml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAuwC8AAACIAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "RegestrationPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationPage.xaml.cs",
+              "RelativeDocumentMoniker": "Mediateka\\Pages\\RegestrationPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationPage.xaml.cs",
+              "RelativeToolTip": "Mediateka\\Pages\\RegestrationPage.xaml.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAwF8AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T12:27:14.494Z",
+              "WhenOpened": "2024-11-02T09:24:59.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AddEventPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\AddEventPage.xaml",
+              "RelativeDocumentMoniker": "Mediateka\\Pages\\AddEventPage.xaml",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\AddEventPage.xaml",
+              "RelativeToolTip": "Mediateka\\Pages\\AddEventPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-02T13:24:57.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Mediateka\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Mediateka\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T08:59:19.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RegestrationPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationPage.xaml",
+              "RelativeDocumentMoniker": "Mediateka\\Pages\\RegestrationPage.xaml",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationPage.xaml",
+              "RelativeToolTip": "Mediateka\\Pages\\RegestrationPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-02T09:17:16.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MetaEvent.cs",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Models\\MetaData\\MetaEvent.cs",
+              "RelativeDocumentMoniker": "Mediateka\\Models\\MetaData\\MetaEvent.cs",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Models\\MetaData\\MetaEvent.cs",
+              "RelativeToolTip": "Mediateka\\Models\\MetaData\\MetaEvent.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAQwBwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T14:28:46.232Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "RegestrationModerator.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationModerator.xaml.cs",
-              "RelativeDocumentMoniker": "Mediateka\\Pages\\RegestrationModerator.xaml.cs",
-              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationModerator.xaml.cs",
-              "RelativeToolTip": "Mediateka\\Pages\\RegestrationModerator.xaml.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAswBwAAAA2AAAAAAAAAA==",
+              "Title": "Event.cs",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Models\\Event.cs",
+              "RelativeDocumentMoniker": "Mediateka\\Models\\Event.cs",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Models\\Event.cs",
+              "RelativeToolTip": "Mediateka\\Models\\Event.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAcwCsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T11:52:16.258Z",
+              "WhenOpened": "2024-11-02T14:28:47.454Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ModelData.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Models\\ModelData.edmx",
+              "RelativeDocumentMoniker": "Mediateka\\Models\\ModelData.edmx",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Models\\ModelData.edmx [Diagram1]",
+              "RelativeToolTip": "Mediateka\\Models\\ModelData.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-11-02T13:47:50.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "Mediateka\\Pages\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\LoginPage.xaml.cs",
+              "RelativeToolTip": "Mediateka\\Pages\\LoginPage.xaml.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAjwGEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T09:20:22.531Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "RegestrationModerator.xaml",
-              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationModerator.xaml",
-              "RelativeDocumentMoniker": "Mediateka\\Pages\\RegestrationModerator.xaml",
-              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationModerator.xaml",
-              "RelativeToolTip": "Mediateka\\Pages\\RegestrationModerator.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-02T11:47:32.049Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\App.xaml.cs",
-              "RelativeDocumentMoniker": "Mediateka\\App.xaml.cs",
-              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\App.xaml.cs",
-              "RelativeToolTip": "Mediateka\\App.xaml.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T09:22:53.469Z",
-              "EditorCaption": ""
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\App.config",
+              "RelativeDocumentMoniker": "Mediateka\\App.config",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\App.config",
+              "RelativeToolTip": "Mediateka\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-02T13:40:02.033Z"
             },
             {
               "$type": "Document",
@@ -276,7 +333,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 10,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\App.xaml.cs",
+              "RelativeDocumentMoniker": "Mediateka\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\App.xaml.cs",
+              "RelativeToolTip": "Mediateka\\App.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T09:22:53.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RegestrationModerator.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationModerator.xaml.cs",
+              "RelativeDocumentMoniker": "Mediateka\\Pages\\RegestrationModerator.xaml.cs",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationModerator.xaml.cs",
+              "RelativeToolTip": "Mediateka\\Pages\\RegestrationModerator.xaml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAswBwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T11:52:16.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RegestrationModerator.xaml",
+              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationModerator.xaml",
+              "RelativeDocumentMoniker": "Mediateka\\Pages\\RegestrationModerator.xaml",
+              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\RegestrationModerator.xaml",
+              "RelativeToolTip": "Mediateka\\Pages\\RegestrationModerator.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-02T11:47:32.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "LoginPage.xaml",
               "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\LoginPage.xaml",
               "RelativeDocumentMoniker": "Mediateka\\Pages\\LoginPage.xaml",
@@ -287,19 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Mediateka\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\MainWindow.xaml.cs",
-              "RelativeToolTip": "Mediateka\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T08:59:19.669Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "ListOrdersExecutors.xaml",
               "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Pages\\ListOrdersExecutors.xaml",
               "RelativeDocumentMoniker": "Mediateka\\Pages\\ListOrdersExecutors.xaml",
@@ -310,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "MetaModerator.cs",
               "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Models\\MetaData\\MetaModerator.cs",
               "RelativeDocumentMoniker": "Mediateka\\Models\\MetaData\\MetaModerator.cs",
@@ -322,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Mediateka\\MainWindow.xaml",
@@ -334,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "ValidationLine.cs",
               "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Service\\ValidationLine.cs",
               "RelativeDocumentMoniker": "Mediateka\\Service\\ValidationLine.cs",
@@ -346,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "MetaUser.cs",
               "DocumentMoniker": "C:\\Users\\Aidar\\Desktop\\Mediateka\\Mediateka\\Mediateka\\Models\\MetaData\\MetaUser.cs",
               "RelativeDocumentMoniker": "Mediateka\\Models\\MetaData\\MetaUser.cs",

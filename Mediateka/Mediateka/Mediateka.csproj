@@ -111,6 +111,7 @@
     <Compile Include="Models\MaterialEvent.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MetaData\MetaEvent.cs" />
     <Compile Include="Models\MetaData\MetaModerator.cs" />
     <Compile Include="Models\MetaData\MetaUser.cs" />
     <Compile Include="Models\ModelData.Context.cs">
@@ -165,6 +166,9 @@
       <DependentUpon>WaitingEventList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\ValidationLine.cs" />
+    <Compile Include="Windows\AddCommentEvent.xaml.cs">
+      <DependentUpon>AddCommentEvent.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -202,6 +206,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\WaitingEventList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddCommentEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

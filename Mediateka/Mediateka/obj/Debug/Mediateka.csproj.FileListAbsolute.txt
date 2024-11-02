@@ -87,3 +87,5 @@ C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\ListEventPl
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\WaitingEventList.baml
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\AddEventPage.g.cs
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\AddEventPage.baml
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\AddCommentEvent.g.cs
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\AddCommentEvent.baml
