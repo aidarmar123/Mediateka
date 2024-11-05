@@ -1,0 +1,117 @@
+﻿<Page x:Class="Mediateka.Pages.ListEventPlanner"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Mediateka.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListEventPlanner"
+      Loaded="Page_Loaded">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="BAddEvent"
+                    Click="BAddEvent_Click"
+                    Content="Добавить"/>
+            <Button x:Name="BEdit"
+                    Click="BEdit_Click"
+                    Margin="5,0"
+                    Content="Изменить"/>
+            <TextBlock Text="Найти"
+                       Margin="5"
+                       VerticalAlignment="Center"/>
+            <TextBox x:Name="TBSearch"
+                     VerticalAlignment="Center"
+                     Width="220"
+                     TextChanged="TBSearch_TextChanged">
+                <TextBox.Style>
+                    <Style>
+                        <Style.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius"
+                                        Value="5"/>
+                            </Style>
+                        </Style.Resources>
+                        
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+        </StackPanel>
+        <ListView x:Name="LVEvents"
+                  Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    
+                        <StackPanel>
+                        <TextBlock FontSize="28"
+                                Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding City, StringFormat='Город: {0}'}"/>
+                        <TextBlock Text="{Binding Description}"
+                                       TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding StatusEvent.Name}"/>
+                        <Expander>
+                            <DataGrid x:Name="DGExecutors"
+                                      ItemsSource="{Binding EventExecutor}"
+                                      IsReadOnly="True"
+                                      AutoGenerateColumns="False"
+                                      MouseDoubleClick="DGExecutors_MouseDoubleClick">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Border CornerRadius="20"
+                                                        Width="50"
+                                                        Height="50">
+                                                    <Border.Background>
+                                                        <ImageBrush ImageSource="{Binding Executor.Avatar}"
+                                                                    RenderOptions.BitmapScalingMode="Fant"
+                                                                    Stretch="Fill"/>
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="ФИО"
+                                                        Binding="{Binding Executor.Name}"/>
+                                    <DataGridTemplateColumn>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button x:Name="BHire"
+                                                        Click="BHire_Click"
+                                                        Content="Нанять"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Expander>
+                    </StackPanel>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="Margin"
+                            Value="3"/>
+                    <Setter Property="BorderBrush"
+                            Value="DeepSkyBlue"/>
+                    <Setter Property="BorderThickness"
+                            Value="1"/>
+                    <Style.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius"
+        Value="10"/>
+                            
+                        </Style>
+                    </Style.Resources>
+                    
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </Grid>
+</Page>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Mediateka.Models;
+using Mediateka.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,6 +57,27 @@ namespace Mediateka.Pages
         }
 
         private void BEdit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LVEvents_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void DGExecutors_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var executor = ((sender as DataGrid).SelectedItem as EventExecutor).Executor;
+            var contextEvent = (sender as DataGrid).DataContext as Event; 
+
+            if(executor != null && contextEvent!=null)
+            {
+                new ExecutorProfile(executor, contextEvent).ShowDialog(); 
+            }
+        }
+
+        private void BHire_Click(object sender, RoutedEventArgs e)
         {
 
         }

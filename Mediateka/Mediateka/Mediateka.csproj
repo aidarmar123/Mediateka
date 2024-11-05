@@ -153,21 +153,27 @@
     <Compile Include="Models\TypeMsg.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AddEventPage.xaml.cs">
+    <Compile Include="Pages\EvenPlanner\AddEventPage.xaml.cs">
       <DependentUpon>AddEventPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ListEventPlanner.xaml.cs">
+    <Compile Include="Pages\EvenPlanner\ListEventPlanner.xaml.cs">
       <DependentUpon>ListEventPlanner.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegestrationModerator.xaml.cs">
+    <Compile Include="Pages\Moderator\RegestrationModerator.xaml.cs">
       <DependentUpon>RegestrationModerator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\WaitingEventList.xaml.cs">
+    <Compile Include="Pages\Moderator\WaitingEventList.xaml.cs">
       <DependentUpon>WaitingEventList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\ValidationLine.cs" />
     <Compile Include="Windows\AddCommentEvent.xaml.cs">
       <DependentUpon>AddCommentEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EventWindow.xaml.cs">
+      <DependentUpon>EventWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ExecutorProfile.xaml.cs">
+      <DependentUpon>ExecutorProfile.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -181,15 +187,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\AddEventPage.xaml">
+    <Page Include="Pages\EvenPlanner\AddEventPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ListEventPlanner.xaml">
+    <Page Include="Pages\EvenPlanner\ListEventPlanner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ListOrdersExecutors.xaml">
+    <Page Include="Pages\Executor\ListOrdersExecutors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -197,7 +203,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\RegestrationModerator.xaml">
+    <Page Include="Pages\Moderator\RegestrationModerator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -205,7 +211,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\WaitingEventList.xaml">
+    <Page Include="Pages\Moderator\WaitingEventList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -213,9 +219,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\EventWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ExecutorProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\ListOrdersExecutors.xaml.cs">
+    <Compile Include="Pages\Executor\ListOrdersExecutors.xaml.cs">
       <DependentUpon>ListOrdersExecutors.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">

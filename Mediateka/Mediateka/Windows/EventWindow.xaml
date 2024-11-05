@@ -1,0 +1,49 @@
+﻿<Window x:Class="Mediateka.Windows.EventWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mediateka.Windows"
+        xmlns:xcd ="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="EventWindow" Height="450" Width="800">
+    <Grid>
+        <Grid Margin="5">
+            <ScrollViewer>
+                <StackPanel>
+                    <TextBlock Text="Название"/>
+                    <TextBlock Text="{Binding Name}"/>
+                    <TextBlock Text="Описание"/>
+                    <TextBlock Text="{Binding Description}"/>
+                    <TextBlock Text="Город проведения"/>
+                    <TextBlock Text="{Binding City}"/>
+
+                    <TextBlock Text="Плата"/>
+                    <TextBlock Text="{Binding Salary}"/>
+                    <TextBlock Text="Какие специалисты нужны"/>
+                    <ListBox x:Name="CCBSkills"
+                             BorderThickness="1"
+                             BorderBrush="LightGray"
+                              ItemsSource="{Binding EventSkill}"
+                              DisplayMemberPath="Skill.Name"/>
+                    <TextBlock Text="Время проведения"/>
+                    <DatePickerTextBox Text="{Binding DateTime, StringFormat='dd.MM.yyyy  время: MM:mm'}"
+                                       IsReadOnly="True"
+                                       />
+                    <TextBlock Text="Крайний срок сдачи"/>
+                    <DatePickerTextBox Text="{Binding Deadline, StringFormat='dd.MM.yyyy'}"
+                    IsReadOnly="True"/>
+                   
+                    <Button x:Name="BResponse"
+                    Margin="0,5"
+                    Content="Откликнуться"
+                    Click="BResponse_Click"/>
+                    <Button x:Name="BBack"
+                    Content="Назад"
+                    Click="BBack_Click"/>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>

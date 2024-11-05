@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\App.xaml
-91805401272
+11752692699
 21304076067
-35-1273872130
+37-286295905
 26-1581971171
-MainWindow.xaml;Pages\AddEventPage.xaml;Pages\ListEventPlanner.xaml;Pages\ListOrdersExecutors.xaml;Pages\LoginPage.xaml;Pages\RegestrationModerator.xaml;Pages\RegestrationPage.xaml;Pages\WaitingEventList.xaml;Windows\AddCommentEvent.xaml;
+MainWindow.xaml;Pages\EvenPlanner\AddEventPage.xaml;Pages\EvenPlanner\ListEventPlanner.xaml;Pages\Executor\ListOrdersExecutors.xaml;Pages\LoginPage.xaml;Pages\Moderator\RegestrationModerator.xaml;Pages\RegestrationPage.xaml;Pages\Moderator\WaitingEventList.xaml;Windows\AddCommentEvent.xaml;Windows\EventWindow.xaml;Windows\ExecutorProfile.xaml;
 
 False
 
