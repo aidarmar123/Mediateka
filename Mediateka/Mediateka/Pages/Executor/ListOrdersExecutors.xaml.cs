@@ -14,6 +14,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -97,11 +98,21 @@ namespace Mediateka.Pages
                     Refresh();
                 }
             }
+            else
+            {
+                Xceed.Wpf.Toolkit.MessageBox.Show("Выбирете мероприятие");
+            }
         }
 
         private void BRemoveFile_Click(object sender, RoutedEventArgs e)
         {
-
+            var material = (sender as Button).DataContext as MaterialEvent;
+            if(material != null)
+            {
+                App.Db.MaterialEvent.Remove(material);
+                App.Db.SaveChanges();
+                Refresh();
+            }
         }
     }
 }
