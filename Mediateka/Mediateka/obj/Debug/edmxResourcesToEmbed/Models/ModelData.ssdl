@@ -76,6 +76,7 @@
     <Property Name="ExecutorId" Type="int" Nullable="false" />
     <Property Name="Data" Type="varbinary(max)" Nullable="false" />
     <Property Name="FormatFile" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NameFile" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Moderators">
     <Key>

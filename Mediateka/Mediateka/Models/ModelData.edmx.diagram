@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="73c5e35404a84e6b8746cace5b0a01a6" Name="Diagram1">
+      <Diagram DiagramId="6f4ba6d7144f440cb156c37836935043" Name="Diagram1">
         <EntityTypeShape EntityType="MediatekaModel.Event" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MediatekaModel.EventExecutor" Width="1.5" PointX="8.25" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MediatekaModel.EventPlanner" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
@@ -12,13 +12,13 @@
         <EntityTypeShape EntityType="MediatekaModel.Executor" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MediatekaModel.ExecutorSkill" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MediatekaModel.MaterialEvent" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MediatekaModel.Moderators" Width="1.5" PointX="10" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediatekaModel.Moderators" Width="1.5" PointX="10" PointY="12.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MediatekaModel.Reviews" Width="1.5" PointX="6" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="MediatekaModel.Role" Width="1.5" PointX="7.75" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MediatekaModel.Skill" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MediatekaModel.StatusEvent" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MediatekaModel.StatusExecutor" Width="1.5" PointX="6" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MediatekaModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediatekaModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="MediatekaModel.TypeMsg" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
         <AssociationConnector Association="MediatekaModel.FK_Event_EventPlanner" ManuallyRouted="false" />
         <AssociationConnector Association="MediatekaModel.FK_Event_StatusEvent" ManuallyRouted="false" />

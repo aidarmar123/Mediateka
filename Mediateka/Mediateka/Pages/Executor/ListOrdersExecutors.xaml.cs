@@ -1,7 +1,9 @@
 ﻿using Mediateka.Models;
 using Mediateka.Windows;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +33,7 @@ namespace Mediateka.Pages
         private void Refresh()
         {
             LVEvents.ItemsSource = App.Db.Event.Where(ev => ev.StatusId == 1).ToList();
+            LVOrders.ItemsSource = App.Db.EventExecutor.Where(x=>x.ExecutorId == App.contextExecutor.Id && x.StatusExecutorId==2).ToList();
             
         }
 
@@ -71,6 +74,34 @@ namespace Mediateka.Pages
             {
                 new EventWindow(_event).ShowDialog();
             }
+        }
+
+        private void BUpload_Click(object sender, RoutedEventArgs e)
+        {
+            if(LVOrders.SelectedItem is EventExecutor eventExecutor)
+            {
+                var openFile = new OpenFileDialog();
+                if (openFile.ShowDialog().GetValueOrDefault())
+                {
+                    var matrial = new MaterialEvent()
+                    {
+                        DateTimeSend = DateTime.Now,
+                        NameFile = openFile.SafeFileName,
+                        EventId = eventExecutor.EventId,
+                        ExecutorId = eventExecutor.ExecutorId,
+                        FormatFile = System.IO.Path.GetExtension(openFile.FileName),
+                        Data = File.ReadAllBytes(openFile.FileName)
+                    };
+                    App.Db.MaterialEvent.Add(matrial);
+                    App.Db.SaveChanges();
+                    Refresh();
+                }
+            }
+        }
+
+        private void BRemoveFile_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -132,6 +132,7 @@
     <Compile Include="Models\Moderators.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Parttials\Executor.cs" />
     <Compile Include="Models\Reviews.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>

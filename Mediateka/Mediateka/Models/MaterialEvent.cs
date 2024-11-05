@@ -20,6 +20,7 @@ namespace Mediateka.Models
         public int ExecutorId { get; set; }
         public byte[] Data { get; set; }
         public string FormatFile { get; set; }
+        public string NameFile { get; set; }
     
         public virtual Event Event { get; set; }
         public virtual Executor Executor { get; set; }

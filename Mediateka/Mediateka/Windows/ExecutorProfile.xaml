@@ -26,12 +26,12 @@
                 </StackPanel>
 
                 <TextBlock Text="ФИО"/>
-                <TextBlock Text="{Binding Name}"/>
+                <TextBlock Text="{Binding FullName}"/>
                 <TextBlock Text="Телефон"/>
                 <TextBlock Text="{Binding Phone}"/>
 
                 <TextBlock Text="E-mail"/>
-                <TextBox Text="{Binding Email}"/>
+                <TextBlock Text="{Binding Email}"/>
 
                 <StackPanel x:Name="SPSkillsExecutor">
                     <TextBlock Text="Навыки"/>
@@ -48,7 +48,7 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="{Binding Event.Name}"/>
+                                <TextBlock Text="{Binding NameFile}"/>
                                 <Button x:Name="BInstall"
                                         Click="BInstall_Click"
                                         Content="Скачать"/>

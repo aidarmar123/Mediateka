@@ -94,6 +94,7 @@
     <Property Name="ExecutorId" Type="Int32" Nullable="false" />
     <Property Name="Data" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
     <Property Name="FormatFile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NameFile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Event" Relationship="Self.FK_MaterialEvent_Event" FromRole="MaterialEvent" ToRole="Event" />
     <NavigationProperty Name="Executor" Relationship="Self.FK_MaterialEvent_Executor" FromRole="MaterialEvent" ToRole="Executor" />
   </EntityType>

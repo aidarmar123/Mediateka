@@ -7,75 +7,129 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ListOrdersExecutors">
-
     <Grid Margin="5">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Найти"
-                   Margin="5"
-                   VerticalAlignment="Center"/>
-            <TextBox x:Name="TBSearch"
-                 VerticalAlignment="Center"
-                 Width="220"
-                 TextChanged="TBSearch_TextChanged">
-                <TextBox.Style>
-                    <Style>
-                        <Style.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius"
-                                    Value="5"/>
-                            </Style>
-                        </Style.Resources>
+        <TabControl>
+            <TabItem Header="Заказы">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
 
-                    </Style>
-                </TextBox.Style>
-            </TextBox>
-        </StackPanel>
-        <ListView x:Name="LVEvents"
-                  MouseDoubleClick="LVEvents_MouseDoubleClick"
-              Grid.Row="1">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock FontSize="28"
-                            Text="{Binding Name}"/>
-                        <TextBlock Text="{Binding City, StringFormat='Город: {0}'}"/>
-                        <TextBlock Text="{Binding Description}"
-                                   TextWrapping="Wrap"
-                                   />
-                        <StackPanel>
-                            <Button x:Name="BResponse"
-                                    Margin="5"
-        HorizontalAlignment="Right"
-        Click="BResponse_Click"
-        Content="Откликнуться"/>
-                        </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Найти"
+                Margin="5"
+                VerticalAlignment="Center"/>
+                        <TextBox x:Name="TBSearch"
+              VerticalAlignment="Center"
+              Width="220"
+              TextChanged="TBSearch_TextChanged">
+                            <TextBox.Style>
+                                <Style>
+                                    <Style.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius"
+                                 Value="5"/>
+                                        </Style>
+                                    </Style.Resources>
+
+                                </Style>
+                            </TextBox.Style>
+                        </TextBox>
+                    </StackPanel>
+                    <ListView x:Name="LVEvents"
+               MouseDoubleClick="LVEvents_MouseDoubleClick"
+           Grid.Row="1">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock FontSize="28"
+                         Text="{Binding Name}"/>
+                                    <TextBlock Text="{Binding City, StringFormat='Город: {0}'}"/>
+                                    <TextBlock Text="{Binding Description}"
+                                TextWrapping="Wrap"
+                                />
+                                    <StackPanel>
+                                        <Button x:Name="BResponse"
+                                 Margin="5"
+     HorizontalAlignment="Right"
+     Click="BResponse_Click"
+     Content="Откликнуться"/>
+                                    </StackPanel>
+
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="Margin"
+                     Value="3"/>
+                                <Setter Property="BorderBrush"
+                     Value="DeepSkyBlue"/>
+                                <Setter Property="BorderThickness"
+                     Value="1"/>
+                                <Style.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius"
+                                 Value="10"/>
+
+                                    </Style>
+                                </Style.Resources>
+
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Одобреные заказы">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="BUpload"
+                                Margin="5,0"
+            Click="BUpload_Click"
+            Content="Загрузить файл"/>
                         
                     </StackPanel>
+                    <ListView x:Name="LVOrders">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Event.Name}"
+                                               FontSize="32"/>
+                                    <TextBlock Text="{Binding Event.DateTime, StringFormat='Дата dd.MM.yyyy'}"/>
+                                    <TextBlock Text="{Binding Event.DateTime, StringFormat='Время HH:mm'}"/>
 
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="{x:Type ListViewItem}">
-                    <Setter Property="Margin"
-                        Value="3"/>
-                    <Setter Property="BorderBrush"
-                        Value="DeepSkyBlue"/>
-                    <Setter Property="BorderThickness"
-                        Value="1"/>
-                    <Style.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius"
-                                    Value="10"/>
+                                    <TextBlock Text="{Binding Event.Deadline, StringFormat='Срок сдачи dd.MM.yyyy'}"/>
 
-                        </Style>
-                    </Style.Resources>
+                                    <DataGrid ItemsSource="{Binding Event.MaterialEvent}"
+                                              IsReadOnly="True"
+                                              AutoGenerateColumns="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Имя файла"
+                                                                Binding="{Binding NameFile}"/>
+                                             <DataGridTextColumn Header="Дата отправким"
+                                                                Binding="{Binding DateTimeSend}"/>
 
-                </Style>
-            </ListView.ItemContainerStyle>
-        </ListView>
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button x:Name="BRemoveFile"
+Click="BRemoveFile_Click"
+Content="Удалить файл"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>                                            
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
+
 </Page>

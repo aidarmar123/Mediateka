@@ -82,6 +82,7 @@
           <ScalarProperty Name="ExecutorId" ColumnName="ExecutorId" />
           <ScalarProperty Name="Data" ColumnName="Data" />
           <ScalarProperty Name="FormatFile" ColumnName="FormatFile" />
+          <ScalarProperty Name="NameFile" ColumnName="NameFile" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
