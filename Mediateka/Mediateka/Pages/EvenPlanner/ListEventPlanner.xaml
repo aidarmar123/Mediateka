@@ -56,6 +56,7 @@
                         <TextBlock Text="{Binding Description}"
                                        TextWrapping="Wrap"/>
                         <TextBlock Text="{Binding StatusEvent.Name}"/>
+                        <TextBlock Text="{Binding CommentModerator, StringFormat='Комментарий: {0}'}"/>
                         <Expander>
                             <DataGrid x:Name="DGExecutors"
                                       ItemsSource="{Binding EventExecutor}"
@@ -80,12 +81,21 @@
                                     </DataGridTemplateColumn>
                                     <DataGridTextColumn Header="ФИО"
                                                         Binding="{Binding Executor.FullName}"/>
+                                    <DataGridTextColumn Header="Статус"
+                                                        Binding="{Binding StatusExecutor.Name}"/>
+                                    
                                     <DataGridTemplateColumn>
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Button x:Name="BHire"
-                                                        Click="BHire_Click"
-                                                        Content="Нанять"/>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button x:Name="BHire"
+                                                            Click="BHire_Click"
+                                                            Content="Нанять"/>
+                                                    <Button x:Name="BRefusal"
+                                                            Click="BRefusal_Click"
+                                                            Content="Отказать"/>
+                                                </StackPanel>
+                                                
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
@@ -104,6 +114,8 @@
                             Value="DeepSkyBlue"/>
                     <Setter Property="BorderThickness"
                             Value="1"/>
+                    <Setter Property="HorizontalContentAlignment"
+                            Value="Stretch"/>
                     <Style.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius"

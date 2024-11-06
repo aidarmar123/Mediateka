@@ -24,6 +24,9 @@ namespace Mediateka
         public static Moderators contextModerator;
 
 
+
+        public static MainWindow mainWindow;
+
         App()
         {
             RegestrDescriptor<Executor,MetaUser>();
@@ -36,6 +39,14 @@ namespace Mediateka
         {
             var provider = new AssociatedMetadataTypeTypeDescriptionProvider(typeof(T1), typeof(T2));
             TypeDescriptor.AddProviderTransparent(provider,typeof(T1));
+        }
+
+        //Функция вызывающия при выходе из приложения и обнуляет всех пользователей
+        public static void ExitFromApp()
+        {
+            contextExecutor = null;
+            contextEventPlanner = null;
+            contextModerator = null;
         }
     }
 }

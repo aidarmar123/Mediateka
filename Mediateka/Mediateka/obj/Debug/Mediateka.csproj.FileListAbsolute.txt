@@ -93,3 +93,5 @@ C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\EventWind
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\EventWindow.baml
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\ExecutorProfile.g.cs
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\ExecutorProfile.baml
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\ProfilePage.g.cs
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\ProfilePage.baml

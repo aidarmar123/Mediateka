@@ -54,6 +54,9 @@ namespace Mediateka.Pages
                 if (executor != null)
                 {
                     App.contextExecutor = executor;
+                    App.mainWindow.DataContext = executor;
+                    App.mainWindow.GProfile.Visibility = Visibility.Visible;
+
                     NavigationService.Navigate(new ListOrdersExecutors());
                 }
                 else
@@ -79,6 +82,9 @@ namespace Mediateka.Pages
                 if (moderator != null)
                 {
                     App.contextModerator = moderator;
+                    App.mainWindow.DataContext = moderator;
+                    App.mainWindow.GProfile.Visibility = Visibility.Visible;
+
                     NavigationService.Navigate(new WaitingEventList());
                 }
                 else
@@ -105,6 +111,8 @@ namespace Mediateka.Pages
                 if (eventPlanner != null)
                 {
                     App.contextEventPlanner = eventPlanner;
+                    App.mainWindow.DataContext = eventPlanner;
+                    App.mainWindow.GProfile.Visibility = Visibility.Visible;
                     NavigationService.Navigate(new ListEventPlanner());
                 }
                 else

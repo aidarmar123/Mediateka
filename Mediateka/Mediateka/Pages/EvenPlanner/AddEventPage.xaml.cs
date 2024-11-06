@@ -39,21 +39,21 @@ namespace Mediateka.Pages
         private void BSave_Click(object sender, RoutedEventArgs e)
         {
             var error = ValidationLine.ValidationObject(contextEvent);
-            if(error.Length > 0)
+            if (error.Length > 0)
             {
                 Xceed.Wpf.Toolkit.MessageBox.Show(error.ToString(), "Поля не заполнены", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                if(contextEvent.Id == 0)
+                contextEvent.StatusId = 3; // Statusid = 3 => на модерации
+                if (contextEvent.Id == 0)
                 {
-                    contextEvent.StatusId = 3; // Statusid = 3 => на модерации
                     App.Db.Event.Add(contextEvent);
                 }
                 App.Db.SaveChanges();
-                foreach(Skill skill in CCBSkills.SelectedItems)
+                foreach (Skill skill in CCBSkills.SelectedItems)
                 {
-                    App.Db.EventSkill.Add(new EventSkill() { SkillId = skill.Id ,EventIdint = contextEvent.Id});
+                    App.Db.EventSkill.Add(new EventSkill() { SkillId = skill.Id, EventIdint = contextEvent.Id });
                     App.Db.SaveChanges();
                 }
 

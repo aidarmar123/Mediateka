@@ -24,6 +24,15 @@ namespace Mediateka
         public MainWindow()
         {
             InitializeComponent();
+            App.mainWindow = this;
+            MainFrame.Navigate(new LoginPage());
+        }
+
+        private void BExit_Click(object sender, RoutedEventArgs e)
+        {
+            App.ExitFromApp();
+            this.DataContext = null;
+            GProfile.Visibility = Visibility.Collapsed;
             MainFrame.Navigate(new LoginPage());
         }
     }

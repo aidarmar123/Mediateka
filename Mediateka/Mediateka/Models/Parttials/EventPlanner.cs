@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Mediateka.Models
 {
-    public partial class Executor
+    public partial class EventPlanner
     {
         public string FullName { get => $"{Name} {Surname} {Patronymic}"; }
-
     }
 }

@@ -132,7 +132,9 @@
     <Compile Include="Models\Moderators.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Parttials\EventPlanner.cs" />
     <Compile Include="Models\Parttials\Executor.cs" />
+    <Compile Include="Models\Parttials\Moderators.cs" />
     <Compile Include="Models\Reviews.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
@@ -165,6 +167,9 @@
     </Compile>
     <Compile Include="Pages\Moderator\WaitingEventList.xaml.cs">
       <DependentUpon>WaitingEventList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\ValidationLine.cs" />
     <Compile Include="Windows\AddCommentEvent.xaml.cs">
@@ -205,6 +210,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Moderator\RegestrationModerator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

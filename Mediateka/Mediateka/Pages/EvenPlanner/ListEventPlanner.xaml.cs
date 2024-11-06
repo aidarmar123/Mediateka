@@ -58,7 +58,10 @@ namespace Mediateka.Pages
 
         private void BEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            if(LVEvents.SelectedItem is Event _event)
+            {
+                NavigationService.Navigate(new AddEventPage(_event));
+            }
         }
 
         private void LVEvents_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -79,7 +82,34 @@ namespace Mediateka.Pages
 
         private void BHire_Click(object sender, RoutedEventArgs e)
         {
+            var eventExecutor = (sender as Button).DataContext as EventExecutor;
+            if (eventExecutor != null)
+            {
+                if(eventExecutor.StatusExecutorId == 1)
+                {
+                    Xceed.Wpf.Toolkit.MessageBox.Show("Исполнитель уже принят");
+                    return;
+                }
+                eventExecutor.StatusExecutorId = 1;
+                App.Db.SaveChanges();
+                Refresh();
+            }
+        }
 
+        private void BRefusal_Click(object sender, RoutedEventArgs e)
+        {
+            var eventExecutor = (sender as Button).DataContext as EventExecutor;
+            if (eventExecutor != null)
+            {
+                if (eventExecutor.StatusExecutorId == 3)
+                {
+                    Xceed.Wpf.Toolkit.MessageBox.Show("Исполнителю уже отказано");
+                    return;
+                }
+                eventExecutor.StatusExecutorId = 3;
+                App.Db.SaveChanges();
+                Refresh();
+            }
         }
     }
 }

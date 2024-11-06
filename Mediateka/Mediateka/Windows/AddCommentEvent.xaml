@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mediateka.Windows"
         mc:Ignorable="d"
-        Title="AddCommentEvent" MinHeight="200" MinWidth="300">
+        Title="AddCommentEvent" MinHeight="200" MinWidth="300"
+        MaxHeight="400" MaxWidth="600">
     <StackPanel VerticalAlignment="Center">
         <TextBlock Text="Добавить комментарий"/>
         <TextBox Text="{Binding CommentModerator}"/>
