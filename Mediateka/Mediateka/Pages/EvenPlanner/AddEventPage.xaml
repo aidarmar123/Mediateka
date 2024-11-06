@@ -29,7 +29,7 @@
                                     DefaultValue="01.01.2024"/>
                 <TextBlock Text="Крайний срок сдачи"/>
                 <xcd:DateTimePicker Value="{Binding Deadline}"
-                    DefaultValue="01.01.2024"/>
+                                DefaultValue="01.01.2024"/>
                 <Button x:Name="BSave"
                         Margin="0,5"
                         Content="Сохранить"

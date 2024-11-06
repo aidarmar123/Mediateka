@@ -25,8 +25,8 @@ namespace Mediateka.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public System.DateTime DateTime { get; set; }
-        public System.DateTime Deadline { get; set; }
+        public System.DateTime DateTime { get; set; }=DateTime.Now;
+        public System.DateTime Deadline { get; set; } = DateTime.Now.AddDays(1);
         public string City { get; set; }
         public int StatusId { get; set; }
         public int EventPlannerId { get; set; }

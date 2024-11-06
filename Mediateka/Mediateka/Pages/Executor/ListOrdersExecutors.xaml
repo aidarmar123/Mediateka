@@ -64,6 +64,8 @@
                         </ListView.ItemTemplate>
                         <ListView.ItemContainerStyle>
                             <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="Background"
+                                        Value="{Binding IsResponse}"/>
                                 <Setter Property="Margin"
                      Value="3"/>
                                 <Setter Property="BorderBrush"

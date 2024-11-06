@@ -9,7 +9,7 @@ namespace Mediateka.Models.MetaData
 {
     public partial class MetaEvent
     {
-        
+
 
         public int Id { get; set; }
         [Required]

@@ -32,6 +32,14 @@ namespace Mediateka.Windows
         {
             if (contextEvent != null)
             {
+                //Проверяем отликнулься лт уже пользователь
+                var repaetEventExecutor = App.Db.EventExecutor.FirstOrDefault(x => x.EventId == contextEvent.Id && x.ExecutorId == App.contextExecutor.Id);
+                if (repaetEventExecutor != null)
+                {
+                    Xceed.Wpf.Toolkit.MessageBox.Show("Вы уже отликнулись");
+                    return;
+                }
+
                 var eventExecutor = new EventExecutor()
                 {
                     ExecutorId = App.contextExecutor.Id,
@@ -40,6 +48,7 @@ namespace Mediateka.Windows
                 };
                 App.Db.EventExecutor.Add(eventExecutor);
                 App.Db.SaveChanges();
+                this.Close();
             }
         }
 

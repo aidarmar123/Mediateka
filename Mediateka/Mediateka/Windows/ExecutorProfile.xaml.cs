@@ -52,6 +52,7 @@ namespace Mediateka.Windows
             var eventExecutor = App.Db.EventExecutor.FirstOrDefault(x => x.EventId == contextEvent.Id && x.ExecutorId == contextExecutor.Id);
             if (eventExecutor != null)
             {
+
                 eventExecutor.StatusExecutorId = 1;
                 App.Db.SaveChanges();
                 this.Close();

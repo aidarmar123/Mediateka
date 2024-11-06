@@ -33,8 +33,9 @@ namespace Mediateka.Pages
 
         private void Refresh()
         {
+            var events = App.Db.Event.Where(ev => ev.StatusId == 1).ToList();
             LVEvents.ItemsSource = App.Db.Event.Where(ev => ev.StatusId == 1).ToList();
-            LVOrders.ItemsSource = App.Db.EventExecutor.Where(x=>x.ExecutorId == App.contextExecutor.Id && x.StatusExecutorId==2).ToList();
+            LVOrders.ItemsSource = App.Db.EventExecutor.Where(x=>x.ExecutorId == App.contextExecutor.Id && x.StatusExecutorId==1).ToList();
             
         }
 
@@ -43,6 +44,14 @@ namespace Mediateka.Pages
             var contextEvent = (sender as Button).DataContext as Event;
             if (contextEvent != null)
             {
+                //Проверяем отликнулься лт уже пользователь
+                var repaetEventExecutor = App.Db.EventExecutor.FirstOrDefault(x => x.EventId == contextEvent.Id && x.ExecutorId == App.contextExecutor.Id);
+                if (repaetEventExecutor != null)
+                {
+                    Xceed.Wpf.Toolkit.MessageBox.Show("Вы уже отликнулись");
+                    return;
+                }
+
                 var eventExecutor = new EventExecutor()
                 {
                     ExecutorId = App.contextExecutor.Id,
