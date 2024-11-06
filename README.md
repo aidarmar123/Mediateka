@@ -8,7 +8,7 @@
 ![image](https://github.com/user-attachments/assets/5e9bc6b4-e42c-4d6f-952c-ace70bcf154f)
 
 ### 3. Регестриция мероприятий (Организатор)
-![image](https://github.com/user-attachments/assets/bbd258e5-dfd2-4dac-b826-c73a28f72bf7)
+![image](https://github.com/user-attachments/assets/e5d6604b-29bb-4cc1-adb6-6529fb1a61bb)
 
 ### 4. Просмотр заявки модератором или админом
 Если заявка не прошла модерацию, то модератор добовляет замечание
