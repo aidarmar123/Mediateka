@@ -47,9 +47,8 @@ namespace Mediateka.Pages
             {
                 contextEvent.StatusId = 3; // Statusid = 3 => на модерации
                 if (contextEvent.Id == 0)
-                {
                     App.Db.Event.Add(contextEvent);
-                }
+
                 App.Db.SaveChanges();
                 foreach (Skill skill in CCBSkills.SelectedItems)
                 {

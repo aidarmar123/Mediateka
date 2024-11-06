@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mediateka.Windows"
         mc:Ignorable="d"
-        Title="AddCommentEvent" MinHeight="200" MinWidth="300"
-        MaxHeight="400" MaxWidth="600">
+        Title="Добавить замечание к мероприятию" MinHeight="200" MinWidth="300"
+        MaxHeight="300" MaxWidth="450">
     <StackPanel VerticalAlignment="Center">
-        <TextBlock Text="Добавить комментарий"/>
+        <TextBlock Text="Добавить комментарий"
+                   FontSize="20"/>
         <TextBox Text="{Binding CommentModerator}"/>
         <Button x:Name="BSave"
                 Content="Сохранить"
