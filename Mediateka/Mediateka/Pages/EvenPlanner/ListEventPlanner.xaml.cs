@@ -1,7 +1,9 @@
 ﻿using Mediateka.Models;
 using Mediateka.Windows;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -109,6 +111,21 @@ namespace Mediateka.Pages
                 eventExecutor.StatusExecutorId = 3;
                 App.Db.SaveChanges();
                 Refresh();
+            }
+        }
+
+        private void BInstall_Click(object sender, RoutedEventArgs e)
+        {
+            var material = (sender as Hyperlink).DataContext as MaterialEvent;
+            if (material != null)
+            {
+                var saveFile = new SaveFileDialog() { Filter = $".{material.FormatFile} | *.{material.FormatFile};" };
+                if (saveFile.ShowDialog().GetValueOrDefault())
+                {
+                    var file = File.Create(saveFile.FileName);
+                    file.Close();
+                    File.WriteAllBytes(saveFile.FileName, material.Data);
+                }
             }
         }
     }

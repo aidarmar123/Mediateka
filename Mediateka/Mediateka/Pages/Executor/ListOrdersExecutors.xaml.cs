@@ -33,7 +33,6 @@ namespace Mediateka.Pages
 
         private void Refresh()
         {
-            var events = App.Db.Event.Where(ev => ev.StatusId == 1).ToList();
             LVEvents.ItemsSource = App.Db.Event.Where(ev => ev.StatusId == 1).ToList();
             LVOrders.ItemsSource = App.Db.EventExecutor.Where(x=>x.ExecutorId == App.contextExecutor.Id && x.StatusExecutorId==1).ToList();
             

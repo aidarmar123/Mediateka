@@ -11,6 +11,7 @@
       Loaded="Page_Loaded">
 
     <Grid Margin="5">
+    
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
@@ -44,6 +45,7 @@
                 </TextBox.Style>
             </TextBox>
         </StackPanel>
+        <ScrollViewer Grid.Row="1">
         <ListView x:Name="LVEvents"
                   Grid.Row="1">
             <ListView.ItemTemplate>
@@ -57,7 +59,7 @@
                                        TextWrapping="Wrap"/>
                         <TextBlock Text="{Binding StatusEvent.Name}"/>
                         <TextBlock Text="{Binding CommentModerator, StringFormat='Комментарий: {0}'}"/>
-                        <Expander>
+                        <Expander Header="Заявки">
                             <DataGrid x:Name="DGExecutors"
                                       ItemsSource="{Binding EventExecutor}"
                                       IsReadOnly="True"
@@ -83,25 +85,76 @@
                                                         Binding="{Binding Executor.FullName}"/>
                                     <DataGridTextColumn Header="Статус"
                                                         Binding="{Binding StatusExecutor.Name}"/>
-                                    
+
                                     <DataGridTemplateColumn>
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Horizontal">
                                                     <Button x:Name="BHire"
                                                             Click="BHire_Click"
+                                                            Margin="5,0"
                                                             Content="Нанять"/>
                                                     <Button x:Name="BRefusal"
                                                             Click="BRefusal_Click"
                                                             Content="Отказать"/>
                                                 </StackPanel>
-                                                
+
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Expander>
+                        <Expander Header="Файлы">
+                            <DataGrid AutoGenerateColumns="False"
+                                      IsReadOnly="True"
+                                      ItemsSource="{Binding MaterialEvent}">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                            <Border CornerRadius="20"
+                                                    HorizontalAlignment="Left"
+                                                    Margin="3"
+                                                    Width="50"
+                                                    Height="50"
+                                                    BorderThickness="2"
+                                                    BorderBrush="DeepSkyBlue">
+                                                <Border.Background>
+                                                    <ImageBrush Stretch="Fill"
+                                                        RenderOptions.BitmapScalingMode="Fant"
+                                                        ImageSource="{Binding Executor.Avatar}"/>
+                                                </Border.Background>
+                                            </Border>
+                                                
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="ФИО"
+                                                        Binding="{Binding Executor.FullName}"/>
+                                    <DataGridTextColumn Header="Дата отправки"
+                                                        Binding="{Binding DateTimeSend, StringFormat='dd.MM.yyyy'}"/>
+                                  
+
+                                    <DataGridTemplateColumn Header="Файл">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock>
+                                                    
+                                                <Hyperlink Click="BInstall_Click">
+                                                    <TextBlock Text="{Binding NameFile}"/>
+                                                </Hyperlink>
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>                                        
+                                            
+                                 
+                                </DataGrid.Columns>
+                                
+                            </DataGrid>
+                        </Expander>
+
                     </StackPanel>
 
                 </DataTemplate>
@@ -127,5 +180,7 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
+            
+        </ScrollViewer>
     </Grid>
 </Page>
