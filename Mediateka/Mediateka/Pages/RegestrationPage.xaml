@@ -41,6 +41,7 @@
                 <TextBlock Text="Отчество"/>
                 <TextBox Text="{Binding Patronymic}"/>
 
+                
                 <TextBlock Text="Телефон"/>
                 <TextBox Text="{Binding Phone}"
                          MaxLength="11"/>

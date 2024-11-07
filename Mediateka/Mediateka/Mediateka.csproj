@@ -142,6 +142,7 @@
     <Compile Include="Models\Role.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RoleUser.cs" />
     <Compile Include="Models\Skill.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
@@ -181,6 +182,9 @@
     </Compile>
     <Compile Include="Windows\ExecutorProfile.xaml.cs">
       <DependentUpon>ExecutorProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SelectRole.xaml.cs">
+      <DependentUpon>SelectRole.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -235,6 +239,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ExecutorProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SelectRole.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

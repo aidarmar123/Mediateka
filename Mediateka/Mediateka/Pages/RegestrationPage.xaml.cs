@@ -41,7 +41,7 @@ namespace Mediateka.Pages
                 contextExecutor = user as Executor;
                 DataContext = contextExecutor;
             }
-            
+
 
         }
 
@@ -51,12 +51,12 @@ namespace Mediateka.Pages
             if (openFileDialog.ShowDialog().GetValueOrDefault())
             {
                 DataContext = null;
-                if(contextEventPlanner!=null)
+                if (contextEventPlanner != null)
                 {
-                    contextEventPlanner.Avatar= File.ReadAllBytes(openFileDialog.FileName);
+                    contextEventPlanner.Avatar = File.ReadAllBytes(openFileDialog.FileName);
                     DataContext = contextEventPlanner;
                 }
-                else if(contextExecutor!=null) 
+                else if (contextExecutor != null)
                 {
                     contextExecutor.Avatar = File.ReadAllBytes(openFileDialog.FileName);
                     DataContext = contextExecutor;
@@ -67,9 +67,9 @@ namespace Mediateka.Pages
         private void Regestr_Click(object sender, RoutedEventArgs e)
         {
             var error = new StringBuilder();
-            if (contextEventPlanner!=null)
+            if (contextEventPlanner != null)
                 error = ValidationLine.ValidationObject(contextEventPlanner);
-            else if(contextExecutor!=null)
+            else if (contextExecutor != null)
                 error = ValidationLine.ValidationObject(contextExecutor);
 
             if (error.Length > 0)
@@ -78,21 +78,22 @@ namespace Mediateka.Pages
             }
             else
             {
-                if (contextEventPlanner!=null)
+                if (contextEventPlanner != null)
                 {
                     if (contextEventPlanner.Id == 0)
                         App.Db.EventPlanner.Add(contextEventPlanner);
-                }else if (contextExecutor != null)
+                }
+                else if (contextExecutor != null)
                 {
-                    if(contextExecutor.Id == 0)
+                    if (contextExecutor.Id == 0)
                         App.Db.Executor.Add(contextExecutor);
                 }
                 App.Db.SaveChanges();
                 if (contextExecutor != null)
                 {
-                    foreach(Skill skill in CCBSkils.SelectedItems)
+                    foreach (Skill skill in CCBSkils.SelectedItems)
                     {
-                        App.Db.ExecutorSkill.Add(new ExecutorSkill() { SkillId = skill.Id, ExecutorId = contextExecutor.Id});
+                        App.Db.ExecutorSkill.Add(new ExecutorSkill() { SkillId = skill.Id, ExecutorId = contextExecutor.Id });
                         App.Db.SaveChanges();
                     }
                 }

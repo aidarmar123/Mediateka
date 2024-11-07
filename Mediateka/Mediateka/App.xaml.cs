@@ -27,6 +27,8 @@ namespace Mediateka
 
         public static MainWindow mainWindow;
 
+
+        public static RoleUser SelectRoleReg;
         App()
         {
             RegestrDescriptor<Executor,MetaUser>();
@@ -47,6 +49,7 @@ namespace Mediateka
             contextExecutor = null;
             contextEventPlanner = null;
             contextModerator = null;
+            SelectRoleReg = null;
         }
     }
 }

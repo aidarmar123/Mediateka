@@ -9,62 +9,23 @@
       Title="LoginPage">
 
     <Grid>
-        <TabControl>
-            <TabItem Header="Организатор">
-                <StackPanel Margin="10">
-                    <TextBlock Text="E-mail:"/>
-                    <TextBox Text="{Binding Login}"/>
-                    <TextBlock Text="Пароль:"/>
-                    <TextBox Text="{Binding Password}"/>
-                    <Button x:Name="BLoginPlanning"
+
+        <StackPanel Margin="10">
+            <TextBlock Text="E-mail:"/>
+            <TextBox Text="{Binding Login}"/>
+            <TextBlock Text="Пароль:"/>
+            <TextBox Text="{Binding Password}"/>
+            <Button x:Name="BLoginPlanning"
             Content="Войти"
             Margin="0,5"
             Click="BLoginPlanning_Click"/>
-                    <Button x:Name="BRegestrationPlanning"
+            <Button x:Name="BRegestrationPlanning"
             Margin="0,5"
             Content="Зарегестрироваться"
             Click="BRegestrationPlanning_Click"/>
 
+        </StackPanel>
 
-                </StackPanel>
-            </TabItem>
-            <TabItem Header="Исполнитель">
-                <StackPanel Margin="10">
-                    <TextBlock Text="E-mail:"/>
-                    <TextBox Text="{Binding Login}"/>
-                    <TextBlock Text="Пароль:"/>
-                    <TextBox Text="{Binding Password}"/>
-                    <Button x:Name="BLoginExecutor"
-            Content="Войти"
-            Margin="0,5"
-            Click="BLoginExecutor_Click"/>
-                    <Button x:Name="BRegestrationExecutor"
-            Margin="0,5"
-            Content="Зарегестрироваться"
-            Click="BRegestrationExecutor_Click"/>
-
-
-                </StackPanel>
-            </TabItem>
-            <TabItem Header="Модератор">
-                <StackPanel Margin="10">
-                    <TextBlock Text="Логин:"/>
-                    <TextBox Text="{Binding Login}"/>
-                    <TextBlock Text="Пароль:"/>
-                    <TextBox Text="{Binding Password}"/>
-                    <Button x:Name="BLoginModerator"
-Content="Войти"
-Margin="0,5"
-Click="BLoginModerator_Click"/>
-                    <Button x:Name="BRegestrationModerator"
-Margin="0,5"
-Content="Зарегестрироваться"
-Click="BRegestrationModerator_Click"/>
-
-
-                </StackPanel>
-            </TabItem>
-        </TabControl>
 
     </Grid>
 </Page>

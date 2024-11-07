@@ -1,4 +1,5 @@
 ﻿using Mediateka.Models;
+using Mediateka.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,13 +46,23 @@ namespace Mediateka.Pages
             return isValid; 
         }
 
-        // Обработчик событий для кнопки входа Исполнителя
-        private void BLoginExecutor_Click(object sender, RoutedEventArgs e)
+        
+        // Обработчик событий для кнопки входа Организатора
+        private void BLoginPlanning_Click(object sender, RoutedEventArgs e)
         {
             if (ValidationLine())
             {
-                Executor executor = App.Db.Executor.FirstOrDefault(ex=>ex.Email == Login && ex.Password== Password);
-                if (executor != null)
+               EventPlanner eventPlanner = App.Db.EventPlanner.FirstOrDefault(ex => ex.Email == Login && ex.Password == Password);
+               Executor executor = App.Db.Executor.FirstOrDefault(x => x.Email == Login && x.Password == Password);
+               Moderators moderator = App.Db.Moderators.FirstOrDefault(x => x.Login == Login && x.Password == Password);
+                if (eventPlanner != null)
+                {
+                    App.contextEventPlanner = eventPlanner;
+                    App.mainWindow.DataContext = eventPlanner;
+                    App.mainWindow.GProfile.Visibility = Visibility.Visible;
+                    NavigationService.Navigate(new ListEventPlanner());
+                }
+                else if(executor!=null)
                 {
                     App.contextExecutor = executor;
                     App.mainWindow.DataContext = executor;
@@ -59,27 +70,7 @@ namespace Mediateka.Pages
 
                     NavigationService.Navigate(new ListOrdersExecutors());
                 }
-                else
-                {
-                    Xceed.Wpf.Toolkit.MessageBox.Show("Пользователь не найден", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-
-                }
-            }
-        }
-
-        // Обработчик событий для кнопки регестрациии Исполнителя
-        private void BRegestrationExecutor_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new RegestrationPage(new Executor()));
-        }
-
-        // Обработчик событий для кнопки входа Модератора и Администратора
-        private void BLoginModerator_Click(object sender, RoutedEventArgs e)
-        {
-            if (ValidationLine())
-            {
-                var moderator = App.Db.Moderators.FirstOrDefault(ex => ex.Login == Login && ex.Password == Password);
-                if (moderator != null)
+                else if (moderator != null)
                 {
                     App.contextModerator = moderator;
                     App.mainWindow.DataContext = moderator;
@@ -94,38 +85,21 @@ namespace Mediateka.Pages
                 }
             }
         }
-
-        // Обработчик событий для кнопки регестрации Модератора и Администратора
-        private void BRegestrationModerator_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new RegestrationModerator(new Moderators()));
-
-        }
-
-        // Обработчик событий для кнопки входа Организатора
-        private void BLoginPlanning_Click(object sender, RoutedEventArgs e)
-        {
-            if (ValidationLine())
-            {
-               EventPlanner eventPlanner = App.Db.EventPlanner.FirstOrDefault(ex => ex.Email == Login && ex.Password == Password);
-                if (eventPlanner != null)
-                {
-                    App.contextEventPlanner = eventPlanner;
-                    App.mainWindow.DataContext = eventPlanner;
-                    App.mainWindow.GProfile.Visibility = Visibility.Visible;
-                    NavigationService.Navigate(new ListEventPlanner());
-                }
-                else
-                {
-                    Xceed.Wpf.Toolkit.MessageBox.Show("Пользователь не найден", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-
-                }
-            }
-        }
         // Обработчик событий для кнопки регестрации Организатора
         private void BRegestrationPlanning_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new RegestrationPage(new EventPlanner()));
+            new SelectRole().ShowDialog();
+            if(App.SelectRoleReg != null)
+            {
+                if (App.SelectRoleReg.Id == 1)
+                    NavigationService.Navigate(new RegestrationPage( new EventPlanner()));
+                else if (App.SelectRoleReg.Id == 2)
+                    NavigationService.Navigate(new RegestrationPage( new Executor()));
+                else if(App.SelectRoleReg.Id ==3)
+                    NavigationService.Navigate(new RegestrationModerator(new Moderators()));
+
+                
+            }
 
         }
     }
