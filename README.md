@@ -30,15 +30,17 @@
 
 ### Профиль Исполнителя
 ![image](https://github.com/user-attachments/assets/20868e35-485f-49cc-ab5e-68798c43ca8c)
-   Навыки Исполнителя
+  
+   1. Навыки Исполнителя
 
 ![image](https://github.com/user-attachments/assets/033f2ddb-3f34-49af-94ce-6b4343a083bb)
 
-Портфолио
+   2. Портфолио
 
 ![image](https://github.com/user-attachments/assets/506dccfc-32a3-4815-90a5-fa38bcda67bb)
 
-Отзывы
+   3. Отзывы
+
 ![image](https://github.com/user-attachments/assets/4da2edaa-9c73-48c2-9a29-9ee7afcdb820)
 
 ### База данных
