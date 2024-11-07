@@ -11,9 +11,8 @@
 
 2. Заполнение данных
 
-  ![image](https://github.com/user-attachments/assets/07172c6b-3d7a-443c-9f7e-994b82695bd7)
+   ![image](https://github.com/user-attachments/assets/a8f1651c-d730-40dc-8338-443dc992c62d)
 
-  ![image](https://github.com/user-attachments/assets/5e9bc6b4-e42c-4d6f-952c-ace70bcf154f)
 
 
 ### 3. Регестриция мероприятий (Организатор)
