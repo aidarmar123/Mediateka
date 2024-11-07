@@ -28,6 +28,18 @@
 Чтобы скачать файл для Организатора нужно выбрать нужное мероприятие, и со вкладки "Файлы" выбрать нужный
 ![image](https://github.com/user-attachments/assets/1f651ba6-fd36-4127-a4db-ba1f7b0f3e95)
 
+### Профиль Исполнителя
+![image](https://github.com/user-attachments/assets/20868e35-485f-49cc-ab5e-68798c43ca8c)
+   Навыки Исполнителя
+
+![image](https://github.com/user-attachments/assets/033f2ddb-3f34-49af-94ce-6b4343a083bb)
+
+Портфолио
+
+![image](https://github.com/user-attachments/assets/506dccfc-32a3-4815-90a5-fa38bcda67bb)
+
+Отзывы
+![image](https://github.com/user-attachments/assets/4da2edaa-9c73-48c2-9a29-9ee7afcdb820)
 
 ### База данных
 Чтобы загразить БД на свое устройство 
