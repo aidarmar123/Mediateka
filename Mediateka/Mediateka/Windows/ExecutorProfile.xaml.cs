@@ -63,5 +63,12 @@ namespace Mediateka.Windows
         {
             this.Close();
         }
+
+        private void BAddComment_Click(object sender, RoutedEventArgs e)
+        {
+            new AddReviews(contextExecutor).ShowDialog();
+            DataContext = null;
+            DataContext = contextExecutor;
+        }
     }
 }

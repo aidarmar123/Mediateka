@@ -52,7 +52,7 @@ namespace Mediateka.Pages
                 App.Db.SaveChanges();
                 foreach (Skill skill in CCBSkills.SelectedItems)
                 {
-                    App.Db.EventSkill.Add(new EventSkill() { SkillId = skill.Id, EventIdint = contextEvent.Id });
+                    App.Db.EventSkill.Add(new EventSkill() { SkillId = skill.Id, EventId = contextEvent.Id });
                     App.Db.SaveChanges();
                 }
 

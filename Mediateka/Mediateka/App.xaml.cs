@@ -19,6 +19,7 @@ namespace Mediateka
     {
         public static MediatekaEntities Db = new MediatekaEntities();
 
+            
         public static Executor contextExecutor;
         public static EventPlanner contextEventPlanner;
         public static Moderators contextModerator;
@@ -29,12 +30,30 @@ namespace Mediateka
 
 
         public static RoleUser SelectRoleReg;
+        public static int selecRating;
+
         App()
         {
             RegestrDescriptor<Executor,MetaUser>();
             RegestrDescriptor<EventPlanner,MetaUser>();
             RegestrDescriptor<Moderators,MetaModerator>();
             RegestrDescriptor<Event,MetaEvent>();
+            RegestrDescriptor<Reviews,MetaReviews>();
+
+            ValidEvent();
+        }
+        //Метод прверяющий статус мероприятия завершено или нет
+        private void ValidEvent()
+        {
+            foreach(var _event in Db.Event)
+            {
+                if (_event.DateTime < DateTime.Now)
+                {
+                    _event.StatusId = 4;
+                    Db.SaveChangesAsync();
+                }
+                    
+            }
         }
 
         private void RegestrDescriptor<T1, T2>()

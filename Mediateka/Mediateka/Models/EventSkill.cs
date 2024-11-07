@@ -16,7 +16,7 @@ namespace Mediateka.Models
     {
         public int Id { get; set; }
         public int SkillId { get; set; }
-        public int EventIdint { get; set; }
+        public int EventId { get; set; }
     
         public virtual Event Event { get; set; }
         public virtual Skill Skill { get; set; }

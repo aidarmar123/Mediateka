@@ -11,7 +11,8 @@ namespace Mediateka.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Event
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,12 +21,13 @@ namespace Mediateka.Models
             this.EventExecutor = new HashSet<EventExecutor>();
             this.EventSkill = new HashSet<EventSkill>();
             this.MaterialEvent = new HashSet<MaterialEvent>();
+            
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public System.DateTime DateTime { get; set; }=DateTime.Now;
+        public System.DateTime DateTime { get; set; } = DateTime.Now;
         public System.DateTime Deadline { get; set; } = DateTime.Now.AddDays(1);
         public string City { get; set; }
         public int StatusId { get; set; }

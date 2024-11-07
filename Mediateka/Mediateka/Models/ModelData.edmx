@@ -48,7 +48,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SkillId" Type="int" Nullable="false" />
-          <Property Name="EventIdint" Type="int" Nullable="false" />
+          <Property Name="EventId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Executor">
           <Key>
@@ -101,6 +101,7 @@
           <Property Name="EvenPlannerId" Type="int" Nullable="false" />
           <Property Name="ExecutorId" Type="int" Nullable="false" />
           <Property Name="TypeMsgId" Type="int" Nullable="false" />
+          <Property Name="Rating" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -215,7 +216,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="EventSkill">
-              <PropertyRef Name="EventIdint" />
+              <PropertyRef Name="EventId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -462,7 +463,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SkillId" Type="Int32" Nullable="false" />
-          <Property Name="EventIdint" Type="Int32" Nullable="false" />
+          <Property Name="EventId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Event" Relationship="Self.FK_EventSkill_Event" FromRole="EventSkill" ToRole="Event" />
           <NavigationProperty Name="Skill" Relationship="Self.FK_EventSkill_Skill" FromRole="EventSkill" ToRole="Skill" />
         </EntityType>
@@ -526,6 +527,7 @@
           <Property Name="EvenPlannerId" Type="Int32" Nullable="false" />
           <Property Name="ExecutorId" Type="Int32" Nullable="false" />
           <Property Name="TypeMsgId" Type="Int32" Nullable="false" />
+          <Property Name="Rating" Type="Int32" Nullable="false" />
           <NavigationProperty Name="EventPlanner" Relationship="Self.FK_Reviews_EventPlanner" FromRole="Reviews" ToRole="EventPlanner" />
           <NavigationProperty Name="Executor" Relationship="Self.FK_Reviews_Executor" FromRole="Reviews" ToRole="Executor" />
           <NavigationProperty Name="TypeMsg" Relationship="Self.FK_Reviews_TypeMsg" FromRole="Reviews" ToRole="TypeMsg" />
@@ -625,7 +627,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="EventSkill">
-              <PropertyRef Name="EventIdint" />
+              <PropertyRef Name="EventId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -889,7 +891,7 @@
               <MappingFragment StoreEntitySet="EventSkill">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="SkillId" ColumnName="SkillId" />
-                <ScalarProperty Name="EventIdint" ColumnName="EventIdint" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -947,6 +949,7 @@
                 <ScalarProperty Name="EvenPlannerId" ColumnName="EvenPlannerId" />
                 <ScalarProperty Name="ExecutorId" ColumnName="ExecutorId" />
                 <ScalarProperty Name="TypeMsgId" ColumnName="TypeMsgId" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

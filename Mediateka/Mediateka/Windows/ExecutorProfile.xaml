@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mediateka.Windows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:uc="clr-namespace:Mediateka.UsersControls"
         mc:Ignorable="d"
         Title="ExecutorProfile" MinHeight="450" MinWidth="800">
     <Grid Margin="5">
@@ -66,6 +68,63 @@
                     </ListView.ItemContainerStyle>
                 </ListView>
                     
+                </Expander>
+                <Expander Header="Отзывы">
+                    <ScrollViewer>
+                        <StackPanel>
+                            
+                    <Button x:Name="BAddComment"
+                            Click="BAddComment_Click"
+                            Content="Добавить отзыв"/>
+                            <ListView ItemsSource="{Binding ReceivingReviews}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="3*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Border CornerRadius="40"
+                                                    Margin="3"
+                                                    Width="50"
+                                                    Height="50"
+                                                    BorderThickness="2"
+                                                    BorderBrush="DeepSkyBlue">
+                                                <Border.Background>
+                                                    <ImageBrush Stretch="Fill"
+                                                                RenderOptions.BitmapScalingMode="Fant"
+                                                                ImageSource="{Binding Avatar}"/>
+                                                </Border.Background>
+                                            </Border>
+                                            <StackPanel Grid.Column="1">
+                                                <TextBlock Text="{Binding EventPlanner.FullName}"
+                                                           FontSize="28"/>
+
+                                                <TextBlock Text="{Binding ContentMsg}"/>
+                                                <Viewbox
+        Height="16"
+        Margin="0,4,0,8"
+        HorizontalAlignment="Left">
+                                                    <materialDesign:RatingBar
+                                                        IsEnabled="False"
+          Margin="0"
+          Foreground="Gold"
+          Orientation="Horizontal"
+          Value="{Binding Rating}" />
+                                                </Viewbox>
+                                            </StackPanel>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <Setter Property="HorizontalContentAlignment"
+                                                Value="Stretch"/>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                            </ListView>
+                        </StackPanel>
+                    </ScrollViewer>
                 </Expander>
                 <Button x:Name="BHire"
                     Margin="0, 5"

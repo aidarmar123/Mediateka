@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:uc="clr-namespace:Mediateka.UsersControls"
       xmlns:local="clr-namespace:Mediateka.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
@@ -87,7 +88,18 @@
                                                         Binding="{Binding Executor.FullName}"/>
                                                 <DataGridTextColumn Header="Статус"
                                                         Binding="{Binding StatusExecutor.Name}"/>
-
+                                                <DataGridTemplateColumn Header="Рейтинг">
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <materialDesign:RatingBar
+Margin="0"
+Foreground="Gold"
+Orientation="Horizontal"
+                                                                IsEnabled="False"
+Value="{Binding Executor.MediumRating}" />
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
                                                 <DataGridTemplateColumn>
                                                     <DataGridTemplateColumn.CellTemplate>
                                                         <DataTemplate>
@@ -131,22 +143,14 @@
                                                 </DataGridTemplateColumn>
                                                 <DataGridTextColumn Header="ФИО"
                             Binding="{Binding Executor.FullName}"/>
-                                                <DataGridTextColumn Header="Статус"
-                            Binding="{Binding StatusExecutor.Name}"/>
+
 
                                                 <DataGridTemplateColumn>
                                                     <DataGridTemplateColumn.CellTemplate>
                                                         <DataTemplate>
-                                                            <StackPanel Orientation="Horizontal">
-                                                                <Button x:Name="BHire"
-                                Click="BHire_Click"
-                                Margin="5,0"
-                                Content="Нанять"/>
-                                                                <Button x:Name="BRefusal"
-                                Click="BRefusal_Click"
-                                Content="Отказать"/>
+                                                            <StackPanel>
+                                                            
                                                             </StackPanel>
-
                                                         </DataTemplate>
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>

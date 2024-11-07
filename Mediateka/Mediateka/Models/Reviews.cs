@@ -19,6 +19,7 @@ namespace Mediateka.Models
         public int EvenPlannerId { get; set; }
         public int ExecutorId { get; set; }
         public int TypeMsgId { get; set; }
+        public int Rating { get; set; }
     
         public virtual EventPlanner EventPlanner { get; set; }
         public virtual Executor Executor { get; set; }

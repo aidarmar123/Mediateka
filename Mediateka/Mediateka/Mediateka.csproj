@@ -114,6 +114,7 @@
     <Compile Include="Models\MetaData\MetaEvent.cs" />
     <Compile Include="Models\MetaData\MetaModerator.cs" />
     <Compile Include="Models\MetaData\MetaUser.cs" />
+    <Compile Include="Models\MetaData\MetaReviews.cs" />
     <Compile Include="Models\ModelData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -136,6 +137,7 @@
     <Compile Include="Models\Parttials\EventPlanner.cs" />
     <Compile Include="Models\Parttials\Executor.cs" />
     <Compile Include="Models\Parttials\Moderators.cs" />
+    <Compile Include="Models\Parttials\Reviews.cs" />
     <Compile Include="Models\Reviews.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
@@ -174,8 +176,14 @@
       <DependentUpon>ProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\ValidationLine.cs" />
+    <Compile Include="UsersControls\Stars.xaml.cs">
+      <DependentUpon>Stars.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AddCommentEvent.xaml.cs">
       <DependentUpon>AddCommentEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddReviews.xaml.cs">
+      <DependentUpon>AddReviews.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\EventWindow.xaml.cs">
       <DependentUpon>EventWindow.xaml</DependentUpon>
@@ -230,7 +238,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UsersControls\Stars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AddCommentEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddReviews.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

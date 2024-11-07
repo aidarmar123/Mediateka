@@ -43,7 +43,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="SkillId" Type="int" Nullable="false" />
-    <Property Name="EventIdint" Type="int" Nullable="false" />
+    <Property Name="EventId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Executor">
     <Key>
@@ -96,6 +96,7 @@
     <Property Name="EvenPlannerId" Type="int" Nullable="false" />
     <Property Name="ExecutorId" Type="int" Nullable="false" />
     <Property Name="TypeMsgId" Type="int" Nullable="false" />
+    <Property Name="Rating" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -210,7 +211,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="EventSkill">
-        <PropertyRef Name="EventIdint" />
+        <PropertyRef Name="EventId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
