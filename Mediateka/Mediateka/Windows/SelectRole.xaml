@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mediateka.Windows"
         mc:Ignorable="d"
-        Title="SelectRole" Height="450" Width="800">
+        Title="SelectRole" MaxHeight="250" MaxWidth="500"
+        MinHeight="150"
+        MinWidth="300">
     <StackPanel VerticalAlignment="Center">
         <TextBlock Text="Выберете роль"/>
         <ComboBox x:Name="CbRole"

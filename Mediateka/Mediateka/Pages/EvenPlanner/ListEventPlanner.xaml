@@ -11,7 +11,7 @@
       Loaded="Page_Loaded">
 
     <Grid Margin="5">
-    
+
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
@@ -46,141 +46,191 @@
             </TextBox>
         </StackPanel>
         <ScrollViewer Grid.Row="1">
-        <ListView x:Name="LVEvents"
+            <ListView x:Name="LVEvents"
                   Grid.Row="1">
-            <ListView.ItemTemplate>
-                <DataTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
 
-                    <StackPanel>
-                        <TextBlock FontSize="28"
+                        <StackPanel>
+                            <TextBlock FontSize="28"
                                 Text="{Binding Name}"/>
-                        <TextBlock Text="{Binding City, StringFormat='Город: {0}'}"/>
-                        <TextBlock Text="{Binding Description}"
+                            <TextBlock Text="{Binding City, StringFormat='Город: {0}'}"/>
+                            <TextBlock Text="{Binding Description}"
                                        TextWrapping="Wrap"/>
-                        <TextBlock Text="{Binding StatusEvent.Name}"/>
-                        <TextBlock Text="{Binding CommentModerator, StringFormat='Комментарий: {0}'}"/>
-                        <Expander Header="Заявки">
-                            <DataGrid x:Name="DGExecutors"
+                            <TextBlock Text="{Binding StatusEvent.Name}"/>
+                            <TextBlock Text="{Binding CommentModerator, StringFormat='Комментарий: {0}'}"/>
+                            <Expander Header="Заявки">
+                                <TabControl>
+                                    <TabItem Header="Все">
+                                        <DataGrid x:Name="DGExecutors"
                                       ItemsSource="{Binding EventExecutor}"
                                       IsReadOnly="True"
                                       AutoGenerateColumns="False"
                                       MouseDoubleClick="DGExecutors_MouseDoubleClick">
-                                <DataGrid.Columns>
-                                    <DataGridTemplateColumn>
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <Border CornerRadius="20"
+                                            <DataGrid.Columns>
+                                                <DataGridTemplateColumn>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <Border CornerRadius="20"
                                                         Width="50"
                                                         Height="50">
-                                                    <Border.Background>
-                                                        <ImageBrush ImageSource="{Binding Executor.Avatar}"
+                                                                <Border.Background>
+                                                                    <ImageBrush ImageSource="{Binding Executor.Avatar}"
                                                                     RenderOptions.BitmapScalingMode="Fant"
                                                                     Stretch="Fill"/>
-                                                    </Border.Background>
-                                                </Border>
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="ФИО"
+                                                                </Border.Background>
+                                                            </Border>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTextColumn Header="ФИО"
                                                         Binding="{Binding Executor.FullName}"/>
-                                    <DataGridTextColumn Header="Статус"
+                                                <DataGridTextColumn Header="Статус"
                                                         Binding="{Binding StatusExecutor.Name}"/>
 
-                                    <DataGridTemplateColumn>
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <StackPanel Orientation="Horizontal">
-                                                    <Button x:Name="BHire"
+                                                <DataGridTemplateColumn>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Button x:Name="BHire"
                                                             Click="BHire_Click"
                                                             Margin="5,0"
                                                             Content="Нанять"/>
-                                                    <Button x:Name="BRefusal"
+                                                                <Button x:Name="BRefusal"
                                                             Click="BRefusal_Click"
                                                             Content="Отказать"/>
-                                                </StackPanel>
+                                                            </StackPanel>
 
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
-                                </DataGrid.Columns>
-                            </DataGrid>
-                        </Expander>
-                        <Expander Header="Файлы">
-                            <DataGrid AutoGenerateColumns="False"
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                    </TabItem>
+                                    <TabItem Header="Принятые">
+                                        <DataGrid
+          ItemsSource="{Binding HitEventExecutor}"
+          IsReadOnly="True"
+          AutoGenerateColumns="False"
+          MouseDoubleClick="DGExecutors_MouseDoubleClick">
+                                            <DataGrid.Columns>
+                                                <DataGridTemplateColumn>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <Border CornerRadius="20"
+                            Width="50"
+                            Height="50">
+                                                                <Border.Background>
+                                                                    <ImageBrush ImageSource="{Binding Executor.Avatar}"
+                                        RenderOptions.BitmapScalingMode="Fant"
+                                        Stretch="Fill"/>
+                                                                </Border.Background>
+                                                            </Border>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTextColumn Header="ФИО"
+                            Binding="{Binding Executor.FullName}"/>
+                                                <DataGridTextColumn Header="Статус"
+                            Binding="{Binding StatusExecutor.Name}"/>
+
+                                                <DataGridTemplateColumn>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Button x:Name="BHire"
+                                Click="BHire_Click"
+                                Margin="5,0"
+                                Content="Нанять"/>
+                                                                <Button x:Name="BRefusal"
+                                Click="BRefusal_Click"
+                                Content="Отказать"/>
+                                                            </StackPanel>
+
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                    </TabItem>
+                                </TabControl>
+                            </Expander>
+                            <Expander Header="Файлы">
+                                <DataGrid AutoGenerateColumns="False"
                                       IsReadOnly="True"
                                       ItemsSource="{Binding MaterialEvent}">
-                                <DataGrid.Columns>
-                                    <DataGridTemplateColumn>
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                            <Border CornerRadius="20"
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Border CornerRadius="20"
                                                     HorizontalAlignment="Left"
                                                     Margin="3"
                                                     Width="50"
                                                     Height="50"
                                                     BorderThickness="2"
                                                     BorderBrush="DeepSkyBlue">
-                                                <Border.Background>
-                                                    <ImageBrush Stretch="Fill"
+                                                        <Border.Background>
+                                                            <ImageBrush Stretch="Fill"
                                                         RenderOptions.BitmapScalingMode="Fant"
                                                         ImageSource="{Binding Executor.Avatar}"/>
-                                                </Border.Background>
-                                            </Border>
-                                                
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="ФИО"
-                                                        Binding="{Binding Executor.FullName}"/>
-                                    <DataGridTextColumn Header="Дата отправки"
-                                                        Binding="{Binding DateTimeSend, StringFormat='dd.MM.yyyy'}"/>
-                                  
+                                                        </Border.Background>
+                                                    </Border>
 
-                                    <DataGridTemplateColumn Header="Файл">
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <TextBlock>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="ФИО"
+                                                        Binding="{Binding Executor.FullName}"/>
+                                        <DataGridTextColumn Header="Дата отправки"
+                                                        Binding="{Binding DateTimeSend, StringFormat='dd.MM.yyyy'}"/>
+
+
+                                        <DataGridTemplateColumn Header="Файл">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock>
                                                     
                                                 <Hyperlink Click="BInstall_Click">
                                                     <TextBlock Text="{Binding NameFile}"/>
                                                 </Hyperlink>
                                                 </TextBlock>
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>                                        
-                                            
-                                 
-                                </DataGrid.Columns>
-                                
-                            </DataGrid>
-                        </Expander>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
 
-                    </StackPanel>
 
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="{x:Type ListViewItem}">
-                    <Setter Property="Margin"
+                                    </DataGrid.Columns>
+
+                                </DataGrid>
+                            </Expander>
+
+                        </StackPanel>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="Margin"
                             Value="3"/>
-                    <Setter Property="BorderBrush"
+                        <Setter Property="BorderBrush"
                             Value="DeepSkyBlue"/>
-                    <Setter Property="BorderThickness"
+                        <Setter Property="BorderThickness"
                             Value="1"/>
-                    <Setter Property="HorizontalContentAlignment"
+                        <Setter Property="HorizontalContentAlignment"
                             Value="Stretch"/>
-                    <Style.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius"
+                        <Style.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius"
         Value="10"/>
 
-                        </Style>
-                    </Style.Resources>
+                            </Style>
+                        </Style.Resources>
 
-                </Style>
-            </ListView.ItemContainerStyle>
-        </ListView>
-            
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+
         </ScrollViewer>
     </Grid>
 </Page>

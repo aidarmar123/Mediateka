@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\App.xaml
-13-330621860
+14664205783
 21304076067
-45-1165985520
+46152861177
 26-1581971171
-MainWindow.xaml;Pages\EvenPlanner\AddEventPage.xaml;Pages\EvenPlanner\ListEventPlanner.xaml;Pages\Executor\ListOrdersExecutors.xaml;Pages\LoginPage.xaml;Pages\Moderator\RegestrationModerator.xaml;Pages\ProfilePage.xaml;Pages\RegestrationPage.xaml;Pages\Moderator\WaitingEventList.xaml;Windows\AddCommentEvent.xaml;Windows\EventWindow.xaml;Windows\ExecutorProfile.xaml;Windows\SelectRole.xaml;
+MainWindow.xaml;Pages\EvenPlanner\AddEventPage.xaml;Pages\EvenPlanner\ListEventPlanner.xaml;Pages\Executor\ListOrdersExecutors.xaml;Pages\LoginPage.xaml;Pages\Moderator\RegestrationModerator.xaml;Pages\ProfilePage.xaml;Pages\RegestrationPage.xaml;Pages\Moderator\WaitingEventList.xaml;UsersControls\Stars.xaml;Windows\AddCommentEvent.xaml;Windows\EventWindow.xaml;Windows\ExecutorProfile.xaml;Windows\SelectRole.xaml;
 
 True
 

@@ -33,5 +33,13 @@ namespace Mediateka.Models
                 return  null;
             }
         }
+
+        public List<EventExecutor> HitEventExecutor
+        {
+            get
+            {
+                return EventExecutor.Where(x=>x.StatusExecutorId==1).ToList();
+            }
+        }
     }
 }

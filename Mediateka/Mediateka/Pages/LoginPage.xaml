@@ -10,7 +10,8 @@
 
     <Grid>
 
-        <StackPanel Margin="10">
+        <StackPanel Margin="10"
+                    VerticalAlignment="Center">
             <TextBlock Text="E-mail:"/>
             <TextBox Text="{Binding Login}"/>
             <TextBlock Text="Пароль:"/>
