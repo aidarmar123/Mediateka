@@ -2,10 +2,19 @@
 Приложение будет хранить в себе сборник мероприятий, на которые нужны фотографы и видеографы
 
 ### 1.Страница входа 
-![image](https://github.com/user-attachments/assets/21cde548-1b89-4ab0-86bc-b65ac5fc0989)
+![image](https://github.com/user-attachments/assets/20a6518f-8c70-4cda-a8b2-156c294711bc)
 
 ### 2.Регестриция пользователя
-![image](https://github.com/user-attachments/assets/5e9bc6b4-e42c-4d6f-952c-ace70bcf154f)
+1. Выбор роли
+
+   ![image](https://github.com/user-attachments/assets/f35dc94f-64c0-4a15-a878-580e43017273)
+
+2. Заполнение данных
+
+  ![image](https://github.com/user-attachments/assets/07172c6b-3d7a-443c-9f7e-994b82695bd7)
+
+  ![image](https://github.com/user-attachments/assets/5e9bc6b4-e42c-4d6f-952c-ace70bcf154f)
+
 
 ### 3. Регестриция мероприятий (Организатор)
 ![image](https://github.com/user-attachments/assets/e5d6604b-29bb-4cc1-adb6-6529fb1a61bb)
