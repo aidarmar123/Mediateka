@@ -2,7 +2,7 @@
 Приложение будет хранить в себе сборник мероприятий, на которые нужны фотографы и видеографы
 
 ### 1.Страница входа 
-![image](https://github.com/user-attachments/assets/20a6518f-8c70-4cda-a8b2-156c294711bc)
+![image](https://github.com/user-attachments/assets/2bcc7b7e-0e86-4c9e-b216-3328b87a6257)
 
 ### 2.Регестриция пользователя
 1. Выбор роли
