@@ -10,8 +10,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ListEventPlanner"
       Loaded="Page_Loaded">
-
-    <Grid Margin="5">
+    
+    <Grid Margin="5"
+          Background="#062949">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -25,25 +26,16 @@
                     Click="BEdit_Click"
                     Margin="5,0"
                     Content="Изменить"/>
-            <TextBlock Text="Найти"
-                       Margin="5"
-                       VerticalAlignment="Center"/>
+           
             <TextBox x:Name="TBSearch"
                      VerticalAlignment="Center"
-                     Width="220"
-                    
-                     materialDesign:HintAssist.Hint="Property name"
+                     Foreground="White"
+                     FontSize="18"
+                     Padding="10, 5"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     materialDesign:HintAssist.Hint="Найти мероприятие"
                      TextChanged="TBSearch_TextChanged">
-                <TextBox.Style>
-                    <Style>
-                        <Style.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius"
-                                        Value="5"/>
-                            </Style>
-                        </Style.Resources>
-                    </Style>
-                </TextBox.Style>
+                
             </TextBox>
         </StackPanel>
         <ScrollViewer Grid.Row="1">
@@ -53,14 +45,26 @@
                     <DataTemplate>
 
                         <StackPanel>
+                            
                             <TextBlock FontSize="28"
+                                       Margin="10, 2"
                                 Text="{Binding Name}"/>
-                            <TextBlock Text="{Binding City, StringFormat='Город: {0}'}"/>
+                            <TextBlock Text="{Binding City, StringFormat='Город: {0}'}"
+                                        Margin="10, 2"/>
                             <TextBlock Text="{Binding Description}"
-                                       TextWrapping="Wrap"/>
-                            <TextBlock Text="{Binding StatusEvent.Name}"/>
-                            <TextBlock Text="{Binding CommentModerator, StringFormat='Комментарий: {0}'}"/>
-                            <Expander Header="Заявки">
+                                       TextWrapping="Wrap"
+                                        Margin="10, 2"/>
+                            <TextBlock Text="{Binding StatusEvent.Name}"
+                                        Margin="10, 2"/>
+                            <TextBlock Text="{Binding CommentModerator, StringFormat='Комментарий: {0}'}"
+                                        Margin="10, 2"/>
+                            <Expander Header="Заявки" 
+                                      >
+                                <Expander.Background>
+                                    <LinearGradientBrush>
+                                        
+                                    </LinearGradientBrush>
+                                </Expander.Background>
                                 <TabControl>
                                     <TabItem Header="Все">
                                         <DataGrid x:Name="DGExecutors"
@@ -92,7 +96,7 @@
                                                     <DataGridTemplateColumn.CellTemplate>
                                                         <DataTemplate>
                                                             <materialDesign:RatingBar
-Margin="0"
+                                                                
 Foreground="Gold"
 Orientation="Horizontal"
                                                                 IsEnabled="False"
@@ -160,6 +164,11 @@ Value="{Binding Executor.MediumRating}" />
                                 </TabControl>
                             </Expander>
                             <Expander Header="Файлы">
+                                <Expander.Background>
+                                    <LinearGradientBrush>
+
+                                    </LinearGradientBrush>
+                                </Expander.Background>
                                 <DataGrid AutoGenerateColumns="False"
                                       IsReadOnly="True"
                                       ItemsSource="{Binding MaterialEvent}">
@@ -173,7 +182,7 @@ Value="{Binding Executor.MediumRating}" />
                                                     Width="50"
                                                     Height="50"
                                                     BorderThickness="2"
-                                                    BorderBrush="DeepSkyBlue">
+                                                  >
                                                         <Border.Background>
                                                             <ImageBrush Stretch="Fill"
                                                         RenderOptions.BitmapScalingMode="Fant"
@@ -216,13 +225,28 @@ Value="{Binding Executor.MediumRating}" />
                 <ListView.ItemContainerStyle>
                     <Style TargetType="{x:Type ListViewItem}">
                         <Setter Property="Margin"
-                            Value="3"/>
-                        <Setter Property="BorderBrush"
-                            Value="DeepSkyBlue"/>
-                        <Setter Property="BorderThickness"
-                            Value="1"/>
+                            Value="10"/>
+                        <Setter Property="BorderBrush">
+                            <Setter.Value>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#223d74" Offset="1.0"/>
+                                    <GradientStop Color="#4362a1" Offset="0.0"/>
+                                </RadialGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                           
+                        
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <LinearGradientBrush>
+                                    <GradientStop Color="#223d74" Offset="0.0"/>
+                                    <GradientStop Color="#4362a1" Offset="1.0"/>
+                                </LinearGradientBrush>
+                            </Setter.Value>
+                        </Setter>
                         <Setter Property="HorizontalContentAlignment"
                             Value="Stretch"/>
+                        
                         <Style.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius"
