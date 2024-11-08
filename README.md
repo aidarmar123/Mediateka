@@ -2,10 +2,18 @@
 Приложение будет хранить в себе сборник мероприятий, на которые нужны фотографы и видеографы
 
 ### 1.Страница входа 
-![image](https://github.com/user-attachments/assets/21cde548-1b89-4ab0-86bc-b65ac5fc0989)
+![image](https://github.com/user-attachments/assets/20a6518f-8c70-4cda-a8b2-156c294711bc)
 
 ### 2.Регестриция пользователя
-![image](https://github.com/user-attachments/assets/5e9bc6b4-e42c-4d6f-952c-ace70bcf154f)
+1. Выбор роли
+
+   ![image](https://github.com/user-attachments/assets/f35dc94f-64c0-4a15-a878-580e43017273)
+
+2. Заполнение данных
+
+   ![image](https://github.com/user-attachments/assets/a8f1651c-d730-40dc-8338-443dc992c62d)
+
+
 
 ### 3. Регестриция мероприятий (Организатор)
 ![image](https://github.com/user-attachments/assets/e5d6604b-29bb-4cc1-adb6-6529fb1a61bb)
@@ -28,6 +36,20 @@
 Чтобы скачать файл для Организатора нужно выбрать нужное мероприятие, и со вкладки "Файлы" выбрать нужный
 ![image](https://github.com/user-attachments/assets/1f651ba6-fd36-4127-a4db-ba1f7b0f3e95)
 
+### Профиль Исполнителя
+![image](https://github.com/user-attachments/assets/20868e35-485f-49cc-ab5e-68798c43ca8c)
+  
+   1. Навыки Исполнителя
+
+![image](https://github.com/user-attachments/assets/033f2ddb-3f34-49af-94ce-6b4343a083bb)
+
+   2. Портфолио
+
+![image](https://github.com/user-attachments/assets/506dccfc-32a3-4815-90a5-fa38bcda67bb)
+
+   3. Отзывы
+
+![image](https://github.com/user-attachments/assets/4da2edaa-9c73-48c2-9a29-9ee7afcdb820)
 
 ### База данных
 Чтобы загразить БД на свое устройство 
