@@ -3,47 +3,44 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
       xmlns:local="clr-namespace:Mediateka.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="WaitingEventList"
       Loaded="Page_Loaded">
 
-    <Grid Margin="5">
+    <Grid
+          Background="#062949">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" 
+                    Margin="10">
             <Button x:Name="BApprove"
                     Click="BApprove_Click"
                     Content="Одобрить"/>
             <Button x:Name="BNotApprove"
-                    Margin="5,0"
+                    Margin="10,0"
          Click="BNotApprove_Click"
          Content="Не одобрить"/>
 
-            <TextBlock Text="Найти"
-                    Margin="5"
-                    VerticalAlignment="Center"/>
+       
             <TextBox x:Name="TBSearch"
-                  VerticalAlignment="Center"
-                  Width="220"
-                  TextChanged="TBSearch_TextChanged">
-                <TextBox.Style>
-                    <Style>
-                        <Style.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius"
-                                     Value="5"/>
-                            </Style>
-                        </Style.Resources>
+              VerticalAlignment="Center"
+                                 Margin="10, 5"
+              materialDesign:HintAssist.Hint="Найти заявку"
+ Padding="20, 5"
+ Style="{StaticResource MaterialDesignOutlinedTextBox}"
+              TextChanged="TBSearch_TextChanged">
 
-                    </Style>
-                </TextBox.Style>
             </TextBox>
+            
         </StackPanel>
         <ListView x:Name="LVEvents"
+                  Margin="10"
                 SelectionChanged="LVEvents_SelectionChanged"
                BorderThickness="2"
                Grid.Row="1">
@@ -65,15 +62,34 @@
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="Margin"
-                         Value="3"/>
-                    <Setter Property="BorderBrush"
-                         Value="DeepSkyBlue"/>
-                    <Setter Property="BorderThickness"
-                         Value="1"/>
+                    Value="10"/>
+                    <Setter Property="Padding"
+                            Value="10"/>
+                    <Setter Property="BorderBrush">
+                        <Setter.Value>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#223d74" Offset="1.0"/>
+                                <GradientStop Color="#4362a1" Offset="0.0"/>
+                            </RadialGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+
+
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#223d74" Offset="0.0"/>
+                                <GradientStop Color="#4362a1" Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="HorizontalContentAlignment"
+                    Value="Stretch"/>
+
                     <Style.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius"
-     Value="10"/>
+Value="10"/>
 
                         </Style>
                     </Style.Resources>

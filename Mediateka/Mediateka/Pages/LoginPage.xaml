@@ -3,29 +3,45 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
       xmlns:local="clr-namespace:Mediateka.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoginPage">
 
-    <Grid>
+    <Grid Background="#062949">
 
-        <StackPanel Margin="10"
-                    VerticalAlignment="Center">
-            <TextBlock Text="E-mail:"/>
-            <TextBox Text="{Binding Login}"/>
-            <TextBlock Text="Пароль:"/>
-            <TextBox Text="{Binding Password}"/>
-            <Button x:Name="BLoginPlanning"
-            Content="Войти"
-            Margin="0,5"
-            Click="BLoginPlanning_Click"/>
-            <Button x:Name="BRegestrationPlanning"
-            Margin="0,5"
-            Content="Зарегестрироваться"
-            Click="BRegestrationPlanning_Click"/>
+        <Border CornerRadius="30"
+                Margin="10"
+                Padding="20"
+                VerticalAlignment="Center"
+                
+                BorderBrush="Black">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#223d74" Offset="0.0"/>
+                    <GradientStop Color="#4362a1" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel >
 
-        </StackPanel>
+                <TextBlock Text="E-mail:"/>
+                <TextBox Text="{Binding Login}"/>
+                <TextBlock Text="Пароль:"/>
+                <TextBox Text="{Binding Password}"/>
+                <Button x:Name="BLoginPlanning"
+     Content="Войти"
+     Margin="0,5"
+     Click="BLoginPlanning_Click"/>
+                <Button x:Name="BRegestrationPlanning"
+     Margin="0,5"
+     Content="Зарегестрироваться"
+     Click="BRegestrationPlanning_Click"/>
+
+            </StackPanel>
+        </Border>
+       
 
 
     </Grid>

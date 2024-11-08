@@ -3,44 +3,74 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      
       xmlns:local="clr-namespace:Mediateka.Pages"
       xmlns:xcd="http://schemas.xceed.com/wpf/xaml/toolkit"
       
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddEventPage">
-
-    <Grid Margin="5"
+    <Page.Resources>
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="Background"
+                    Value="Black"/>
+        </Style>
+    </Page.Resources>
+    <Grid 
           Background="#062949">
-        <ScrollViewer>
-            <StackPanel>
-                <TextBlock Text="Название"/>
-                <TextBox Text="{Binding Name}"/>
-                <TextBlock Text="Описание"/>
-                <TextBox Text="{Binding Description}"/>
-                <TextBlock Text="Город проведения"/>
-                <TextBox Text="{Binding City}"/>
+            <Border CornerRadius="30"
+        Margin="10"
+        Padding="20"
+        VerticalAlignment="Center"
+        >
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#223d74" Offset="0.0"/>
+                        <GradientStop Color="#4362a1" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+        <ScrollViewer Margin="10">
+                <StackPanel>
+                    <TextBlock Text="Название"/>
+                    <TextBox Text="{Binding Name}"/>
+                    <TextBlock Text="Описание"/>
+                    <TextBox Text="{Binding Description}"/>
+                    <TextBlock Text="Город проведения"/>
+                    <TextBox Text="{Binding City}"/>
 
-                <TextBlock Text="Плата"/>
-                <TextBox Text="{Binding Salary}"/>
-                <TextBlock Text="Какие специалисты нужны"/>
-                <xcd:CheckComboBox x:Name="CCBSkills"
+                    <TextBlock Text="Плата"/>
+                    <TextBox Text="{Binding Salary}"/>
+                    <TextBlock Text="Какие специалисты нужны"/>
+                    <xcd:CheckComboBox x:Name="CCBSkills"
+                                    BorderThickness="0"
+                                   
+                                  xcd:Background="#4362a1"
                                    DisplayMemberPath="Name"/>
-                <TextBlock Text="Время проведения"/>
-                <xcd:DateTimePicker Value="{Binding DateTime}"
+                    <TextBlock Text="Время проведения"/>
+                    <xcd:DateTimePicker Value="{Binding DateTime}"
+                                    Background="#4362a1"
+                                    Foreground="White"
+                                    BorderThickness="0"
                                     DefaultValue="01.01.2024"/>
-                <TextBlock Text="Крайний срок сдачи"/>
-                <xcd:DateTimePicker Value="{Binding Deadline}"
+                    <TextBlock Text="Крайний срок сдачи"/>
+                    <xcd:DateTimePicker Value="{Binding Deadline}"
+                                    Background="#4362a1"
+                                    Foreground="White"
+                                    
+                                    BorderThickness="0"
+                                    
                                 DefaultValue="01.01.2024"/>
-                <Button x:Name="BSave"
+                    <Button x:Name="BSave"
                         Margin="0,5"
                         Content="Сохранить"
                         Click="BSave_Click"/>
-                 <Button x:Name="BBack"
+                    <Button x:Name="BBack"
                         Content="Назад"
                         Click="BBack_Click"/>
-                
-            </StackPanel>
+
+                </StackPanel>
         </ScrollViewer>
+            </Border>
     </Grid>
 </Page>

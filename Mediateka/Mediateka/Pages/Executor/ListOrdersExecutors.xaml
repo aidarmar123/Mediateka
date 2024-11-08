@@ -3,12 +3,16 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:Mediateka.Pages"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontSize="18"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ListOrdersExecutors">
-    <Grid Margin="5">
-        <TabControl>
+    <Grid
+          Background="#062949">
+        <TabControl Margin="10">
             <TabItem Header="Заказы">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -18,24 +22,15 @@
 
 
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Найти"
-                Margin="5"
-                VerticalAlignment="Center"/>
+                       
                         <TextBox x:Name="TBSearch"
               VerticalAlignment="Center"
-              Width="220"
+                                 Margin="10, 5"
+              materialDesign:HintAssist.Hint="Найти заказ"
+ Padding="20, 5"
+ Style="{StaticResource MaterialDesignOutlinedTextBox}"
               TextChanged="TBSearch_TextChanged">
-                            <TextBox.Style>
-                                <Style>
-                                    <Style.Resources>
-                                        <Style TargetType="Border">
-                                            <Setter Property="CornerRadius"
-                                 Value="5"/>
-                                        </Style>
-                                    </Style.Resources>
-
-                                </Style>
-                            </TextBox.Style>
+                            
                         </TextBox>
                     </StackPanel>
                     <ListView x:Name="LVEvents"
@@ -64,24 +59,36 @@
                         </ListView.ItemTemplate>
                         <ListView.ItemContainerStyle>
                             <Style TargetType="{x:Type ListViewItem}">
-                                <Setter Property="Background"
-                                        Value="{Binding IsResponse}"/>
                                 <Setter Property="Margin"
-                     Value="3"/>
-                                <Setter Property="BorderBrush"
-                     Value="DeepSkyBlue"/>
-                                <Setter Property="BorderThickness"
-                     Value="1"/>
+                    Value="10"/>
+                                <Setter Property="BorderBrush">
+                                    <Setter.Value>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#223d74" Offset="1.0"/>
+                                            <GradientStop Color="#4362a1" Offset="0.0"/>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter Property="Padding"
+         Value="10"/>
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush>
+                                            <GradientStop Color="#223d74" Offset="0.0"/>
+                                            <GradientStop Color="#4362a1" Offset="1.0"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
                                 <Setter Property="HorizontalContentAlignment"
-                                        Value="Stretch"/>
+                    Value="Stretch"/>
+
                                 <Style.Resources>
                                     <Style TargetType="Border">
                                         <Setter Property="CornerRadius"
-                                 Value="10"/>
-                                        
+Value="10"/>
                                     </Style>
                                 </Style.Resources>
-
                             </Style>
                         </ListView.ItemContainerStyle>
                     </ListView>
@@ -107,7 +114,8 @@
 
                                     <TextBlock Text="{Binding Event.Deadline, StringFormat='Срок сдачи dd.MM.yyyy'}"/>
 
-                                    <DataGrid ItemsSource="{Binding Event.MaterialEvent}"
+                                    <DataGrid ItemsSource="{Binding Event.ContextMaterialEvent}"
+                                              Margin="10"
                                               IsReadOnly="True"
                                               AutoGenerateColumns="False">
                                         <DataGrid.Columns>
@@ -133,12 +141,36 @@ Content="Удалить файл"/>
                         <ListView.ItemContainerStyle>
                             <Style TargetType="{x:Type ListViewItem}">
                                 <Setter Property="Margin"
-Value="3"/>
-                                <Setter Property="HorizontalContentAlignment"
-                   Value="Stretch"/>
-                                
-                                
+                    Value="10"/>
+                                <Setter Property="Padding"
+                                        Value="10"/>
+                                <Setter Property="BorderBrush">
+                                    <Setter.Value>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#223d74" Offset="1.0"/>
+                                            <GradientStop Color="#4362a1" Offset="0.0"/>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
 
+
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush>
+                                            <GradientStop Color="#223d74" Offset="0.0"/>
+                                            <GradientStop Color="#4362a1" Offset="1.0"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="HorizontalContentAlignment"
+                    Value="Stretch"/>
+
+                                <Style.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius"
+Value="10"/>
+                                    </Style>
+                                </Style.Resources>
                             </Style>
                         </ListView.ItemContainerStyle>
                     </ListView>

@@ -80,6 +80,7 @@ namespace Mediateka.Pages
             {
                 if (contextEventPlanner != null)
                 {
+
                     if (contextEventPlanner.Id == 0)
                         App.Db.EventPlanner.Add(contextEventPlanner);
                 }

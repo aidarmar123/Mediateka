@@ -98,7 +98,6 @@ C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Pages\ProfilePage
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\SelectRole.g.cs
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\SelectRole.baml
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\UsersControls\Stars.g.cs
-C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\UsersControls\Stars.baml
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\AddReviews.g.cs
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\AddReviews.baml

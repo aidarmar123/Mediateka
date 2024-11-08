@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uc ="clr-namespace:Mediateka.UsersControls"
+        Style="{StaticResource MaterialDesignWindow}"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Mediateka.Windows"
         mc:Ignorable="d"
-        Title="AddReviews" Height="450" Width="800">
+        Title="Добавить отзыв" Height="450" Width="800">
     <StackPanel VerticalAlignment="Center">
         <TextBlock Text="Добавить комментарий"
                FontSize="20"/>

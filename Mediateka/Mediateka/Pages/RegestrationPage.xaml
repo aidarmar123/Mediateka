@@ -4,72 +4,89 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Mediateka.Pages"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontSize="20"
       xmlns:xcd ="http://schemas.xceed.com/wpf/xaml/toolkit"      
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
 
       Title="RegestrationPage">
 
-    <Grid Margin="5">
-        <ScrollViewer>
-            <StackPanel>
-                <TextBlock Text="Фото"/>
-                <StackPanel HorizontalAlignment="Left">
-                    <Border CornerRadius="40"
+    <Grid Background="#062949">
+        <Border CornerRadius="30"
+Margin="10"
+Padding="20"
+VerticalAlignment="Center"
+>
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#223d74" Offset="0.0"/>
+                    <GradientStop Color="#4362a1" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <ScrollViewer>
+                <StackPanel>
+                    <TextBlock Text="Фото"/>
+                    <StackPanel HorizontalAlignment="Left">
+                        <Border CornerRadius="40"
                             Margin="3"
                             Width="100"
                             Height="100"
                             BorderThickness="2"
-                            BorderBrush="DeepSkyBlue">
-                        <Border.Background>
-                            <ImageBrush Stretch="Fill"
+                            BorderBrush="#4362a1">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill"
                                         RenderOptions.BitmapScalingMode="Fant"
                                         ImageSource="{Binding Avatar}"/>
-                        </Border.Background>
-                    </Border>
+                            </Border.Background>
+                        </Border>
 
-                    <Button x:Name="BAddImage"
+                        <Button x:Name="BAddImage"
                         Content="Добавить фото"
                         Click="BAddImage_Click"/>
-                </StackPanel>
+                    </StackPanel>
 
-                <TextBlock Text="Имя"/>
-                <TextBox Text="{Binding Name}"/>
-                <TextBlock Text="Фамилия"/>
-                <TextBox Text="{Binding Surname}"/>
+                    <TextBlock Text="Имя"/>
+                    <TextBox Text="{Binding Name}"/>
+                    <TextBlock Text="Фамилия"/>
+                    <TextBox Text="{Binding Surname}"/>
 
-                <TextBlock Text="Отчество"/>
-                <TextBox Text="{Binding Patronymic}"/>
+                    <TextBlock Text="Отчество"/>
+                    <TextBox Text="{Binding Patronymic}"/>
 
-                
-                <TextBlock Text="Телефон"/>
-                <TextBox Text="{Binding Phone}"
+
+                    <TextBlock Text="Телефон"/>
+                    <TextBox Text="{Binding Phone}"
                          MaxLength="11"/>
 
-                <TextBlock Text="E-mail"/>
-                <TextBox Text="{Binding Email}"/>
+                    <TextBlock Text="E-mail"/>
+                    <TextBox Text="{Binding Email}"/>
 
-                <TextBlock Text="Password"/>
-                <TextBox Text="{Binding Password}"/>
-                <StackPanel x:Name="SPSkillsExecutor"
+                    <TextBlock Text="Password"/>
+                    <TextBox Text="{Binding Password}"/>
+                    <StackPanel x:Name="SPSkillsExecutor"
             Visibility="Collapsed">
-                    <TextBlock Text="Твои навыки"/>
-                    <xcd:CheckComboBox x:Name="CCBSkils"
+                        <TextBlock Text="Твои навыки"/>
+                        <xcd:CheckComboBox x:Name="CCBSkils"
+                                           BorderThickness="0"
+                                           Background="#223d74"
                        DisplayMemberPath="Name"/>
-                </StackPanel>
-                <Button x:Name="Regestr"
-                        Margin="0, 5"
+                    </StackPanel>
+                    <Button x:Name="Regestr"
                         Click="Regestr_Click"
+                            Margin="0,10 , 0 ,5"
                         Content="Зарегестрироваться"
                         />
-                <Button x:Name="BBack"
+                    <Button x:Name="BBack"
+                        Margin="0, 10"
+                            
          Click="BBack_Click"
          Content="Назад"
          />
-                
-            </StackPanel>
-            
-        </ScrollViewer>
-        
+
+                </StackPanel>
+
+            </ScrollViewer>
+        </Border>
     </Grid>
 </Page>

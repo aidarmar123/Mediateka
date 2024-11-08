@@ -4,37 +4,50 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Mediateka.Pages"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RegestrationModerator">
 
     <Grid Margin="5">
-        <ScrollViewer>
-            <StackPanel>
-               
-                <TextBlock Text="Логин"/>
-                <TextBox Text="{Binding Login}"/>
+        <Border CornerRadius="30"
+        Margin="10"
+        Padding="20"
+        VerticalAlignment="Center"
+        
+        BorderBrush="Black">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#223d74" Offset="0.0"/>
+                    <GradientStop Color="#4362a1" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <ScrollViewer>
+                <StackPanel>
 
-                <TextBlock Text="Пароль"/>
-                <TextBox Text="{Binding Password}"/>
-                
-                <TextBlock Text="Ваша роль"/>
-                <ComboBox x:Name="CbRole"
+                    <TextBlock Text="Логин"/>
+                    <TextBox Text="{Binding Login}"/>
+
+                    <TextBlock Text="Пароль"/>
+                    <TextBox Text="{Binding Password}"/>
+
+                    <TextBlock Text="Ваша роль"/>
+                    <ComboBox x:Name="CbRole"
                           DisplayMemberPath="Name"
                           SelectedItem="{Binding Role}"/>
-                <Button x:Name="Regestr"
-                    Margin="0, 5"
+                    <Button x:Name="Regestr"
+                    Margin="0, 10"
                     Click="Regestr_Click"
                     Content="Зарегестрироваться"
                     />
-                <Button x:Name="BBack"
+                    <Button x:Name="BBack"
      Click="BBack_Click"
      Content="Назад"
      />
 
-            </StackPanel>
+                </StackPanel>
 
-        </ScrollViewer>
-
+            </ScrollViewer>
+        </Border>
     </Grid>
 </Page>

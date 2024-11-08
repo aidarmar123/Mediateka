@@ -14,7 +14,9 @@ namespace Mediateka.Models
         {
             get
             {
-                return Reviews.Select(x=>x.Rating).Sum()/Reviews.Count;
+                if(Reviews.Count > 0)
+                    return Reviews.Select(x=>x.Rating).Sum()/Reviews.Count;
+                return 0;
             }
         }
         public List<Reviews> ReceivingReviews

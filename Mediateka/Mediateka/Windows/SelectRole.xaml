@@ -4,11 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mediateka.Windows"
+        Style="{StaticResource MaterialDesignWindow}"
         mc:Ignorable="d"
-        Title="SelectRole" MaxHeight="250" MaxWidth="500"
+        Title="Выбрать роль" MaxHeight="250" MaxWidth="500"
         MinHeight="150"
         MinWidth="300">
-    <StackPanel VerticalAlignment="Center">
+    <StackPanel VerticalAlignment="Center" 
+                Margin="5">
         <TextBlock Text="Выберете роль"/>
         <ComboBox x:Name="CbRole"
           DisplayMemberPath="Name"
