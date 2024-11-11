@@ -18,6 +18,10 @@
 
    ![image](https://github.com/user-attachments/assets/546fe444-2cb9-4fe2-b231-98ea3d56afca)
 
+   #### Карточка мероприятия
+
+   ![image](https://github.com/user-attachments/assets/a146f129-35c3-4ec6-b398-461a06634c1a)
+
    #### Регестриция мероприятий (Организатор)
    
    ![image](https://github.com/user-attachments/assets/e5d6604b-29bb-4cc1-adb6-6529fb1a61bb)
