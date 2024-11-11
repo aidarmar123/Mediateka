@@ -13,10 +13,14 @@
 
    ![image](https://github.com/user-attachments/assets/a8f1651c-d730-40dc-8338-443dc992c62d)
 
+### 3. Профиль организатора
+   #### Список мероприятий
 
+   ![image](https://github.com/user-attachments/assets/546fe444-2cb9-4fe2-b231-98ea3d56afca)
 
-### 3. Регестриция мероприятий (Организатор)
-![image](https://github.com/user-attachments/assets/e5d6604b-29bb-4cc1-adb6-6529fb1a61bb)
+   #### Регестриция мероприятий (Организатор)
+   
+   ![image](https://github.com/user-attachments/assets/e5d6604b-29bb-4cc1-adb6-6529fb1a61bb)
 
 ### 4. Просмотр заявки модератором или админом
 Если заявка не прошла модерацию, то модератор добовляет замечание
