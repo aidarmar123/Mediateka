@@ -2,7 +2,7 @@
 Приложение будет хранить в себе сборник мероприятий, на которые нужны фотографы и видеографы
 
 ### 1.Страница входа 
-![image](https://github.com/user-attachments/assets/20a6518f-8c70-4cda-a8b2-156c294711bc)
+![image](https://github.com/user-attachments/assets/2bcc7b7e-0e86-4c9e-b216-3328b87a6257)
 
 ### 2.Регестриция пользователя
 1. Выбор роли
@@ -13,10 +13,18 @@
 
    ![image](https://github.com/user-attachments/assets/a8f1651c-d730-40dc-8338-443dc992c62d)
 
+### 3. Профиль организатора
+   #### Список мероприятий
 
+   ![image](https://github.com/user-attachments/assets/546fe444-2cb9-4fe2-b231-98ea3d56afca)
 
-### 3. Регестриция мероприятий (Организатор)
-![image](https://github.com/user-attachments/assets/e5d6604b-29bb-4cc1-adb6-6529fb1a61bb)
+   #### Карточка мероприятия
+
+   ![image](https://github.com/user-attachments/assets/a146f129-35c3-4ec6-b398-461a06634c1a)
+
+   #### Регестриция мероприятий (Организатор)
+   
+   ![image](https://github.com/user-attachments/assets/e5d6604b-29bb-4cc1-adb6-6529fb1a61bb)
 
 ### 4. Просмотр заявки модератором или админом
 Если заявка не прошла модерацию, то модератор добовляет замечание
