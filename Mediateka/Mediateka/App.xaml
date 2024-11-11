@@ -15,7 +15,7 @@
                 <Setter Property="FontSize"
             Value="16"/>
             </Style>
-           
+       
             <Style TargetType="ListViewItem">
                 <Setter Property="Background"
                         Value="#065680"/>

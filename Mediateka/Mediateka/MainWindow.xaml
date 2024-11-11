@@ -23,7 +23,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal"
-                        >
+                        Margin="10,5">
                 
                 <Border CornerRadius="20"
                         Margin="5"
@@ -34,6 +34,7 @@
                     </Border.Background>
                 </Border>
                 <TextBlock Text="{Binding FullName}"
+                           FontSize="24"
                            VerticalAlignment="Center"/>
             </StackPanel>
             <Button x:Name="BExit"

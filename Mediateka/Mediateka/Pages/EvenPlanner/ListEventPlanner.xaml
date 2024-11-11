@@ -10,16 +10,16 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ListEventPlanner"
       Loaded="Page_Loaded">
-    
+ 
     <Grid 
           Background="#062949">
-
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal"
-                    Margin="10">
+                    Margin="15, 5">
             <Button x:Name="BAddEvent"
                     Click="BAddEvent_Click"
                     Content="Добавить"/>
@@ -47,19 +47,44 @@
                     <DataTemplate>
 
                         <StackPanel>
-                            
-                            <TextBlock FontSize="28"
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                    
+                                <TextBlock FontSize="28"
+                                       Grid.ColumnSpan="2"
+                                Text="{Binding Name}"
+                                           FontWeight="Bold"/>
+                                <StackPanel Grid.Row="1">
+                            <TextBlock Text="{Binding City, StringFormat='Город: {0}'}"
+                                       FontSize="18"/>
                                        
-                                Text="{Binding Name}"/>
-                            <TextBlock Text="{Binding City, StringFormat='Город: {0}'}"/>
-
                             <TextBlock Text="{Binding Description}"
+                                       MaxWidth="410"
                                        TextWrapping="Wrap"
                                        />
-                            <TextBlock Text="{Binding StatusEvent.Name}"
-                                        />
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" 
+                                            Grid.Row="1"
+                                            VerticalAlignment="Center">
+                                <TextBlock Text="{Binding Salary, StringFormat='Плата: {0} руб'}"
+            FontSize="18"/>
+                            <TextBlock Text="{Binding StatusEvent.Name, StringFormat='Статус: {0}'}"
+                                        FontSize="18"/>
                             <TextBlock Text="{Binding CommentModerator, StringFormat='Комментарий: {0}'}"
-                                        />
+                                        FontSize="18"/>
+                                </StackPanel>
+                            </Grid>
+                            
+                            
+                            
+                            
                             <Expander Header="Заявки" 
                                       >
                                 <Expander.Background>
@@ -225,9 +250,11 @@ Value="{Binding Executor.MediumRating}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.ItemContainerStyle>
+                    
                     <Style TargetType="{x:Type ListViewItem}">
                         <Setter Property="Margin"
                             Value="10"/>
+                        
                         <Setter Property="Padding"
         Value="10"/>
                         <Setter Property="BorderBrush">

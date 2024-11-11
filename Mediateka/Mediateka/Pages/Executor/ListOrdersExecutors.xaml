@@ -12,7 +12,7 @@
       Title="ListOrdersExecutors">
     <Grid
           Background="#062949">
-        <TabControl Margin="10">
+        <TabControl Margin="5">
             <TabItem Header="Заказы">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -40,9 +40,11 @@
                             <DataTemplate>
                                 <StackPanel>
                                     <TextBlock FontSize="28"
+                                               FontWeight="Bold"
                          Text="{Binding Name}"/>
-                                    <TextBlock Text="{Binding City, StringFormat='Город: {0}'}"/>
-                                    <TextBlock Text="{Binding Description}"
+                                    <TextBlock Text="{Binding City, StringFormat='Город: {0}'}"
+                                               FontSize="18"/>
+                                    <TextBlock Text="{Binding Description}"                                               FontSize="18"
                                 TextWrapping="Wrap"
                                 />
                                     <StackPanel>
@@ -108,6 +110,7 @@ Value="10"/>
                             <DataTemplate>
                                 <StackPanel>
                                     <TextBlock Text="{Binding Event.Name}"
+                                               FontWeight="Bold"
                                                FontSize="32"/>
                                     <TextBlock Text="{Binding Event.DateTime, StringFormat='Дата dd.MM.yyyy'}"/>
                                     <TextBlock Text="{Binding Event.DateTime, StringFormat='Время HH:mm'}"/>

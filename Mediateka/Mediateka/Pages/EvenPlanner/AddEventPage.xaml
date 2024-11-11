@@ -19,7 +19,16 @@
     </Page.Resources>
     <Grid 
           Background="#062949">
-            <Border CornerRadius="30"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Мероприятие"
+                    Margin="5"
+                  FontSize="32"
+                   HorizontalAlignment="Center"/>
+        <Border CornerRadius="30" 
+                Grid.Row="1"
         Margin="10"
         Padding="20"
         VerticalAlignment="Center"
