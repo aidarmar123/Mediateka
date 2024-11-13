@@ -35,6 +35,7 @@ namespace Mediateka.Pages
             var list  = App.Db.Event.Where(ev => ev.EventPlannerId == App.contextEventPlanner.Id).ToList();
             
             LVEvents.ItemsSource = list;
+            LVLastEvents.ItemsSource = list.Where(x=>x.StatusId ==4).ToList();
         }
 
         private void BAddEvent_Click(object sender, RoutedEventArgs e)
@@ -128,6 +129,19 @@ namespace Mediateka.Pages
                     file.Close();
                     File.WriteAllBytes(saveFile.FileName, material.Data);
                 }
+            }
+        }
+
+        private void TBSearchLast_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var text = TBSearchLast.Text;
+            if (string.IsNullOrEmpty(text))
+            {
+                Refresh();
+            }
+            else
+            {
+                LVLastEvents.ItemsSource = App.Db.Event.Where(ev => ev.EventPlannerId == App.contextEventPlanner.Id && ev.Name.Contains(text) && ev.StatusId==4).ToList();
             }
         }
     }
