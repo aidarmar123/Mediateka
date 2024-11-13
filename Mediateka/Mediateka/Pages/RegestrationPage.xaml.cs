@@ -66,11 +66,15 @@ namespace Mediateka.Pages
 
         private void Regestr_Click(object sender, RoutedEventArgs e)
         {
+            //Проверка на заполнение строк
             var error = new StringBuilder();
             if (contextEventPlanner != null)
                 error = ValidationLine.ValidationObject(contextEventPlanner);
             else if (contextExecutor != null)
                 error = ValidationLine.ValidationObject(contextExecutor);
+
+
+
 
             if (error.Length > 0)
             {
@@ -78,30 +82,65 @@ namespace Mediateka.Pages
             }
             else
             {
+                bool isValid = false;
                 if (contextEventPlanner != null)
                 {
+                    isValid = !IsReapetUser(contextEventPlanner.Email);
+                    isValid =isValid && ValidationName(contextEventPlanner.Name, contextEventPlanner.Surname, contextEventPlanner.Patronymic);
 
-                    if (contextEventPlanner.Id == 0)
+                    if (isValid && contextEventPlanner.Id == 0)
                         App.Db.EventPlanner.Add(contextEventPlanner);
                 }
                 else if (contextExecutor != null)
                 {
-                    if (contextExecutor.Id == 0)
+
+                    
+                    isValid = !IsReapetUser(contextExecutor.Email);
+                    isValid =isValid && ValidationName(contextExecutor.Name, contextExecutor.Surname, contextExecutor.Patronymic);
+                    if (isValid && contextExecutor.Id == 0)
                         App.Db.Executor.Add(contextExecutor);
                 }
-                App.Db.SaveChanges();
-                if (contextExecutor != null)
+                if (isValid)
                 {
-                    foreach (Skill skill in CCBSkils.SelectedItems)
+                    App.Db.SaveChanges();
+                    if (contextExecutor != null)
                     {
-                        App.Db.ExecutorSkill.Add(new ExecutorSkill() { SkillId = skill.Id, ExecutorId = contextExecutor.Id });
-                        App.Db.SaveChanges();
+                        foreach (Skill skill in CCBSkils.SelectedItems)
+                        {
+                            App.Db.ExecutorSkill.Add(new ExecutorSkill() { SkillId = skill.Id, ExecutorId = contextExecutor.Id });
+                            App.Db.SaveChanges();
+                        }
                     }
-                }
 
-                Xceed.Wpf.Toolkit.MessageBox.Show("Вы успешно зарегестрированы");
-                NavigationService.GoBack();
+                    Xceed.Wpf.Toolkit.MessageBox.Show("Вы успешно зарегестрированы");
+                    NavigationService.GoBack();
+                }
+                
+
             }
+        }
+
+        private bool IsReapetUser(string email)
+        {
+            var moderator = App.Db.Moderators.FirstOrDefault(x=>x.Login == email);
+            var executor= App.Db.Executor.FirstOrDefault(x=>x.Email == email);
+            var eventPlanner = App.Db.EventPlanner.FirstOrDefault(x=>x.Email == email);
+
+            bool isReapet = moderator != null || executor != null || eventPlanner != null;
+            if (isReapet)
+                Xceed.Wpf.Toolkit.MessageBox.Show("Пользователь уже существует");
+            
+            return isReapet;
+        }
+
+        private bool ValidationName(string name, string surname, string patronymic)
+        {
+            bool isValidName = !name.Any(char.IsDigit) && !surname.Any(char.IsDigit) && !patronymic.Any(char.IsDigit);
+            if(!isValidName)
+                Xceed.Wpf.Toolkit.MessageBox.Show("В ФИО нельзя вводить цифры");
+
+            return isValidName;
+
         }
 
         private void BBack_Click(object sender, RoutedEventArgs e)

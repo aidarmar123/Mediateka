@@ -29,14 +29,15 @@
                 <TextBlock Text="E-mail:"/>
                 <TextBox Text="{Binding Login}"/>
                 <TextBlock Text="Пароль:"/>
-                <TextBox Text="{Binding Password}"/>
+                <PasswordBox x:Name="PBPass"
+                   />
                 <Button x:Name="BLoginPlanning"
      Content="Войти"
      Margin="0,5"
      Click="BLoginPlanning_Click"/>
                 <Button x:Name="BRegestrationPlanning"
      Margin="0,5"
-     Content="Зарегестрироваться"
+     Content="Зарегистрироваться"
      Click="BRegestrationPlanning_Click"/>
 
             </StackPanel>

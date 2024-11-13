@@ -30,6 +30,7 @@ namespace Mediateka.Pages
         public LoginPage()
         {
             InitializeComponent();
+            
             DataContext = this;
             
         }
@@ -50,6 +51,7 @@ namespace Mediateka.Pages
         // Обработчик событий для кнопки входа Организатора
         private void BLoginPlanning_Click(object sender, RoutedEventArgs e)
         {
+            Password = PBPass.Password;
             if (ValidationLine())
             {
                EventPlanner eventPlanner = App.Db.EventPlanner.FirstOrDefault(ex => ex.Email == Login && ex.Password == Password);
