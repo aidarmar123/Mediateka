@@ -63,12 +63,7 @@ namespace Mediateka
             }
             else
             {
-                var contextExecutor = DataContext as Executor;
-                if(contextExecutor!=null)
-                     MainFrame.Navigate(new RegestrationPage(contextExecutor));
-                else
-                    MainFrame.Navigate(new RegestrationPage(DataContext as EventPlanner));
-
+                    MainFrame.Navigate(new RegestrationPage(DataContext));
             }
 
         }

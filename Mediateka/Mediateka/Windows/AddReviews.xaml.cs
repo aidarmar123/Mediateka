@@ -24,15 +24,11 @@ namespace Mediateka.Windows
 
         Reviews contextReview;
   
-        public AddReviews(Executor executor)
+        public AddReviews(Reviews reviews)
         {
             InitializeComponent();
-            contextReview = new Reviews()
-            {
-                TypeMsgId = 2,
-                EvenPlannerId = App.contextEventPlanner.Id,
-                ExecutorId = executor.Id,
-            };
+            contextReview = reviews;
+            
            
             DataContext = contextReview;
         }

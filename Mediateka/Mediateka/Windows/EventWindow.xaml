@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:Mediateka.Windows"
         xmlns:xcd ="http://schemas.xceed.com/wpf/xaml/toolkit"
         Style="{StaticResource MaterialDesignWindow}"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      
         mc:Ignorable="d"
         Background="#062949"
         MaxHeight="600"
@@ -57,7 +59,94 @@
                                    FontWeight="Bold"/>
                         <DatePickerTextBox Text="{Binding Deadline, StringFormat='dd.MM.yyyy'}"
                     IsReadOnly="True"/>
+                        <Expander Header="Организатор" 
+                                  Background="Transparent">
+                            <StackPanel Margin="10">
+                               
+                                <StackPanel HorizontalAlignment="Left"
+                                            Orientation="Horizontal">
+                                    <Border CornerRadius="40"
+         Margin="3"
+         Width="100"
+         Height="100"
+        >
+                                        <Border.Background>
+                                            <ImageBrush Stretch="Fill"
+                     RenderOptions.BitmapScalingMode="Fant"
+                     ImageSource="{Binding EventPlanner.Avatar}"/>
+                                        </Border.Background>
+                                    </Border>
+                                    <TextBlock Text="{Binding EventPlanner.FullName}"
+                                               Margin="10"
+                                               VerticalAlignment="Center"/>
+                                </StackPanel>
 
+                                
+                                
+                                <TextBlock Text="Телефон"/>
+                                <TextBlock Text="{Binding EventPlanner.Phone}"/>
+
+                                <TextBlock Text="E-mail"/>
+                                <TextBlock Text="{Binding EventPlanner.Email}"/>
+                                <Expander Header="Отзывы"
+                                          Background="Transparent">
+                                   
+                                    
+                                    <ScrollViewer>
+                                        <StackPanel>
+
+                                           
+                                            <ListView ItemsSource="{Binding EventPlanner.ReceivingReviews}">
+                                                <ListView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition/>
+                                                                <ColumnDefinition Width="3*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Border CornerRadius="40"
+                                            Margin="3"
+                                            Width="50"
+                                            Height="50"
+                                            BorderThickness="1">
+                                                                <Border.Background>
+                                                                    <ImageBrush Stretch="Fill"
+                                                        RenderOptions.BitmapScalingMode="Fant"
+                                                        ImageSource="{Binding EventPlanner.Avatar}"/>
+                                                                </Border.Background>
+                                                            </Border>
+                                                            <StackPanel Grid.Column="1">
+                                                                <TextBlock Text="{Binding EventPlanner.FullName}"
+                                                   FontSize="28"/>
+
+                                                                <TextBlock Text="{Binding ContentMsg}"/>
+                                                                <Viewbox
+Height="16"
+Margin="0,4,0,8"
+HorizontalAlignment="Left">
+                                                                    <materialDesign:RatingBar
+                                                IsReadOnly="True"
+  Margin="0"
+  
+  Orientation="Horizontal"
+  Value="{Binding Rating}" />
+                                                                </Viewbox>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                                <ListView.ItemContainerStyle>
+                                                    <Style TargetType="ListViewItem">
+                                                        <Setter Property="HorizontalContentAlignment"
+                                        Value="Stretch"/>
+                                                    </Style>
+                                                </ListView.ItemContainerStyle>
+                                            </ListView>
+                                        </StackPanel>
+                                    </ScrollViewer>
+                                </Expander>
+                            </StackPanel>
+                        </Expander>
                         <Button x:Name="BResponse"
                     Margin="0,5"
                     Content="Откликнуться"

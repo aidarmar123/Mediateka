@@ -66,7 +66,13 @@ namespace Mediateka.Windows
 
         private void BAddComment_Click(object sender, RoutedEventArgs e)
         {
-            new AddReviews(contextExecutor).ShowDialog();
+            var review = new Reviews()
+            {
+                TypeMsgId = 2,
+                EvenPlannerId = App.contextEventPlanner.Id,
+                ExecutorId = contextExecutor.Id,
+            };
+            new AddReviews(review).ShowDialog();
             DataContext = null;
             DataContext = contextExecutor;
         }
