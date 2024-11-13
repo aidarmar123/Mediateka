@@ -22,7 +22,7 @@
 
 
                     <StackPanel Orientation="Horizontal">
-                       
+
                         <TextBox x:Name="TBSearch"
               VerticalAlignment="Center"
                                  Margin="10, 5"
@@ -30,7 +30,7 @@
  Padding="20, 5"
  Style="{StaticResource MaterialDesignOutlinedTextBox}"
               TextChanged="TBSearch_TextChanged">
-                            
+
                         </TextBox>
                     </StackPanel>
                     <ListView x:Name="LVEvents"
@@ -49,6 +49,7 @@
                                 />
                                     <StackPanel>
                                         <Button x:Name="BResponse"
+                                                IsEnabled="{Binding IsNotResponseExecutor}"
                                  Margin="5"
      HorizontalAlignment="Right"
      Click="BResponse_Click"
@@ -102,8 +103,8 @@ Value="10"/>
                         <Button x:Name="BUpload"
                                 Margin="5,0"
             Click="BUpload_Click"
-            Content="Загрузить файл"/>
-                        
+            Content="Добавить материал"/>
+
                     </StackPanel>
                     <ListView x:Name="LVOrders">
                         <ListView.ItemTemplate>
@@ -119,15 +120,28 @@ Value="10"/>
 
                                     <DataGrid ItemsSource="{Binding Event.ContextMaterialEvent}"
                                               Margin="10"
+                                              
                                               IsReadOnly="True"
                                               AutoGenerateColumns="False">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="Имя файла"
+                                                                Width="*"
                                                                 Binding="{Binding NameFile}"/>
-                                             <DataGridTextColumn Header="Дата отправким"
+                                            <DataGridTextColumn Header="Комментарий"
+                                                                Width="*"
+                                                                
+                                                                Binding="{Binding CommentFile}">
+                                                <DataGridTextColumn.ElementStyle>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="TextWrapping" Value="Wrap"/>
+                                                    </Style>
+                                                </DataGridTextColumn.ElementStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Дата отправким"
+                                                                Width="*"
                                                                 Binding="{Binding DateTimeSend}"/>
 
-                                            <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn Width="*">
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <Button x:Name="BRemoveFile"
@@ -135,7 +149,7 @@ Click="BRemoveFile_Click"
 Content="Удалить файл"/>
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>                                            
+                                            </DataGridTemplateColumn>
                                         </DataGrid.Columns>
                                     </DataGrid>
                                 </StackPanel>

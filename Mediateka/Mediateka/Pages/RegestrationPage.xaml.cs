@@ -26,6 +26,8 @@ namespace Mediateka.Pages
     {
         EventPlanner contextEventPlanner;
         Executor contextExecutor;
+
+       
         public RegestrationPage(Object user)
         {
             InitializeComponent();
@@ -112,7 +114,7 @@ namespace Mediateka.Pages
                         }
                     }
 
-                    Xceed.Wpf.Toolkit.MessageBox.Show("Вы успешно зарегестрированы");
+                    Xceed.Wpf.Toolkit.MessageBox.Show("Данные успешно сохранены");
                     NavigationService.GoBack();
                 }
                 

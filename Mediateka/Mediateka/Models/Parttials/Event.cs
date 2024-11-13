@@ -49,5 +49,18 @@ namespace Mediateka.Models
                 return MaterialEvent.Where(x => x.ExecutorId == App.contextExecutor.Id).ToList();
             }
         }
+
+       public bool IsNotResponseExecutor
+        {
+            get
+            {
+                if (App.contextExecutor != null)
+                {
+                    var repaetEventExecutor = App.Db.EventExecutor.FirstOrDefault(x => x.EventId == Id && x.ExecutorId == App.contextExecutor.Id);
+                    return repaetEventExecutor == null;
+                }
+                return true;
+            }
+        }
     }
 }

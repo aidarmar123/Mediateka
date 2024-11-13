@@ -33,7 +33,7 @@ namespace Mediateka.Pages
 
         private void Refresh()
         {
-            LVEvents.ItemsSource = App.Db.Event.Where(ev => ev.StatusId == 1).ToList();
+            LVEvents.ItemsSource = App.Db.Event.Where(ev => ev.StatusId == 1 && App.Db.EventExecutor.FirstOrDefault(x => x.ExecutorId == App.contextExecutor.Id && x.StatusExecutorId == 1 && x.EventId == ev.Id) ==null).ToList();
             LVOrders.ItemsSource = App.Db.EventExecutor.Where(x=>x.ExecutorId == App.contextExecutor.Id && x.StatusExecutorId==1).ToList();
             
         }
@@ -43,13 +43,8 @@ namespace Mediateka.Pages
             var contextEvent = (sender as Button).DataContext as Event;
             if (contextEvent != null)
             {
-                //Проверяем отликнулься лт уже пользователь
-                var repaetEventExecutor = App.Db.EventExecutor.FirstOrDefault(x => x.EventId == contextEvent.Id && x.ExecutorId == App.contextExecutor.Id);
-                if (repaetEventExecutor != null)
-                {
-                    Xceed.Wpf.Toolkit.MessageBox.Show("Вы уже отликнулись");
-                    return;
-                }
+                //Проверяем отликнулься ли уже пользователь
+                
 
                 var eventExecutor = new EventExecutor()
                 {
@@ -89,22 +84,9 @@ namespace Mediateka.Pages
         {
             if(LVOrders.SelectedItem is EventExecutor eventExecutor)
             {
-                var openFile = new OpenFileDialog();
-                if (openFile.ShowDialog().GetValueOrDefault())
-                {
-                    var matrial = new MaterialEvent()
-                    {
-                        DateTimeSend = DateTime.Now,
-                        NameFile = openFile.SafeFileName,
-                        EventId = eventExecutor.EventId,
-                        ExecutorId = eventExecutor.ExecutorId,
-                        FormatFile = System.IO.Path.GetExtension(openFile.FileName),
-                        Data = File.ReadAllBytes(openFile.FileName)
-                    };
-                    App.Db.MaterialEvent.Add(matrial);
-                    App.Db.SaveChanges();
-                    Refresh();
-                }
+                new UnstallFile(eventExecutor).ShowDialog();
+                Refresh();
+                
             }
             else
             {

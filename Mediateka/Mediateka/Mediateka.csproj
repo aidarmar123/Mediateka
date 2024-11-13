@@ -194,6 +194,9 @@
     <Compile Include="Windows\SelectRole.xaml.cs">
       <DependentUpon>SelectRole.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\UnstallFile.xaml.cs">
+      <DependentUpon>UnstallFile.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -259,6 +262,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\SelectRole.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UnstallFile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

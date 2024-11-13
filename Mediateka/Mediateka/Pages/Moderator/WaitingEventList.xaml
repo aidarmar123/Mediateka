@@ -13,22 +13,31 @@
 
     <Grid
           Background="#062949">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" 
+     
+        <TabControl Grid.Row="1">
+            <TabItem Header="Мероприятия">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" 
                     Margin="20, 5">
-            <Button x:Name="BApprove"
+                        <Button x:Name="BApprove"
                     Click="BApprove_Click"
                     Content="Одобрить"/>
-            <Button x:Name="BNotApprove"
+                        <Button x:Name="BNotApprove"
                     Margin="10,0"
          Click="BNotApprove_Click"
          Content="Не одобрить"/>
 
-       
-            <TextBox x:Name="TBSearch"
+
+                        <TextBox x:Name="TBSearchEvent"
               VerticalAlignment="Center"
                                  Margin="10, 5"
               materialDesign:HintAssist.Hint="Найти заявку"
@@ -36,68 +45,180 @@
  Style="{StaticResource MaterialDesignOutlinedTextBox}"
               TextChanged="TBSearch_TextChanged">
 
-            </TextBox>
-            
-        </StackPanel>
-        <ListView x:Name="LVEvents"
+                        </TextBox>
+
+                    </StackPanel>
+                    <ListView x:Name="LVEvents"
                   Margin="10, 5"
                 SelectionChanged="LVEvents_SelectionChanged"
                BorderThickness="2"
                Grid.Row="1">
-            <ListView.ItemTemplate>
-                <DataTemplate>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
 
-                    <StackPanel Width="Auto">
-                        <TextBlock FontSize="28"
+                                <StackPanel Width="Auto">
+                                    <TextBlock FontSize="28"
                                    FontWeight="Bold"
                              Text="{Binding Name}"/>
-                        <TextBlock Text="{Binding City, StringFormat='Город: {0}'}"
+                                    <TextBlock Text="{Binding City, StringFormat='Город: {0}'}"
                                    FontSize="20"/>
-                        <TextBlock Text="{Binding Description}"
+                                    <TextBlock Text="{Binding Description}"
                                     TextWrapping="Wrap"
                                     />
-                        <TextBlock Text="{Binding StatusEvent.Name}"/>
-                    </StackPanel>
+                                    <TextBlock Text="{Binding StatusEvent.Name}"/>
+                                </StackPanel>
 
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="{x:Type ListViewItem}">
-                    <Setter Property="Margin"
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="Margin"
                     Value="10"/>
-                    <Setter Property="Padding"
+                                <Setter Property="Padding"
                             Value="10"/>
-                    <Setter Property="BorderBrush">
-                        <Setter.Value>
-                            <RadialGradientBrush>
-                                <GradientStop Color="#223d74" Offset="1.0"/>
-                                <GradientStop Color="#4362a1" Offset="0.0"/>
-                            </RadialGradientBrush>
-                        </Setter.Value>
-                    </Setter>
+                                <Setter Property="BorderBrush">
+                                    <Setter.Value>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#223d74" Offset="1.0"/>
+                                            <GradientStop Color="#4362a1" Offset="0.0"/>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
 
 
-                    <Setter Property="Background">
-                        <Setter.Value>
-                            <LinearGradientBrush>
-                                <GradientStop Color="#223d74" Offset="0.0"/>
-                                <GradientStop Color="#4362a1" Offset="1.0"/>
-                            </LinearGradientBrush>
-                        </Setter.Value>
-                    </Setter>
-                    <Setter Property="HorizontalContentAlignment"
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush>
+                                            <GradientStop Color="#223d74" Offset="0.0"/>
+                                            <GradientStop Color="#4362a1" Offset="1.0"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="HorizontalContentAlignment"
                     Value="Stretch"/>
 
-                    <Style.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius"
+                                <Style.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius"
 Value="10"/>
 
-                        </Style>
-                    </Style.Resources>
+                                    </Style>
+                                </Style.Resources>
 
-                </Style>
-            </ListView.ItemContainerStyle>
-        </ListView>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Отзывы">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" 
+                    Margin="20, 5">
+                        <Button x:Name="BDeleteReviews"
+                    Click="BDeleteReviews_Click"
+                    Content="Удалить комментарий"/>
+
+
+
+                        <TextBox x:Name="TBSearchReviews"
+                                VerticalAlignment="Center"
+                                 Margin="10, 5"
+                    materialDesign:HintAssist.Hint="Найти комментарий"
+                    Padding="20, 5"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                TextChanged="TBSearchReviews_TextChanged">
+
+                        </TextBox>
+
+                    </StackPanel>
+                    <ListView x:Name="LVReviews"
+                  Margin="10, 5"
+               Grid.Row="1">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+
+                                <StackPanel Width="Auto">
+                                    <StackPanel Orientation="Horizontal">
+                                    <Border CornerRadius="40"
+                                            
+     Margin="3"
+     Width="50"
+     Height="50"
+     BorderThickness="1">
+                                        <Border.Background>
+                                            <ImageBrush Stretch="Fill"
+                 RenderOptions.BitmapScalingMode="Fant"
+                 ImageSource="{Binding SendMsg.Avatar}"/>
+                                        </Border.Background>
+                                    </Border>
+                                    <TextBlock Text="{Binding SendMsg.Name}"
+                                               FontSize="20"
+                                               Margin="5"
+                                               FontWeight="Bold"
+                                               VerticalAlignment="Center"/>
+                                        
+                                    </StackPanel>
+                                    <materialDesign:RatingBar
+                                              IsReadOnly="True"
+                                              Margin="0"
+                                              Orientation="Horizontal"
+                                              Value="{Binding Rating}" />
+                                    <TextBlock Text="{Binding ContentMsg}"
+                                   FontSize="20"
+                                               Margin="5"/>
+                                  
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="Margin"
+                    Value="10"/>
+                                <Setter Property="Padding"
+                            Value="10"/>
+                                <Setter Property="BorderBrush">
+                                    <Setter.Value>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#223d74" Offset="1.0"/>
+                                            <GradientStop Color="#4362a1" Offset="0.0"/>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush>
+                                            <GradientStop Color="#223d74" Offset="0.0"/>
+                                            <GradientStop Color="#4362a1" Offset="1.0"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="HorizontalContentAlignment"
+                    Value="Stretch"/>
+
+                                <Style.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius"
+Value="10"/>
+
+                                    </Style>
+                                </Style.Resources>
+
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            
+            
+            
+        </TabControl>
     </Grid>
 </Page>

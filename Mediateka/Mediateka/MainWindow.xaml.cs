@@ -1,4 +1,6 @@
-﻿using Mediateka.Pages;
+﻿using Mediateka.Models;
+using Mediateka.Pages;
+using Mediateka.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +36,41 @@ namespace Mediateka
             this.DataContext = null;
             GProfile.Visibility = Visibility.Collapsed;
             MainFrame.Navigate(new LoginPage());
+        }
+
+        private void BAddUser_Click(object sender, RoutedEventArgs e)
+        {
+            new SelectRole().ShowDialog();
+            if (App.SelectRoleReg != null)
+            {
+                if (App.SelectRoleReg.Id == 1)
+                    MainFrame.Navigate(new RegestrationPage(new EventPlanner()));
+                else if (App.SelectRoleReg.Id == 2)
+                    MainFrame.Navigate(new RegestrationPage(new Executor()));
+                else if (App.SelectRoleReg.Id == 3)
+                    MainFrame.Navigate(new RegestrationModerator(new Moderators()));
+
+
+            }
+        }
+
+        private void GProfile_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var contextModerator = this.DataContext as Moderators;
+            if(contextModerator != null)
+            {
+                MainFrame.Navigate(new RegestrationModerator(contextModerator));
+            }
+            else
+            {
+                var contextExecutor = DataContext as Executor;
+                if(contextExecutor!=null)
+                     MainFrame.Navigate(new RegestrationPage(contextExecutor));
+                else
+                    MainFrame.Navigate(new RegestrationPage(DataContext as EventPlanner));
+
+            }
+
         }
     }
 }

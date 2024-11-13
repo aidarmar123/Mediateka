@@ -101,3 +101,5 @@ C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\UsersControls\Sta
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\UsersControls\Stars.baml
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\AddReviews.g.cs
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\AddReviews.baml
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\UnstallFile.g.cs
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\UnstallFile.baml

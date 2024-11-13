@@ -10,7 +10,7 @@ namespace Mediateka.Models
     {
         public string FullName { get => $"{Name} {Surname} {Patronymic}"; }
 
-        public int MediumRating
+        public double MediumRating
         {
             get
             {

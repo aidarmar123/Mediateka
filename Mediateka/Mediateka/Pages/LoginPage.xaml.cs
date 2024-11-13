@@ -48,7 +48,6 @@ namespace Mediateka.Pages
         }
 
         
-        // Обработчик событий для кнопки входа Организатора
         private void BLoginPlanning_Click(object sender, RoutedEventArgs e)
         {
             Password = PBPass.Password;
@@ -78,6 +77,9 @@ namespace Mediateka.Pages
                     App.mainWindow.DataContext = moderator;
                     App.mainWindow.GProfile.Visibility = Visibility.Visible;
 
+                    if (moderator.RoleId == 1)
+                        App.mainWindow.BAddUser.Visibility = Visibility.Visible;
+
                     NavigationService.Navigate(new WaitingEventList());
                 }
                 else
@@ -87,7 +89,6 @@ namespace Mediateka.Pages
                 }
             }
         }
-        // Обработчик событий для кнопки регестрации Организатора
         private void BRegestrationPlanning_Click(object sender, RoutedEventArgs e)
         {
             new SelectRole().ShowDialog();

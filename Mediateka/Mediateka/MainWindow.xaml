@@ -20,11 +20,13 @@
               Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal"
                         Margin="10,5">
                 
+                <StackPanel Orientation="Horizontal"
+                            MouseDown="GProfile_MouseDown">
                 <Border CornerRadius="20"
                         Margin="5"
                         Height="70"
@@ -36,13 +38,24 @@
                 <TextBlock Text="{Binding FullName}"
                            FontSize="24"
                            VerticalAlignment="Center"/>
+                    
+                </StackPanel>
             </StackPanel>
-            <Button x:Name="BExit"
+            <StackPanel
                     Grid.Column="1"
+                VerticalAlignment="Center"
+                    Margin="10">
+                <Button x:Name="BExit"
+                    Margin="3"
                     Click="BExit_Click"
                     Content="Выйти"
-                    Margin="5"
-                    HorizontalAlignment="Right"/>
+                    />
+                <Button x:Name="BAddUser"
+                        Margin="3"
+                        Visibility="Collapsed"
+               Click="BAddUser_Click"
+               Content="Добавить пользователя"/>
+            </StackPanel>
 
         </Grid>
         <Frame x:Name="MainFrame"

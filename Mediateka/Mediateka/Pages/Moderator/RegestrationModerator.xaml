@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:Mediateka.Pages"
       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
       mc:Ignorable="d" 
+      Background="#062949"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RegestrationModerator">
 

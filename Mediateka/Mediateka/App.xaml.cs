@@ -40,6 +40,7 @@ namespace Mediateka
             RegestrDescriptor<Event,MetaEvent>();
             RegestrDescriptor<Reviews,MetaReviews>();
 
+
             ValidEvent();
         }
         //Метод прверяющий статус мероприятия завершено или нет
@@ -50,9 +51,12 @@ namespace Mediateka
                 if (_event.DateTime < DateTime.Now)
                 {
                     _event.StatusId = 4;
-                    Db.SaveChangesAsync();
-                }
                     
+                }
+                if (_event.StatusEvent == null)
+                    _event.StatusEvent = Db.StatusEvent.FirstOrDefault(x => x.Id == _event.Id);
+
+                Db.SaveChangesAsync();
             }
         }
 
@@ -69,6 +73,7 @@ namespace Mediateka
             contextEventPlanner = null;
             contextModerator = null;
             SelectRoleReg = null;
+            mainWindow.BAddUser.Visibility = Visibility.Collapsed;
         }
     }
 }

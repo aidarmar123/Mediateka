@@ -40,10 +40,15 @@ namespace Mediateka.Pages
             }
             else
             {
-                if (contextModerator.Id == 0)
-                    App.Db.Moderators.Add(contextModerator);
-                App.Db.SaveChanges();
-                NavigationService.GoBack();
+
+                if (!IsReapetUser(contextModerator.Login))
+                {
+                    if (contextModerator.Id == 0)
+                        App.Db.Moderators.Add(contextModerator);
+                    App.Db.SaveChanges();
+                    NavigationService.GoBack();
+                }
+               
             }
         }
 
@@ -51,5 +56,19 @@ namespace Mediateka.Pages
         {
             NavigationService.GoBack();
         }
+
+        private bool IsReapetUser(string email)
+        {
+            var moderator = App.Db.Moderators.FirstOrDefault(x => x.Login == email);
+            var executor = App.Db.Executor.FirstOrDefault(x => x.Email == email);
+            var eventPlanner = App.Db.EventPlanner.FirstOrDefault(x => x.Email == email);
+
+            bool isReapet = moderator != null || executor != null || eventPlanner != null;
+            if (isReapet)
+                Xceed.Wpf.Toolkit.MessageBox.Show("Пользователь уже существует");
+
+            return isReapet;
+        }
+
     }
 }

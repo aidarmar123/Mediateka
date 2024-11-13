@@ -82,6 +82,7 @@
           <Property Name="Data" Type="varbinary(max)" Nullable="false" />
           <Property Name="FormatFile" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="NameFile" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CommentFile" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Moderators">
           <Key>
@@ -505,6 +506,7 @@
           <Property Name="Data" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <Property Name="FormatFile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="NameFile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CommentFile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Event" Relationship="Self.FK_MaterialEvent_Event" FromRole="MaterialEvent" ToRole="Event" />
           <NavigationProperty Name="Executor" Relationship="Self.FK_MaterialEvent_Executor" FromRole="MaterialEvent" ToRole="Executor" />
         </EntityType>
@@ -928,6 +930,7 @@
                 <ScalarProperty Name="Data" ColumnName="Data" />
                 <ScalarProperty Name="FormatFile" ColumnName="FormatFile" />
                 <ScalarProperty Name="NameFile" ColumnName="NameFile" />
+                <ScalarProperty Name="CommentFile" ColumnName="CommentFile" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

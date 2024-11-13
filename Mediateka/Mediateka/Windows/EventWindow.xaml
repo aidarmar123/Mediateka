@@ -7,44 +7,68 @@
         xmlns:xcd ="http://schemas.xceed.com/wpf/xaml/toolkit"
         Style="{StaticResource MaterialDesignWindow}"
         mc:Ignorable="d"
+        Background="#062949"
+        MaxHeight="600"
+        MaxWidth="900"
         Title="Мероприятие" MinHeight="450" MinWidth="800">
     <Grid>
         <Grid Margin="5">
-            <ScrollViewer>
-                <StackPanel>
-                    <TextBlock Text="Название"/>
-                    <TextBlock Text="{Binding Name}"/>
-                    <TextBlock Text="Описание"/>
-                    <TextBlock Text="{Binding Description}"/>
-                    <TextBlock Text="Город проведения"/>
-                    <TextBlock Text="{Binding City}"/>
+            <Border CornerRadius="30" 
+         Grid.Row="1"
+ Margin="10"
+ Padding="20"
+ VerticalAlignment="Center"
+ >
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#223d74" Offset="0.0"/>
+                        <GradientStop Color="#4362a1" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <ScrollViewer>
+                    <StackPanel>
+                        <TextBlock Text="Название" 
+                                   FontWeight="ExtraBold"/>
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="Описание"
+                                    FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Description}"/>
+                        <TextBlock Text="Город проведения"
+                                    FontWeight="Bold"/>
+                        <TextBlock Text="{Binding City}"/>
 
-                    <TextBlock Text="Плата"/>
-                    <TextBlock Text="{Binding Salary}"/>
-                    <TextBlock Text="Какие специалисты нужны"/>
-                    <ListBox x:Name="CCBSkills"
+                        <TextBlock Text="Плата"
+                                    FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Salary}"/>
+                        <TextBlock Text="Какие специалисты нужны"
+                                    FontWeight="Bold"/>
+                        <ListBox x:Name="CCBSkills"
                              BorderThickness="1"
-                             BorderBrush="LightGray"
+                             BorderBrush="#4362a1"
                               ItemsSource="{Binding EventSkill}"
                               DisplayMemberPath="Skill.Name"/>
-                    <TextBlock Text="Время проведения"/>
-                    <DatePickerTextBox Text="{Binding DateTime, StringFormat='dd.MM.yyyy  время: MM:mm'}"
+                        <TextBlock Text="Время проведения"
+                                   FontWeight="Bold"/>
+                        <DatePickerTextBox Text="{Binding DateTime, StringFormat='dd.MM.yyyy  время: MM:mm'}"
                                        IsReadOnly="True"
+                                           
                                        />
-                    <TextBlock Text="Крайний срок сдачи"/>
-                    <DatePickerTextBox Text="{Binding Deadline, StringFormat='dd.MM.yyyy'}"
+                        <TextBlock Text="Крайний срок сдачи"
+                                   FontWeight="Bold"/>
+                        <DatePickerTextBox Text="{Binding Deadline, StringFormat='dd.MM.yyyy'}"
                     IsReadOnly="True"/>
-                   
-                    <Button x:Name="BResponse"
+
+                        <Button x:Name="BResponse"
                     Margin="0,5"
                     Content="Откликнуться"
                     Click="BResponse_Click"/>
-                    <Button x:Name="BBack"
+                        <Button x:Name="BBack"
                     Content="Назад"
                     Click="BBack_Click"/>
 
-                </StackPanel>
-            </ScrollViewer>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
         </Grid>
     </Grid>
 </Window>

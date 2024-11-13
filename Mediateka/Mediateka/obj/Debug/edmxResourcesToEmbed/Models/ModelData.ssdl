@@ -77,6 +77,7 @@
     <Property Name="Data" Type="varbinary(max)" Nullable="false" />
     <Property Name="FormatFile" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="NameFile" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CommentFile" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Moderators">
     <Key>

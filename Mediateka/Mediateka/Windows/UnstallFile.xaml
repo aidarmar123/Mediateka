@@ -1,0 +1,32 @@
+﻿<Window x:Class="Mediateka.Windows.UnstallFile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mediateka.Windows"
+            Style="{StaticResource MaterialDesignWindow}"
+    Title="Загрузить файл" MinHeight="200" MinWidth="300"
+    MaxHeight="300" MaxWidth="450">
+
+    <StackPanel VerticalAlignment="Center"
+            
+            Margin="10">
+        <TextBlock Text="Добавить комментарий"
+                   FontWeight="Bold"
+               FontSize="20"/>
+        <TextBox Text="{Binding CommentFile}"
+                 TextWrapping="Wrap"
+                 FontSize="18"
+                 MaxLength="100"/>
+        <TextBlock Text="{Binding NameFile}"
+                   FontSize="18"/>
+        <Button x:Name="BUnstall"
+                Content="Загрузить файл"
+                Click="BUnstall_Click"/>
+        <Button x:Name="BSave"
+            Margin="0, 10"
+            Content="Сохранить"
+            Click="BSave_Click"/>
+
+    </StackPanel>
+</Window>

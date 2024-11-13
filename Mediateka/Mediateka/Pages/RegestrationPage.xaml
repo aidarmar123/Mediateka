@@ -75,7 +75,7 @@ VerticalAlignment="Center"
                     <Button x:Name="Regestr"
                         Click="Regestr_Click"
                             Margin="0,10 , 0 ,5"
-                        Content="Зарегестрироваться"
+                        Content="Сохранить"
                         />
                     <Button x:Name="BBack"
                         Margin="0, 10"

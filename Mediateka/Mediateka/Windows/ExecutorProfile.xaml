@@ -120,8 +120,7 @@ VerticalAlignment="Center"
                                                     Margin="3"
                                                     Width="50"
                                                     Height="50"
-                                                    BorderThickness="1"
-                                                    >
+                                                    BorderThickness="1">
                                                     <Border.Background>
                                                         <ImageBrush Stretch="Fill"
                                                                 RenderOptions.BitmapScalingMode="Fant"

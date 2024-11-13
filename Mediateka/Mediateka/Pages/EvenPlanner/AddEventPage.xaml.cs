@@ -45,18 +45,34 @@ namespace Mediateka.Pages
             }
             else
             {
-                contextEvent.StatusId = 3; // Statusid = 3 => на модерации
-                if (contextEvent.Id == 0)
-                    App.Db.Event.Add(contextEvent);
+                var errorDate = new StringBuilder();
+                if (contextEvent.DateTime < DateTime.Now)
+                    errorDate.AppendLine("Дата проведения должна быть больше " + DateTime.Now.ToString("d"));
 
-                App.Db.SaveChanges();
-                foreach (Skill skill in CCBSkills.SelectedItems)
+                if (contextEvent.Deadline < contextEvent.DateTime)
+                    errorDate.AppendLine("Крайний срок должен быть больше Даты Проведения");
+
+                if (errorDate.Length<=0)
                 {
-                    App.Db.EventSkill.Add(new EventSkill() { SkillId = skill.Id, EventId = contextEvent.Id });
+                    contextEvent.StatusId = 3; // Statusid = 3 => на модерации
+                    if (contextEvent.Id == 0)
+                        App.Db.Event.Add(contextEvent);
+
                     App.Db.SaveChanges();
+                    foreach (Skill skill in CCBSkills.SelectedItems)
+                    {
+                        App.Db.EventSkill.Add(new EventSkill() { SkillId = skill.Id, EventId = contextEvent.Id });
+                        App.Db.SaveChanges();
+                    }
+
+                    NavigationService.GoBack();
+
+                }
+                else
+                {
+                    Xceed.Wpf.Toolkit.MessageBox.Show(errorDate.ToString());
                 }
 
-                NavigationService.GoBack();
             }
         }
     }

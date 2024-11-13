@@ -32,7 +32,9 @@ namespace Mediateka.Pages
 
         private void Refresh()
         {
-            LVEvents.ItemsSource = App.Db.Event.Where(ev=>ev.EventPlannerId == App.contextEventPlanner.Id).ToList();
+            var list  = App.Db.Event.Where(ev => ev.EventPlannerId == App.contextEventPlanner.Id).ToList();
+            
+            LVEvents.ItemsSource = list;
         }
 
         private void BAddEvent_Click(object sender, RoutedEventArgs e)

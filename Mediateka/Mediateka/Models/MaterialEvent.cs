@@ -21,6 +21,7 @@ namespace Mediateka.Models
         public byte[] Data { get; set; }
         public string FormatFile { get; set; }
         public string NameFile { get; set; }
+        public string CommentFile { get; set; }
     
         public virtual Event Event { get; set; }
         public virtual Executor Executor { get; set; }
