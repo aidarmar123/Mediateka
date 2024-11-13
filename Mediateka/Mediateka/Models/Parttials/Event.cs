@@ -62,5 +62,21 @@ namespace Mediateka.Models
                 return true;
             }
         }
+
+        public bool isWork
+        {
+            get
+            {
+                if (App.contextExecutor != null)
+                {
+                    return EventExecutor.FirstOrDefault(x => x.ExecutorId == App.contextExecutor.Id && x.StatusExecutorId == 1) != null;
+                }
+                       
+
+                return false;
+            }
+        }
     }
+
+   
 }

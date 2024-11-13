@@ -95,7 +95,10 @@
                                     <ScrollViewer>
                                         <StackPanel>
 
-                                           
+                                            <Button x:Name="BAddComment"
+                                                    IsEnabled="{Binding isWork}"
+                    Click="BAddComment_Click"
+                    Content="Добавить отзыв"/>
                                             <ListView ItemsSource="{Binding EventPlanner.ReceivingReviews}">
                                                 <ListView.ItemTemplate>
                                                     <DataTemplate>

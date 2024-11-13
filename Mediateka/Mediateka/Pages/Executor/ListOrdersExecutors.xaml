@@ -106,7 +106,8 @@ Value="10"/>
             Content="Добавить материал"/>
 
                     </StackPanel>
-                    <ListView x:Name="LVOrders">
+                    <ListView x:Name="LVOrders"
+                              MouseDoubleClick="LVEvents_MouseDoubleClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
@@ -125,10 +126,10 @@ Value="10"/>
                                               AutoGenerateColumns="False">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="Имя файла"
-                                                                Width="*"
+                                                                
                                                                 Binding="{Binding NameFile}"/>
                                             <DataGridTextColumn Header="Комментарий"
-                                                                Width="*"
+                                                                
                                                                 
                                                                 Binding="{Binding CommentFile}">
                                                 <DataGridTextColumn.ElementStyle>
@@ -138,10 +139,10 @@ Value="10"/>
                                                 </DataGridTextColumn.ElementStyle>
                                             </DataGridTextColumn>
                                             <DataGridTextColumn Header="Дата отправким"
-                                                                Width="*"
+                                                                
                                                                 Binding="{Binding DateTimeSend}"/>
 
-                                            <DataGridTemplateColumn Width="*">
+                                            <DataGridTemplateColumn>
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <Button x:Name="BRemoveFile"
