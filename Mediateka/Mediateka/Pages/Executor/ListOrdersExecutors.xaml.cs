@@ -104,5 +104,13 @@ namespace Mediateka.Pages
                 Refresh();
             }
         }
+
+        private void LVOrders_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (LVOrders.SelectedItem is EventExecutor eventExecutor)
+            {
+                new EventWindow(eventExecutor.Event).ShowDialog();
+            }
+        }
     }
 }

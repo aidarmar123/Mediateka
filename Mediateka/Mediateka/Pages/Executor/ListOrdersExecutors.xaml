@@ -107,7 +107,7 @@ Value="10"/>
 
                     </StackPanel>
                     <ListView x:Name="LVOrders"
-                              MouseDoubleClick="LVEvents_MouseDoubleClick">
+                              MouseDoubleClick="LVOrders_MouseDoubleClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
