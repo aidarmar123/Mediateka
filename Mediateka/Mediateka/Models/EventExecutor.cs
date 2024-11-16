@@ -18,6 +18,7 @@ namespace Mediateka.Models
         public int EventId { get; set; }
         public int ExecutorId { get; set; }
         public int StatusExecutorId { get; set; }
+        public string Comment { get; set; }
     
         public virtual Event Event { get; set; }
         public virtual Executor Executor { get; set; }

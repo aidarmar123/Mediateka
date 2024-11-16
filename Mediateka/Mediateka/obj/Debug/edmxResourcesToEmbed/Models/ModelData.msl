@@ -24,6 +24,7 @@
           <ScalarProperty Name="EventId" ColumnName="EventId" />
           <ScalarProperty Name="ExecutorId" ColumnName="ExecutorId" />
           <ScalarProperty Name="StatusExecutorId" ColumnName="StatusExecutorId" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

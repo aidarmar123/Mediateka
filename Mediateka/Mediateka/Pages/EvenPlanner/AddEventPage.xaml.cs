@@ -23,7 +23,7 @@ namespace Mediateka.Pages
     public partial class AddEventPage : Page
     {
         Event contextEvent;
-        Dictionary<string, double> currencies;
+
         List<string> listCurrency = new List<string>() { "RUB", "USD", "EUR" };
 
         public AddEventPage(Event _event)
@@ -41,7 +41,7 @@ namespace Mediateka.Pages
             NavigationService.GoBack();
         }
 
-        private void BSave_Click(object sender, RoutedEventArgs e)
+        private async void  BSave_Click(object sender, RoutedEventArgs e)
         {
             var error = ValidationLine.ValidationObject(contextEvent);
             if (error.Length > 0)
@@ -60,6 +60,10 @@ namespace Mediateka.Pages
                 if (errorDate.Length <= 0)
                 {
                     contextEvent.StatusId = 3; // Statusid = 3 => на модерации
+
+                    var contextCurrency = await NetManager.Get<Currency>(BCurrency.Content.ToString());
+                    contextEvent.Salary = contextEvent.Salary * contextCurrency.rates.FirstOrDefault(x => x.Key == "RUB").Value;
+
                     if (contextEvent.Id == 0)
                         App.Db.Event.Add(contextEvent);
 
@@ -83,34 +87,31 @@ namespace Mediateka.Pages
 
         private async void BCurrency_ClickAsync(object sender, RoutedEventArgs e)
         {
-            //var currency = await NetManager.Get<Currency>("");
-
-            //currencies = currency.rates;
-             
-
-            //var indexCurrency = listCurrency.IndexOf(BCurrency.Content.ToString());
-            //indexCurrency += 1;
-            //if (indexCurrency >= listCurrency.Count)
-            //    indexCurrency = 0;
 
 
-            //if (contextEvent.Salary > 0)
-            //{
-            //BCurrency.Content = listCurrency[indexCurrency];
-            //    if (indexCurrency != 0)
-            //    {
-            //        contextEvent.Salary =(int)(contextEvent.Salary/ currencies.FirstOrDefault(x => x.Key == listCurrency[indexCurrency]).Value);
-            //        DataContext = null;
-            //        DataContext = contextEvent;
-            //    }
-                
-                    
-            //        contextEvent.Salary = (int)(contextEvent.Salary * currencies.FirstOrDefault(x => x.Key == BCurrency.Content.ToString()).Value);
-            //        DataContext = null;
-            //        DataContext = contextEvent;
-                
-               
-            //}
+
+
+
+
+
+            if (contextEvent.Salary > 0)
+            {
+                var indexCurrency = listCurrency.IndexOf(BCurrency.Content.ToString());
+                indexCurrency += 1;
+                if (indexCurrency >= listCurrency.Count)
+                    indexCurrency = 0;
+                BCurrency.Content = listCurrency[indexCurrency];
+
+
+                var contextCurrency = await NetManager.Get<Currency>(listCurrency[indexCurrency - 1 >= 0 ? indexCurrency - 1 : listCurrency.Count-1]);
+                contextEvent.Salary = contextEvent.Salary * contextCurrency.rates.FirstOrDefault(x => x.Key == BCurrency.Content.ToString()).Value;
+
+                contextEvent.Salary = Math.Round(contextEvent.Salary, 2);
+                DataContext = null;
+                DataContext = contextEvent;
+
+
+            }
 
         }
     }

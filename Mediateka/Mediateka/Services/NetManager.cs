@@ -10,7 +10,7 @@ namespace Mediateka.Services
 {
    public static class NetManager
     {
-        public static readonly string URL = "https://www.cbr-xml-daily.ru/latest.js";
+        public static readonly string URL = "https://open.er-api.com/v6/latest/";
         public static HttpClient httpClient = new HttpClient();
         
         public static async Task<T> Get<T>(string path)

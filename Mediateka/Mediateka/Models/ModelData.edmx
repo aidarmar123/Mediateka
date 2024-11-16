@@ -18,7 +18,7 @@
           <Property Name="StatusId" Type="int" Nullable="false" />
           <Property Name="EventPlannerId" Type="int" Nullable="false" />
           <Property Name="CommentModerator" Type="nvarchar(max)" />
-          <Property Name="Salary" Type="int" Nullable="false" />
+          <Property Name="Salary" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="EventExecutor">
           <Key>
@@ -28,6 +28,7 @@
           <Property Name="EventId" Type="int" Nullable="false" />
           <Property Name="ExecutorId" Type="int" Nullable="false" />
           <Property Name="StatusExecutorId" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="EventPlanner">
           <Key>
@@ -122,7 +123,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="StatusExecutor">
@@ -432,7 +433,7 @@
           <Property Name="StatusId" Type="Int32" Nullable="false" />
           <Property Name="EventPlannerId" Type="Int32" Nullable="false" />
           <Property Name="CommentModerator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Salary" Type="Int32" Nullable="false" />
+          <Property Name="Salary" Type="Double" Nullable="false" />
           <NavigationProperty Name="EventPlanner" Relationship="Self.FK_Event_EventPlanner" FromRole="Event" ToRole="EventPlanner" />
           <NavigationProperty Name="StatusEvent" Relationship="Self.FK_Event_StatusEvent" FromRole="Event" ToRole="StatusEvent" />
           <NavigationProperty Name="EventExecutor" Relationship="Self.FK_EventExecutor_Event" FromRole="Event" ToRole="EventExecutor" />
@@ -447,6 +448,7 @@
           <Property Name="EventId" Type="Int32" Nullable="false" />
           <Property Name="ExecutorId" Type="Int32" Nullable="false" />
           <Property Name="StatusExecutorId" Type="Int32" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Event" Relationship="Self.FK_EventExecutor_Event" FromRole="EventExecutor" ToRole="Event" />
           <NavigationProperty Name="Executor" Relationship="Self.FK_EventExecutor_Executor" FromRole="EventExecutor" ToRole="Executor" />
           <NavigationProperty Name="StatusExecutor" Relationship="Self.FK_EventExecutor_StatusExecutor" FromRole="EventExecutor" ToRole="StatusExecutor" />
@@ -563,7 +565,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Event" Relationship="Self.FK_Event_StatusEvent" FromRole="StatusEvent" ToRole="Event" />
         </EntityType>
@@ -887,6 +889,7 @@
                 <ScalarProperty Name="EventId" ColumnName="EventId" />
                 <ScalarProperty Name="ExecutorId" ColumnName="ExecutorId" />
                 <ScalarProperty Name="StatusExecutorId" ColumnName="StatusExecutorId" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

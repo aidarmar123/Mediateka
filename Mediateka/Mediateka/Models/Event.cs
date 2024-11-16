@@ -25,13 +25,13 @@ namespace Mediateka.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public System.DateTime DateTime { get; set; }
-        public System.DateTime Deadline { get; set; }
+        public System.DateTime DateTime { get; set; } = DateTime.Now.AddDays(1);
+        public System.DateTime Deadline { get; set; }= DateTime.Now.AddDays(2);
         public string City { get; set; }
         public int StatusId { get; set; }
         public int EventPlannerId { get; set; }
         public string CommentModerator { get; set; }
-        public int Salary { get; set; }
+        public double Salary { get; set; }
     
         public virtual EventPlanner EventPlanner { get; set; }
         public virtual StatusEvent StatusEvent { get; set; }

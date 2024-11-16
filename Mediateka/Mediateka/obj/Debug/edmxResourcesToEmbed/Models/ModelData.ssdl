@@ -13,7 +13,7 @@
     <Property Name="StatusId" Type="int" Nullable="false" />
     <Property Name="EventPlannerId" Type="int" Nullable="false" />
     <Property Name="CommentModerator" Type="nvarchar(max)" />
-    <Property Name="Salary" Type="int" Nullable="false" />
+    <Property Name="Salary" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="EventExecutor">
     <Key>
@@ -23,6 +23,7 @@
     <Property Name="EventId" Type="int" Nullable="false" />
     <Property Name="ExecutorId" Type="int" Nullable="false" />
     <Property Name="StatusExecutorId" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="EventPlanner">
     <Key>
@@ -117,7 +118,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="StatusExecutor">
