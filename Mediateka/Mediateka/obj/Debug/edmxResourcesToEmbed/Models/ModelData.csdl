@@ -156,6 +156,13 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="EventExecutor" Relationship="Self.FK_EventExecutor_StatusExecutor" FromRole="StatusExecutor" ToRole="EventExecutor" />
   </EntityType>
+  <EntityType Name="SwearWords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -368,6 +375,7 @@
     <EntitySet Name="Skill" EntityType="Self.Skill" />
     <EntitySet Name="StatusEvent" EntityType="Self.StatusEvent" />
     <EntitySet Name="StatusExecutor" EntityType="Self.StatusExecutor" />
+    <EntitySet Name="SwearWords" EntityType="Self.SwearWords" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="TypeMsg" EntityType="Self.TypeMsg" />
     <AssociationSet Name="FK_Event_EventPlanner" Association="Self.FK_Event_EventPlanner">

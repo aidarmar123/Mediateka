@@ -127,6 +127,13 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="SwearWords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -338,6 +345,7 @@
     <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StatusEvent" EntityType="Self.StatusEvent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StatusExecutor" EntityType="Self.StatusExecutor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SwearWords" EntityType="Self.SwearWords" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeMsg" EntityType="Self.TypeMsg" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Event_EventPlanner" Association="Self.FK_Event_EventPlanner">

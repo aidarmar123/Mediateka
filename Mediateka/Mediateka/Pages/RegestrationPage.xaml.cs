@@ -1,5 +1,5 @@
 ﻿using Mediateka.Models;
-using Mediateka.Service;
+using Mediateka.Services;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -88,8 +88,8 @@ namespace Mediateka.Pages
                 if (contextEventPlanner != null)
                 {
                     isValid = !IsReapetUser(contextEventPlanner.Email);
-                    isValid =isValid && ValidationName(contextEventPlanner.Name, contextEventPlanner.Surname, contextEventPlanner.Patronymic);
-
+                    isValid = isValid && ValidationUser(contextEventPlanner.Name, contextEventPlanner.Surname, contextEventPlanner.Patronymic, contextEventPlanner.Phone, contextEventPlanner.Email);
+                   
                     if (isValid && contextEventPlanner.Id == 0)
                         App.Db.EventPlanner.Add(contextEventPlanner);
                 }
@@ -98,7 +98,8 @@ namespace Mediateka.Pages
 
                     
                     isValid = !IsReapetUser(contextExecutor.Email);
-                    isValid =isValid && ValidationName(contextExecutor.Name, contextExecutor.Surname, contextExecutor.Patronymic);
+                    isValid =isValid && ValidationUser(contextExecutor.Name, contextExecutor.Surname, contextExecutor.Patronymic, contextExecutor.Phone, contextExecutor.Email);
+                    
                     if (isValid && contextExecutor.Id == 0)
                         App.Db.Executor.Add(contextExecutor);
                 }
@@ -122,6 +123,7 @@ namespace Mediateka.Pages
             }
         }
 
+
         private bool IsReapetUser(string email)
         {
             var moderator = App.Db.Moderators.FirstOrDefault(x=>x.Login == email);
@@ -135,13 +137,23 @@ namespace Mediateka.Pages
             return isReapet;
         }
 
-        private bool ValidationName(string name, string surname, string patronymic)
+        private bool ValidationUser(string name, string surname, string patronymic, string phone, string email)
         {
             bool isValidName = !name.Any(char.IsDigit) && !surname.Any(char.IsDigit) && !patronymic.Any(char.IsDigit);
+
+            
             if(!isValidName)
                 Xceed.Wpf.Toolkit.MessageBox.Show("В ФИО нельзя вводить цифры");
 
-            return isValidName;
+            bool isValidNumber = phone.Any(char.IsDigit)&& phone.Length==11;
+            if(!isValidNumber)
+                Xceed.Wpf.Toolkit.MessageBox.Show("Телефон должен состоять из 11 цифр");
+
+            bool isValidEmail = email.Contains("@")&& email.Contains(".");
+            if (!isValidEmail)
+                Xceed.Wpf.Toolkit.MessageBox.Show("Email не действителен");
+
+            return isValidName&&isValidNumber&&isValidEmail;
 
         }
 

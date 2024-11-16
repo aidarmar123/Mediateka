@@ -39,11 +39,6 @@ namespace Mediateka.Pages
             Refresh();
         }
 
-        private void LVEvents_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void BApprove_Click(object sender, RoutedEventArgs e)
         {
             if (LVEvents.SelectedItem is Event _event && _event.StatusId != 4)
@@ -101,9 +96,15 @@ namespace Mediateka.Pages
             }
         }
 
-        private void BAddUser_Click(object sender, RoutedEventArgs e)
+       
+        private void LVEvents_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            if(LVEvents.SelectedItem is Event _event)
+            {
+                var window = new EventWindow(_event);
+                window.BResponse.Visibility = Visibility.Collapsed;
+                window.ShowDialog();
+            }
         }
     }
 }

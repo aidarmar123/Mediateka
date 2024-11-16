@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:Mediateka"
         xmlns:uc="clr-namespace:Mediateka.UsersControls"
         mc:Ignorable="d"
+        Icon="/Resourse/Icon128.ico"
         Style="{StaticResource MaterialDesignWindow}"
-        Title="MainWindow" MinHeight="450" MinWidth="800"
+        Title="Медиатека" MinHeight="450" MinWidth="800"
         MaxHeight="650"
         MaxWidth="900">
     <Grid>
@@ -27,7 +28,12 @@
                 
                 <StackPanel Orientation="Horizontal"
                             MouseDown="GProfile_MouseDown">
-                <Border CornerRadius="20"
+                    <Image Source="/Resourse/Icon128.png"
+                           x:Name="IAdmin"
+                           Visibility="Collapsed"/>
+                    <Border CornerRadius="20"
+                            x:Name="BUser"
+                        Visibility="Collapsed"
                         Margin="5"
                         Height="70"
                         Width="70">

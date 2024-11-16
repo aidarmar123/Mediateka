@@ -12,10 +12,19 @@
 
     <Grid Background="#062949">
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Source="/Resourse/Icon128.png"
+               Width="200"
+               VerticalAlignment="Center"/>
+        
         <Border CornerRadius="30"
+                Grid.Row="1"
                 Margin="10"
                 Padding="20"
-                VerticalAlignment="Center"
+                VerticalAlignment="Top"
                 
                 BorderBrush="Black">
             <Border.Background>

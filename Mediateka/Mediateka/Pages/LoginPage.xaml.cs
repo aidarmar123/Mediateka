@@ -1,4 +1,5 @@
 ﻿using Mediateka.Models;
+using Mediateka.Services;
 using Mediateka.Windows;
 using System;
 using System.Collections.Generic;
@@ -27,16 +28,20 @@ namespace Mediateka.Pages
         public string Login { get; set; }
         public string Password { get; set; }
 
+        
+
         public LoginPage()
         {
             InitializeComponent();
             
             DataContext = this;
             
+            
         }
 
         private bool ValidationLine()
         {
+           
             //Проверяем заполненость полей
             bool isValid = !(string.IsNullOrEmpty(Login) && string.IsNullOrEmpty(Password));
 
@@ -61,6 +66,8 @@ namespace Mediateka.Pages
                     App.contextEventPlanner = eventPlanner;
                     App.mainWindow.DataContext = eventPlanner;
                     App.mainWindow.GProfile.Visibility = Visibility.Visible;
+                    App.mainWindow.BUser.Visibility = Visibility.Visible;
+
                     NavigationService.Navigate(new ListEventPlanner());
                 }
                 else if(executor!=null)
@@ -68,6 +75,7 @@ namespace Mediateka.Pages
                     App.contextExecutor = executor;
                     App.mainWindow.DataContext = executor;
                     App.mainWindow.GProfile.Visibility = Visibility.Visible;
+                    App.mainWindow.BUser.Visibility = Visibility.Visible;
 
                     NavigationService.Navigate(new ListOrdersExecutors());
                 }
@@ -76,6 +84,8 @@ namespace Mediateka.Pages
                     App.contextModerator = moderator;
                     App.mainWindow.DataContext = moderator;
                     App.mainWindow.GProfile.Visibility = Visibility.Visible;
+                    App.mainWindow.IAdmin.Visibility = Visibility.Visible;
+
 
                     if (moderator.RoleId == 1)
                         App.mainWindow.BAddUser.Visibility = Visibility.Visible;

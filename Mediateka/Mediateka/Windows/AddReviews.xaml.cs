@@ -1,9 +1,10 @@
 ﻿using Mediateka.Models;
-using Mediateka.Service;
+using Mediateka.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,19 +24,17 @@ namespace Mediateka.Windows
     {
 
         Reviews contextReview;
-  
+
         public AddReviews(Reviews reviews)
         {
             InitializeComponent();
             contextReview = reviews;
-            
-           
             DataContext = contextReview;
         }
 
         private void BSave_Click(object sender, RoutedEventArgs e)
         {
-            contextReview.Rating =(int)RBRating.Value;
+            contextReview.Rating = (int)RBRating.Value;
             var error = ValidationLine.ValidationObject(contextReview);
             if (error.Length > 0)
             {
@@ -43,10 +42,34 @@ namespace Mediateka.Windows
             }
             else
             {
+                bool isValid = true;
+
+                //ThreadStart start = () =>
+                //                {
+
+                //Thread thread = new Thread(start);
+                //thread.Start();
+
+                //thread.Join();
+                foreach (var word in App.Db.SwearWords.Select(w => w.Name))
+                {
+                    if (contextReview.ContentMsg.Contains(word))
+                    {
+                        MessageBox.Show("Не цензурная лексика");
+                        isValid = false;
+                        break;
+                    }
+                }
+
+            
+            if (isValid)
+            {
+
                 App.Db.Reviews.Add(contextReview);
                 App.Db.SaveChanges();
                 this.Close();
             }
         }
     }
+}
 }

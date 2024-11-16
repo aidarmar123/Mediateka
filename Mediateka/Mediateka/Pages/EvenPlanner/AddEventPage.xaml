@@ -33,13 +33,13 @@
         Padding="20"
         VerticalAlignment="Center"
         >
-                <Border.Background>
-                    <LinearGradientBrush>
-                        <GradientStop Color="#223d74" Offset="0.0"/>
-                        <GradientStop Color="#4362a1" Offset="1.0"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-        <ScrollViewer Margin="10">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#223d74" Offset="0.0"/>
+                    <GradientStop Color="#4362a1" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <ScrollViewer Margin="10">
                 <StackPanel>
                     <TextBlock Text="Название"/>
                     <TextBox Text="{Binding Name}"/>
@@ -49,7 +49,19 @@
                     <TextBox Text="{Binding City}"/>
 
                     <TextBlock Text="Плата"/>
-                    <TextBox Text="{Binding Salary}"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Text="{Binding Salary}"/>
+                        <Button x:Name="BCurrency"
+                                
+                                Grid.Column="1"
+                                Background="Transparent"
+                                BorderThickness="0"
+                               Click="BCurrency_ClickAsync"/>
+                    </Grid>
                     <TextBlock Text="Какие специалисты нужны"/>
                     <xcd:CheckComboBox x:Name="CCBSkills"
                                     BorderThickness="0"
@@ -79,7 +91,7 @@
                         Click="BBack_Click"/>
 
                 </StackPanel>
-        </ScrollViewer>
-            </Border>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </Page>

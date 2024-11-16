@@ -50,7 +50,8 @@
                     </StackPanel>
                     <ListView x:Name="LVEvents"
                   Margin="10, 5"
-                SelectionChanged="LVEvents_SelectionChanged"
+                              MouseDoubleClick="LVEvents_MouseDoubleClick"
+               
                BorderThickness="2"
                Grid.Row="1">
                         <ListView.ItemTemplate>

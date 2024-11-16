@@ -141,6 +141,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="SwearWords">
+      <EntityTypeMapping TypeName="MediatekaModel.SwearWords">
+        <MappingFragment StoreEntitySet="SwearWords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="MediatekaModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">

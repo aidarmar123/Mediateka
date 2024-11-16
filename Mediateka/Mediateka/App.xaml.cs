@@ -74,6 +74,8 @@ namespace Mediateka
             contextModerator = null;
             SelectRoleReg = null;
             mainWindow.BAddUser.Visibility = Visibility.Collapsed;
+            mainWindow.IAdmin.Visibility = Visibility.Collapsed;
+            mainWindow.BUser.Visibility = Visibility.Collapsed;
         }
     }
 }

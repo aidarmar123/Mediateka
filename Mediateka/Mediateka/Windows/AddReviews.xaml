@@ -12,7 +12,9 @@
     <StackPanel VerticalAlignment="Center">
         <TextBlock Text="Добавить комментарий"
                FontSize="20"/>
-        <TextBox Text="{Binding ContentMsg}"/>
+        <TextBox Text="{Binding ContentMsg}"
+                 MaxLength="100"
+                 TextWrapping="Wrap"/>
 
         <TextBlock Text="Оценить" 
                    FontSize="20"/>

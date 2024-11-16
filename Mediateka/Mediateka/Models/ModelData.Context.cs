@@ -38,6 +38,7 @@ namespace Mediateka.Models
         public virtual DbSet<Skill> Skill { get; set; }
         public virtual DbSet<StatusEvent> StatusEvent { get; set; }
         public virtual DbSet<StatusExecutor> StatusExecutor { get; set; }
+        public virtual DbSet<SwearWords> SwearWords { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TypeMsg> TypeMsg { get; set; }
     }

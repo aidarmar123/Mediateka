@@ -1,5 +1,5 @@
 ﻿using Mediateka.Models;
-using Mediateka.Service;
+using Mediateka.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +23,13 @@ namespace Mediateka.Pages
     public partial class AddEventPage : Page
     {
         Event contextEvent;
+        Dictionary<string, double> currencies;
+        List<string> listCurrency = new List<string>() { "RUB", "USD", "EUR" };
+
         public AddEventPage(Event _event)
         {
             InitializeComponent();
+            BCurrency.Content = listCurrency[0];
             CCBSkills.ItemsSource = App.Db.Skill.ToList();
             contextEvent = _event;
             DataContext = contextEvent;
@@ -33,6 +37,7 @@ namespace Mediateka.Pages
 
         private void BBack_Click(object sender, RoutedEventArgs e)
         {
+
             NavigationService.GoBack();
         }
 
@@ -52,7 +57,7 @@ namespace Mediateka.Pages
                 if (contextEvent.Deadline < contextEvent.DateTime)
                     errorDate.AppendLine("Крайний срок должен быть больше Даты Проведения");
 
-                if (errorDate.Length<=0)
+                if (errorDate.Length <= 0)
                 {
                     contextEvent.StatusId = 3; // Statusid = 3 => на модерации
                     if (contextEvent.Id == 0)
@@ -74,6 +79,39 @@ namespace Mediateka.Pages
                 }
 
             }
+        }
+
+        private async void BCurrency_ClickAsync(object sender, RoutedEventArgs e)
+        {
+            //var currency = await NetManager.Get<Currency>("");
+
+            //currencies = currency.rates;
+             
+
+            //var indexCurrency = listCurrency.IndexOf(BCurrency.Content.ToString());
+            //indexCurrency += 1;
+            //if (indexCurrency >= listCurrency.Count)
+            //    indexCurrency = 0;
+
+
+            //if (contextEvent.Salary > 0)
+            //{
+            //BCurrency.Content = listCurrency[indexCurrency];
+            //    if (indexCurrency != 0)
+            //    {
+            //        contextEvent.Salary =(int)(contextEvent.Salary/ currencies.FirstOrDefault(x => x.Key == listCurrency[indexCurrency]).Value);
+            //        DataContext = null;
+            //        DataContext = contextEvent;
+            //    }
+                
+                    
+            //        contextEvent.Salary = (int)(contextEvent.Salary * currencies.FirstOrDefault(x => x.Key == BCurrency.Content.ToString()).Value);
+            //        DataContext = null;
+            //        DataContext = contextEvent;
+                
+               
+            //}
+
         }
     }
 }

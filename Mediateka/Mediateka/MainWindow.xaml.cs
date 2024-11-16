@@ -1,5 +1,6 @@
 ﻿using Mediateka.Models;
 using Mediateka.Pages;
+using Mediateka.Services;
 using Mediateka.Windows;
 using System;
 using System.Collections.Generic;
@@ -26,10 +27,12 @@ namespace Mediateka
         public MainWindow()
         {
             InitializeComponent();
+            
             App.mainWindow = this;
             MainFrame.Navigate(new LoginPage());
         }
 
+       
         private void BExit_Click(object sender, RoutedEventArgs e)
         {
             App.ExitFromApp();

@@ -1,5 +1,5 @@
 ﻿using Mediateka.Models;
-using Mediateka.Service;
+using Mediateka.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
