@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace Mediateka.Models
@@ -74,6 +75,44 @@ namespace Mediateka.Models
                        
 
                 return false;
+            }
+        }
+
+        public Visibility isComment
+        {
+            get
+            {
+                if (CommentExecutor!=null)
+                {
+                        return Visibility.Visible;
+                }
+                return Visibility.Collapsed;
+            }
+        }
+
+        public bool isEnabled
+        {
+            get
+            {
+                if (App.contextExecutor != null)
+                {
+                    return EventExecutor.FirstOrDefault(x => x.ExecutorId == App.contextExecutor.Id && x.StatusExecutorId == 3) == null;
+                }
+                return true;
+            }
+        }
+
+        public string CommentExecutor
+        {
+            get
+            {
+                if(App.contextExecutor != null)
+                {
+                    var comment= EventExecutor.FirstOrDefault(x => x.ExecutorId == App.contextExecutor.Id && x.StatusExecutorId == 3);
+
+                    return comment!=null?comment.Comment:null;
+                }
+                return null;
             }
         }
     }

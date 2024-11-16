@@ -14,7 +14,8 @@
                 Margin="10">
         <TextBlock Text="Добавить комментарий"
                    FontSize="20"/>
-        <TextBox Text="{Binding CommentModerator}"/>
+        <TextBox Text="{Binding CommentModerator}"
+                 Margin="10,0"/>
         <Button x:Name="BSave"
                 Margin="0, 10"
                 Content="Сохранить"

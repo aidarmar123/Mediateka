@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mediateka.Windows"
+        
             Style="{StaticResource MaterialDesignWindow}"
     Title="Загрузить файл" MinHeight="200" MinWidth="300"
     MaxHeight="300" MaxWidth="450">
@@ -13,13 +14,19 @@
             Margin="10">
         <TextBlock Text="Добавить комментарий"
                    FontWeight="Bold"
+                 Margin="5"
+                   
                FontSize="20"/>
         <TextBox Text="{Binding CommentFile}"
                  TextWrapping="Wrap"
                  FontSize="18"
+                 Margin="5"
                  MaxLength="100"/>
         <TextBlock Text="{Binding NameFile}"
-                   FontSize="18"/>
+                   FontSize="18"
+                 Margin="5"
+                   />
+        
         <Button x:Name="BUnstall"
                 Content="Загрузить файл"
                 Click="BUnstall_Click"/>

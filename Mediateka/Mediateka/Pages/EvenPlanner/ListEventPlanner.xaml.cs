@@ -111,7 +111,9 @@ namespace Mediateka.Pages
                     Xceed.Wpf.Toolkit.MessageBox.Show("Исполнителю уже отказано");
                     return;
                 }
+
                 eventExecutor.StatusExecutorId = 3;
+                new AddCommentToExecutor(eventExecutor).ShowDialog();
                 App.Db.SaveChanges();
                 Refresh();
             }

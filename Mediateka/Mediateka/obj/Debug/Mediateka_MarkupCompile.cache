@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\App.xaml
-16243124722
+17-435671183
 21304076067
-53-1273809795
+53382267608
 46-216128362
-MainWindow.xaml;Pages\EvenPlanner\AddEventPage.xaml;Pages\EvenPlanner\ListEventPlanner.xaml;Pages\Executor\ListOrdersExecutors.xaml;Pages\LoginPage.xaml;Pages\Moderator\RegestrationModerator.xaml;Pages\ProfilePage.xaml;Pages\RegestrationPage.xaml;Pages\Moderator\WaitingEventList.xaml;UsersControls\Stars.xaml;Windows\AddCommentEvent.xaml;Windows\AddReviews.xaml;Windows\EventWindow.xaml;Windows\ExecutorProfile.xaml;Windows\SelectRole.xaml;Windows\UnstallFile.xaml;
+MainWindow.xaml;Pages\EvenPlanner\AddEventPage.xaml;Pages\EvenPlanner\ListEventPlanner.xaml;Pages\Executor\ListOrdersExecutors.xaml;Pages\LoginPage.xaml;Pages\Moderator\RegestrationModerator.xaml;Pages\ProfilePage.xaml;Pages\RegestrationPage.xaml;Pages\Moderator\WaitingEventList.xaml;UsersControls\Stars.xaml;Windows\AddCommentEvent.xaml;Windows\AddCommentToExecutor.xaml;Windows\AddReviews.xaml;Windows\EventWindow.xaml;Windows\ExecutorProfile.xaml;Windows\SelectRole.xaml;Windows\UnstallFile.xaml;
 resourse\icon128.png
-True
+False
 

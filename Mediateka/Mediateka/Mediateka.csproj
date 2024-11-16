@@ -245,6 +245,9 @@
     <Compile Include="Windows\AddCommentEvent.xaml.cs">
       <DependentUpon>AddCommentEvent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AddCommentToExecutor.xaml.cs">
+      <DependentUpon>AddCommentToExecutor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AddReviews.xaml.cs">
       <DependentUpon>AddReviews.xaml</DependentUpon>
     </Compile>
@@ -309,6 +312,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AddCommentEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddCommentToExecutor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

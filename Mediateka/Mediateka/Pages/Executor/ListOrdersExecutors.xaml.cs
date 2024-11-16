@@ -33,7 +33,7 @@ namespace Mediateka.Pages
 
         private void Refresh()
         {
-            LVEvents.ItemsSource = App.Db.Event.Where(ev => ev.StatusId == 1 && App.Db.EventExecutor.FirstOrDefault(x => x.ExecutorId == App.contextExecutor.Id && x.StatusExecutorId == 1 && x.EventId == ev.Id) ==null).ToList();
+            LVEvents.ItemsSource = App.Db.Event.Where(ev => ev.StatusId == 1).ToList();
             LVOrders.ItemsSource = App.Db.EventExecutor.Where(x=>x.ExecutorId == App.contextExecutor.Id && x.StatusExecutorId==1).ToList();
             
         }
@@ -44,8 +44,7 @@ namespace Mediateka.Pages
             if (contextEvent != null)
             {
                 //Проверяем отликнулься ли уже пользователь
-                
-
+             
                 var eventExecutor = new EventExecutor()
                 {
                     ExecutorId = App.contextExecutor.Id,
@@ -54,6 +53,7 @@ namespace Mediateka.Pages
                 };
                 App.Db.EventExecutor.Add(eventExecutor);
                 App.Db.SaveChanges();
+                Refresh();
             }
         }
 

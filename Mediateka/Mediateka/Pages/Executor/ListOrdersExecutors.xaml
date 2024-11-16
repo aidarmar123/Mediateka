@@ -47,6 +47,8 @@
                                     <TextBlock Text="{Binding Description}"                                               FontSize="18"
                                 TextWrapping="Wrap"
                                 />
+                                    <TextBlock Visibility="{Binding isComment}"
+                                               Text="{Binding CommentExecutor, StringFormat='Причина отказа: {0}'}"/>
                                     <StackPanel>
                                         <Button x:Name="BResponse"
                                                 IsEnabled="{Binding IsNotResponseExecutor}"
@@ -98,7 +100,12 @@ Value="10"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Одобреные заказы">
-                <StackPanel>
+              
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="BUpload"
                                 Margin="5,0"
@@ -106,7 +113,9 @@ Value="10"/>
             Content="Добавить материал"/>
 
                     </StackPanel>
+                    
                     <ListView x:Name="LVOrders"
+                            Grid.Row="1"
                               MouseDoubleClick="LVOrders_MouseDoubleClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -192,7 +201,9 @@ Value="10"/>
                             </Style>
                         </ListView.ItemContainerStyle>
                     </ListView>
-                </StackPanel>
+             
+                </Grid>
+               
             </TabItem>
         </TabControl>
     </Grid>

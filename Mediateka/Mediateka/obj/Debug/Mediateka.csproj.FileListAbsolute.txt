@@ -141,3 +141,5 @@ C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\bin\Debug\SharpVectors.Mode
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\bin\Debug\SharpVectors.Rendering.Gdi.xml
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\bin\Debug\SharpVectors.Rendering.Wpf.xml
 C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\bin\Debug\SharpVectors.Runtime.Wpf.xml
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\AddCommentToExecutor.g.cs
+C:\Users\Aidar\Desktop\Mediateka\Mediateka\Mediateka\obj\Debug\Windows\AddCommentToExecutor.baml
