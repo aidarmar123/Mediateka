@@ -23,11 +23,12 @@ namespace Mediateka.Windows
     public partial class UnstallFile : Window
     {
         EventExecutor contextEventExecutor;
-        MaterialEvent contextMaterialEvent= new MaterialEvent();
-
-        public UnstallFile(Models.EventExecutor eventExecutor)
+        MaterialEvent contextMaterialEvent = new MaterialEvent();
+        Executor contextExecutor;
+        public UnstallFile(Models.EventExecutor eventExecutor, Executor executor = null)
         {
             InitializeComponent();
+            contextExecutor = executor;
             contextEventExecutor = eventExecutor;
             DataContext = contextMaterialEvent;
         }
@@ -42,16 +43,17 @@ namespace Mediateka.Windows
                     CommentFile = contextMaterialEvent.CommentFile,
                     DateTimeSend = DateTime.Now,
                     NameFile = openFile.SafeFileName,
-                    EventId = contextEventExecutor.EventId,
-                    ExecutorId = contextEventExecutor.ExecutorId,
+                    ExecutorId = contextEventExecutor != null ? contextEventExecutor.ExecutorId : contextExecutor.Id,
                     FormatFile = System.IO.Path.GetExtension(openFile.FileName),
                     Data = File.ReadAllBytes(openFile.FileName)
                 };
+                if(contextEventExecutor!=null)
+                    contextMaterialEvent.EventId = contextEventExecutor.EventId;
                 DataContext = null;
-                DataContext= contextMaterialEvent;
+                DataContext = contextMaterialEvent;
 
-                
-                
+
+
 
             }
         }

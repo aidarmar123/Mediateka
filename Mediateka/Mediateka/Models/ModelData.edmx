@@ -77,7 +77,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EventId" Type="int" Nullable="false" />
+          <Property Name="EventId" Type="int" />
           <Property Name="DateTimeSend" Type="datetime" Nullable="false" />
           <Property Name="ExecutorId" Type="int" Nullable="false" />
           <Property Name="Data" Type="varbinary(max)" Nullable="false" />
@@ -266,7 +266,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MaterialEvent_Event">
-          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
           <End Role="MaterialEvent" Type="Self.MaterialEvent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Event">
@@ -510,7 +510,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EventId" Type="Int32" Nullable="false" />
+          <Property Name="EventId" Type="Int32" />
           <Property Name="DateTimeSend" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ExecutorId" Type="Int32" Nullable="false" />
           <Property Name="Data" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
@@ -651,7 +651,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MaterialEvent_Event">
-          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
           <End Role="MaterialEvent" Type="Self.MaterialEvent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Event">

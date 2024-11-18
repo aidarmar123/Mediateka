@@ -15,7 +15,7 @@ namespace Mediateka.Models
     public partial class MaterialEvent
     {
         public int Id { get; set; }
-        public int EventId { get; set; }
+        public Nullable<int> EventId { get; set; }
         public System.DateTime DateTimeSend { get; set; }
         public int ExecutorId { get; set; }
         public byte[] Data { get; set; }

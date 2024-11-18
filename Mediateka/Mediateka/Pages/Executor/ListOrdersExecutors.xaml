@@ -134,7 +134,7 @@ Value="10"/>
                                     <TextBlock Text="{Binding Event.DateTime, StringFormat='Дата dd.MM.yyyy'}"/>
                                     <TextBlock Text="{Binding Event.DateTime, StringFormat='Время HH:mm'}"/>
 
-                                    <TextBlock Text="{Binding Event.Deadline, StringFormat='Срок сдачи dd.MM.yyyy'}"/>
+                                    <TextBlock Text="{Binding Event.Deadline, StringFormat='Срок сдачи dd.MM.yyyy до HH:mm'}"/>
 
                                     <DataGrid ItemsSource="{Binding Event.ContextMaterialEvent}"
                                               Margin="10"

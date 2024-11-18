@@ -76,12 +76,16 @@ namespace Mediateka.Pages
 
         private void DGExecutors_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            var executor = ((sender as DataGrid).SelectedItem as EventExecutor).Executor;
+           
+            if((sender as DataGrid).SelectedItem is EventExecutor eventExecutor)
+            {
+                var executor  = eventExecutor.Executor;
             var contextEvent = (sender as DataGrid).DataContext as Event; 
 
             if(executor != null && contextEvent!=null)
             {
                 new ExecutorProfile(executor, contextEvent).ShowDialog(); 
+            }
             }
         }
 

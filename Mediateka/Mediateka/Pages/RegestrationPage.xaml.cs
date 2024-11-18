@@ -1,5 +1,6 @@
 ﻿using Mediateka.Models;
 using Mediateka.Services;
+using Mediateka.Windows;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -92,7 +93,7 @@ namespace Mediateka.Pages
                 if (contextEventPlanner != null)
                 {
                     if (startEmail != contextEventPlanner.Email)
-                        isValid = IsReapetUser(contextEventPlanner.Email);
+                        isValid = !IsReapetUser(contextEventPlanner.Email);
 
                     isValid = isValid && ValidationUser(contextEventPlanner.Name, contextEventPlanner.Surname, contextEventPlanner.Patronymic, contextEventPlanner.Phone, contextEventPlanner.Email);
 
@@ -102,7 +103,7 @@ namespace Mediateka.Pages
                 else if (contextExecutor != null)
                 {
                     if (startEmail != contextExecutor.Email)
-                        isValid = IsReapetUser(contextExecutor.Email);
+                        isValid = !IsReapetUser(contextExecutor.Email);
                     isValid = isValid && ValidationUser(contextExecutor.Name, contextExecutor.Surname, contextExecutor.Patronymic, contextExecutor.Phone, contextExecutor.Email);
 
                     if (isValid && contextExecutor.Id == 0)
@@ -111,6 +112,7 @@ namespace Mediateka.Pages
                 if (isValid)
                 {
                     App.Db.SaveChanges();
+                    App.mainWindow.Refresh();
                     if (contextExecutor != null)
                     {
                         foreach (Skill skill in CCBSkils.SelectedItems)
@@ -166,6 +168,39 @@ namespace Mediateka.Pages
         {
             NavigationService.GoBack();
 
+        }
+
+        private void BAddFile_Click(object sender, RoutedEventArgs e)
+        {
+
+            new UnstallFile(null, contextExecutor).ShowDialog();
+            DataContext = null;
+            DataContext = contextExecutor;
+        }
+
+        private void BDeleteFile_Click(object sender, RoutedEventArgs e)
+        {
+            if (LBPortfolio.SelectedItem is MaterialEvent material)
+            {
+                App.Db.MaterialEvent.Remove(material);
+                App.Db.SaveChanges();
+                DataContext = null;
+                DataContext = contextExecutor;
+            }
+        }
+
+        private void BInstallile_Click(object sender, RoutedEventArgs e)
+        {
+            if (LBPortfolio.SelectedItem is MaterialEvent material)
+            {
+                var saveFile = new SaveFileDialog() { Filter = $".{material.FormatFile} | *.{material.FormatFile};" };
+                if (saveFile.ShowDialog().GetValueOrDefault())
+                {
+                    var file = File.Create(saveFile.FileName);
+                    file.Close();
+                    File.WriteAllBytes(saveFile.FileName, material.Data);
+                }
+            }
         }
     }
 }

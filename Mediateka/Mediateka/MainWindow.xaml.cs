@@ -27,12 +27,12 @@ namespace Mediateka
         public MainWindow()
         {
             InitializeComponent();
-            
+
             App.mainWindow = this;
             MainFrame.Navigate(new LoginPage());
         }
 
-       
+
         private void BExit_Click(object sender, RoutedEventArgs e)
         {
             App.ExitFromApp();
@@ -60,22 +60,48 @@ namespace Mediateka
         private void GProfile_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var contextModerator = this.DataContext as Moderators;
-            if(contextModerator != null)
+            if (contextModerator != null)
             {
                 MainFrame.Navigate(new RegestrationModerator(contextModerator));
             }
             else
             {
-                if(DataContext is Executor executor)
-                    MainFrame.Navigate(new RegestrationPage(executor));
-                else if(DataContext is EventPlanner eventPlanner)
+                if (DataContext is Executor executor)
+                {
+                    var profile = new RegestrationPage(executor);
+                    profile.ExPortfolio.Visibility = Visibility.Visible;
+                    MainFrame.Navigate(profile);
+
+                }
+
+                else if (DataContext is EventPlanner eventPlanner)
+                {
                     MainFrame.Navigate(new RegestrationPage(eventPlanner));
+
+                }
 
 
             }
 
+            Refresh();
         }
 
- 
+        public void Refresh()
+        {
+            DataContext = null;
+            if (App.contextExecutor != null)
+            {
+                DataContext = App.contextExecutor;
+            }
+            else if (App.contextEventPlanner != null)
+            {
+                DataContext = App.contextEventPlanner;
+            }
+            else if (App.contextModerator != null)
+            {
+                DataContext = App.contextModerator;
+            }
+
+        }
     }
 }

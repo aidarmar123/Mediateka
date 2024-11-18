@@ -23,11 +23,13 @@ namespace Mediateka.Pages
     public partial class RegestrationModerator : Page
     {
         Moderators contextModerator;
+        string startLogin;
         public RegestrationModerator(Models.Moderators moderators)
         {
             InitializeComponent();
             CbRole.ItemsSource = App.Db.Role.ToList();
             contextModerator = moderators;
+            startLogin =contextModerator.Login;
             DataContext = contextModerator;
         }
 
@@ -41,11 +43,12 @@ namespace Mediateka.Pages
             else
             {
 
-                if (!IsReapetUser(contextModerator.Login))
+                if (!IsReapetUser(contextModerator.Login)||startLogin==contextModerator.Login)
                 {
                     if (contextModerator.Id == 0)
                         App.Db.Moderators.Add(contextModerator);
                     App.Db.SaveChanges();
+                    App.mainWindow.Refresh();
                     NavigationService.GoBack();
                 }
                

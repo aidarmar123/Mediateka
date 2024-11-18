@@ -64,6 +64,53 @@ VerticalAlignment="Center"
 
                     <TextBlock Text="Password"/>
                     <TextBox Text="{Binding Password}"/>
+                    <Expander Header="Портфолио"
+                              x:Name="ExPortfolio"
+                              
+                              Background="Transparent">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                        
+                        <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BAddFile"
+                                    Click="BAddFile_Click"
+                                        Margin="5"
+                                    Content="Добавить"/>
+                            <Button x:Name="BDeleteFile"
+                                        Margin="5"
+                                    Click="BDeleteFile_Click"
+                                    Content="Удалить"/>
+                            <Button x:Name="BInstallile"
+                                        Margin="5"
+                                    Click="BInstallile_Click"
+                                    Content="Скачать"/>
+                            
+                            </StackPanel>
+                        <ListView x:Name="LBPortfolio"
+                                  Grid.Row="1"
+     ItemsSource="{Binding MaterialEvent}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                     <Grid>
+                                            <TextBlock Text="{Binding NameFile}"/>
+                                        
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment"
+                Value="Stretch"/>
+                                    <Setter Property="Margin"
+                        Value="5"/>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                        </ListView>
+                        </Grid>
+                    </Expander>
                     <StackPanel x:Name="SPSkillsExecutor"
             Visibility="Collapsed">
                         <TextBlock Text="Твои навыки"/>
