@@ -17,5 +17,14 @@ namespace Mediateka.Models
                 return Reviews.Where(x => x.TypeMsgId == 1).ToList();
             }
         }
+        public double MediumRating
+        {
+            get
+            {
+                if (ReceivingReviews.Count > 0)
+                    return ReceivingReviews.Select(x => x.Rating).Sum() / ReceivingReviews.Count;
+                return 0;
+            }
+        }
     }
 }

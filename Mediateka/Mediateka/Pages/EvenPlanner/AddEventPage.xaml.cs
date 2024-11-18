@@ -88,12 +88,6 @@ namespace Mediateka.Pages
         private async void BCurrency_ClickAsync(object sender, RoutedEventArgs e)
         {
 
-
-
-
-
-
-
             if (contextEvent.Salary > 0)
             {
                 var indexCurrency = listCurrency.IndexOf(BCurrency.Content.ToString());

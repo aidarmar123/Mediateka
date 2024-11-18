@@ -115,6 +115,14 @@ namespace Mediateka.Models
                 return null;
             }
         }
+
+        public string SearchText
+        {
+            get
+            {
+                return Name+City+Description;
+            }
+        }
     }
 
    

@@ -9,6 +9,7 @@
         Icon="/Resourse/Icon128.ico"
         Style="{StaticResource MaterialDesignWindow}"
         Title="Медиатека" MinHeight="450" MinWidth="800"
+       
         MaxHeight="650"
         MaxWidth="900">
     <Grid>

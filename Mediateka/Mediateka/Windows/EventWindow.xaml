@@ -41,7 +41,19 @@
 
                         <TextBlock Text="Плата"
                                     FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Salary}"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Text="{Binding Salary}"/>
+                            <Button x:Name="BCurrency"
+            
+            Grid.Column="1"
+            Background="Transparent"
+            BorderThickness="0"
+           Click="BCurrency_ClickAsync"/>
+                        </Grid>
                         <TextBlock Text="Какие специалисты нужны"
                                     FontWeight="Bold"/>
                         <ListBox x:Name="CCBSkills"

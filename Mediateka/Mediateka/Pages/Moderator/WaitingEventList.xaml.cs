@@ -31,7 +31,7 @@ namespace Mediateka.Pages
         private void Refresh()
         {
             LVEvents.ItemsSource = App.Db.Event.OrderByDescending(ev => ev.StatusId == 3).ToList();
-            LVReviews.ItemsSource= App.Db.Reviews.ToList();
+            LVReviews.ItemsSource = App.Db.Reviews.ToList();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -51,7 +51,7 @@ namespace Mediateka.Pages
 
         private void BNotApprove_Click(object sender, RoutedEventArgs e)
         {
-            if (LVEvents.SelectedItem is Event _event && _event.StatusId!=4)
+            if (LVEvents.SelectedItem is Event _event && _event.StatusId != 4)
             {
                 _event.StatusId = 2;
                 new AddCommentEvent(_event).ShowDialog();
@@ -88,22 +88,31 @@ namespace Mediateka.Pages
 
         private void BDeleteReviews_Click(object sender, RoutedEventArgs e)
         {
-            if(LVReviews.SelectedItem is Reviews review)
+            if (LVReviews.SelectedItem is Reviews review)
             {
                 App.Db.Reviews.Remove(review);
-                App.Db.SaveChanges();   
+                App.Db.SaveChanges();
                 Refresh();
             }
         }
 
-       
+
         private void LVEvents_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if(LVEvents.SelectedItem is Event _event)
+            if (LVEvents.SelectedItem is Event _event)
             {
-                var window = new EventWindow(_event);
-                window.BResponse.Visibility = Visibility.Collapsed;
-                window.ShowDialog();
+
+                if (App.contextModerator.RoleId == 2)
+                {
+
+                    var window = new EventWindow(_event);
+                    window.BResponse.Visibility = Visibility.Collapsed;
+                    window.ShowDialog();
+                }
+                else if (App.contextModerator.RoleId == 1)
+                {
+                    NavigationService.Navigate(new AddEventPage(_event));
+                }
             }
         }
     }

@@ -26,24 +26,28 @@ namespace Mediateka.Pages
     {
         EventPlanner contextEventPlanner;
         Executor contextExecutor;
+        string startEmail;
 
-       
-        public RegestrationPage(Object user)
+
+        public RegestrationPage(EventPlanner user)
         {
             InitializeComponent();
-            if (user.GetType() == typeof(EventPlanner))
-            {
-                contextEventPlanner = user as EventPlanner;
-                DataContext = contextEventPlanner;
-            }
-            else if (user.GetType() == typeof(Executor))
-            {
-                SPSkillsExecutor.Visibility = Visibility.Visible;
-                CCBSkils.ItemsSource = App.Db.Skill.ToList();
-                contextExecutor = user as Executor;
-                DataContext = contextExecutor;
-            }
 
+            contextEventPlanner = user;
+            startEmail = user.Email;
+            DataContext = contextEventPlanner;
+
+
+        }
+        public RegestrationPage(Executor user)
+        {
+            InitializeComponent();
+
+            SPSkillsExecutor.Visibility = Visibility.Visible;
+            CCBSkils.ItemsSource = App.Db.Skill.ToList();
+            contextExecutor = user;
+            startEmail = user.Email;
+            DataContext = contextExecutor;
 
         }
 
@@ -84,22 +88,23 @@ namespace Mediateka.Pages
             }
             else
             {
-                bool isValid = false;
+                bool isValid = true;
                 if (contextEventPlanner != null)
                 {
-                    isValid = !IsReapetUser(contextEventPlanner.Email);
+                    if (startEmail != contextEventPlanner.Email)
+                        isValid = IsReapetUser(contextEventPlanner.Email);
+
                     isValid = isValid && ValidationUser(contextEventPlanner.Name, contextEventPlanner.Surname, contextEventPlanner.Patronymic, contextEventPlanner.Phone, contextEventPlanner.Email);
-                   
+
                     if (isValid && contextEventPlanner.Id == 0)
                         App.Db.EventPlanner.Add(contextEventPlanner);
                 }
                 else if (contextExecutor != null)
                 {
+                    if (startEmail != contextExecutor.Email)
+                        isValid = IsReapetUser(contextExecutor.Email);
+                    isValid = isValid && ValidationUser(contextExecutor.Name, contextExecutor.Surname, contextExecutor.Patronymic, contextExecutor.Phone, contextExecutor.Email);
 
-                    
-                    isValid = !IsReapetUser(contextExecutor.Email);
-                    isValid =isValid && ValidationUser(contextExecutor.Name, contextExecutor.Surname, contextExecutor.Patronymic, contextExecutor.Phone, contextExecutor.Email);
-                    
                     if (isValid && contextExecutor.Id == 0)
                         App.Db.Executor.Add(contextExecutor);
                 }
@@ -118,7 +123,7 @@ namespace Mediateka.Pages
                     Xceed.Wpf.Toolkit.MessageBox.Show("Данные успешно сохранены");
                     NavigationService.GoBack();
                 }
-                
+
 
             }
         }
@@ -126,14 +131,14 @@ namespace Mediateka.Pages
 
         private bool IsReapetUser(string email)
         {
-            var moderator = App.Db.Moderators.FirstOrDefault(x=>x.Login == email);
-            var executor= App.Db.Executor.FirstOrDefault(x=>x.Email == email);
-            var eventPlanner = App.Db.EventPlanner.FirstOrDefault(x=>x.Email == email);
+            var moderator = App.Db.Moderators.FirstOrDefault(x => x.Login == email);
+            var executor = App.Db.Executor.FirstOrDefault(x => x.Email == email);
+            var eventPlanner = App.Db.EventPlanner.FirstOrDefault(x => x.Email == email);
 
             bool isReapet = moderator != null || executor != null || eventPlanner != null;
             if (isReapet)
                 Xceed.Wpf.Toolkit.MessageBox.Show("Пользователь уже существует");
-            
+
             return isReapet;
         }
 
@@ -141,19 +146,19 @@ namespace Mediateka.Pages
         {
             bool isValidName = !name.Any(char.IsDigit) && !surname.Any(char.IsDigit) && !patronymic.Any(char.IsDigit);
 
-            
-            if(!isValidName)
+
+            if (!isValidName)
                 Xceed.Wpf.Toolkit.MessageBox.Show("В ФИО нельзя вводить цифры");
 
-            bool isValidNumber = phone.Any(char.IsDigit)&& phone.Length==11;
-            if(!isValidNumber)
+            bool isValidNumber = phone.Any(char.IsDigit) && phone.Length == 11;
+            if (!isValidNumber)
                 Xceed.Wpf.Toolkit.MessageBox.Show("Телефон должен состоять из 11 цифр");
 
-            bool isValidEmail = email.Contains("@")&& email.Contains(".");
+            bool isValidEmail = email.Contains("@") && email.Contains(".");
             if (!isValidEmail)
                 Xceed.Wpf.Toolkit.MessageBox.Show("Email не действителен");
 
-            return isValidName&&isValidNumber&&isValidEmail;
+            return isValidName && isValidNumber && isValidEmail;
 
         }
 

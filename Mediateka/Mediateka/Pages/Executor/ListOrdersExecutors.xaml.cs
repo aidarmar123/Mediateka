@@ -25,6 +25,7 @@ namespace Mediateka.Pages
     /// </summary>
     public partial class ListOrdersExecutors : Page
     {
+        List<Event> listEvent = App.Db.Event.Where(ev => ev.StatusId == 1).ToList();
         public ListOrdersExecutors()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace Mediateka.Pages
 
         private void Refresh()
         {
-            LVEvents.ItemsSource = App.Db.Event.Where(ev => ev.StatusId == 1).ToList();
+            LVEvents.ItemsSource = listEvent;
             LVOrders.ItemsSource = App.Db.EventExecutor.Where(x=>x.ExecutorId == App.contextExecutor.Id && x.StatusExecutorId==1).ToList();
             
         }
@@ -59,6 +60,9 @@ namespace Mediateka.Pages
 
         private void TBSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
+            listEvent = App.Db.Event.Where(ev => ev.StatusId == 1).ToList();
+            listEvent = listEvent.Where(ev => ev.EventPlanner.MediumRating >= RatingBar.Value).ToList();
+
             var text = TBSearch.Text;
             if (string.IsNullOrEmpty(text))
             {
@@ -66,7 +70,7 @@ namespace Mediateka.Pages
             }
             else
             {
-                LVEvents.ItemsSource = App.Db.Event.Where(ev => ev.StatusId ==1 && ev.Name.Contains(text)).ToList();
+                LVEvents.ItemsSource = listEvent.Where(ev=>ev.SearchText.Contains(text)).ToList();
             }
         }
 
@@ -111,6 +115,16 @@ namespace Mediateka.Pages
             {
                 new EventWindow(eventExecutor.Event).ShowDialog();
             }
+        }
+
+        private void RatingBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            listEvent = App.Db.Event.Where(ev => ev.StatusId == 1).ToList();
+            listEvent = listEvent.Where(ev => ev.EventPlanner.MediumRating >= RatingBar.Value).ToList();
+            if (!string.IsNullOrEmpty(TBSearch.Text))
+                listEvent = listEvent.Where(ev=>ev.SearchText.Contains(TBSearch.Text)).ToList();
+
+            LVEvents.ItemsSource = listEvent;
         }
     }
 }

@@ -42,6 +42,7 @@
                      TextChanged="TBSearch_TextChanged">
 
                         </TextBox>
+                       
                     </StackPanel>
                     <ScrollViewer Grid.Row="1"
                       Margin="5">

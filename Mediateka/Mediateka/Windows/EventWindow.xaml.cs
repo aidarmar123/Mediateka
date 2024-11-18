@@ -1,4 +1,5 @@
 ﻿using Mediateka.Models;
+using Mediateka.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,14 @@ namespace Mediateka.Windows
     public partial class EventWindow : Window
     {
         Event contextEvent;
+        double salaryRUB;
+        List<string> listCurrency = new List<string>() { "RUB", "USD", "EUR" };
         public EventWindow(Models.Event _event)
         {
             InitializeComponent();
+            BCurrency.Content = listCurrency[0];
             contextEvent = _event;
+            salaryRUB = contextEvent.Salary;
             DataContext = contextEvent;
         }
 
@@ -68,6 +73,37 @@ namespace Mediateka.Windows
             new AddReviews(review).ShowDialog();
             DataContext = null;
             DataContext = contextEvent;
+        }
+        private async void BCurrency_ClickAsync(object sender, RoutedEventArgs e)
+        {
+
+            if (contextEvent.Salary > 0)
+            {
+                var indexCurrency = listCurrency.IndexOf(BCurrency.Content.ToString());
+                indexCurrency += 1;
+                if (indexCurrency >= listCurrency.Count)
+                    indexCurrency = 0;
+
+                BCurrency.Content = listCurrency[indexCurrency];
+
+                if (indexCurrency == 0)
+                {
+                    contextEvent.Salary = salaryRUB;
+                }
+                else
+                {
+
+                    var contextCurrency = await NetManager.Get<Currency>(listCurrency[indexCurrency - 1 >= 0 ? indexCurrency - 1 : listCurrency.Count - 1]);
+                    contextEvent.Salary = contextEvent.Salary * contextCurrency.rates.FirstOrDefault(x => x.Key == BCurrency.Content.ToString()).Value * 0.9;
+                }
+
+                contextEvent.Salary = Math.Round(contextEvent.Salary, 2);
+                DataContext = null;
+                DataContext = contextEvent;
+
+
+            }
+
         }
     }
 }

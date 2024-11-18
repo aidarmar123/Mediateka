@@ -32,6 +32,14 @@
               TextChanged="TBSearch_TextChanged">
 
                         </TextBox>
+                        <TextBlock Text="Рейтинг организатора"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center"/>
+                        <materialDesign:RatingBar
+                            x:Name="RatingBar"
+                            
+                            ValueChanged="RatingBar_ValueChanged"
+                            VerticalAlignment="Center"/>
                     </StackPanel>
                     <ListView x:Name="LVEvents"
                MouseDoubleClick="LVEvents_MouseDoubleClick"
