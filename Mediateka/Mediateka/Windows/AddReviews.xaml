@@ -8,7 +8,8 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Mediateka.Windows"
         mc:Ignorable="d"
-        Title="Добавить отзыв" Height="450" Width="800">
+        Icon="/Resourse/Icon128.ico"
+        Title="Добавить отзыв" MinHeight="150" MinWidth="400">
     <StackPanel VerticalAlignment="Center">
         <TextBlock Text="Добавить комментарий"
                FontSize="20"/>

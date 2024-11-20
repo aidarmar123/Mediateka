@@ -8,6 +8,7 @@
         xmlns:uc="clr-namespace:Mediateka.UsersControls"
         Style="{StaticResource MaterialDesignWindow}"
         mc:Ignorable="d"
+        Icon="/Resourse/Icon128.ico"
         Background="#062949"
         Title="Профиль исполнителя" MinHeight="450" MinWidth="800"
          MaxHeight="550"

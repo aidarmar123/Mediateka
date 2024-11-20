@@ -7,7 +7,7 @@
         xmlns:xcd ="http://schemas.xceed.com/wpf/xaml/toolkit"
         Style="{StaticResource MaterialDesignWindow}"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      
+      Icon="/Resourse/Icon128.ico"
         mc:Ignorable="d"
         Background="#062949"
         MaxHeight="600"

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mediateka.Windows"
         Style="{StaticResource MaterialDesignWindow}"
-        
+        Icon="/Resourse/Icon128.ico"
         mc:Ignorable="d"
-        Title="AddCommentToExecutor" MinHeight="150" MinWidth="300"
+        Title="Добавить причину" MinHeight="150" MinWidth="300"
         MaxHeight="300" MaxWidth="600">
     <StackPanel VerticalAlignment="Center"
              Margin="10">

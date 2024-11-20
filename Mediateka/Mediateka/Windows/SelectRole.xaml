@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Mediateka.Windows"
         Style="{StaticResource MaterialDesignWindow}"
         mc:Ignorable="d"
+        Icon="/Resourse/Icon128.ico"
         Title="Выбрать роль" MaxHeight="250" MaxWidth="500"
         MinHeight="150"
         MinWidth="300">

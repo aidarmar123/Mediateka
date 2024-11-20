@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mediateka.Windows"
-        
+        Icon="/Resourse/Icon128.ico"
             Style="{StaticResource MaterialDesignWindow}"
     Title="Загрузить файл" MinHeight="200" MinWidth="300"
     MaxHeight="300" MaxWidth="450">
