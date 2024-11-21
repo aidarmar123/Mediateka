@@ -33,6 +33,7 @@
 
                         </TextBox>
                         <TextBlock Text="Рейтинг организатора"
+                                   MouseDown="TextBlock_MouseDown"
                                    FontWeight="Bold"
                                    VerticalAlignment="Center"/>
                         <materialDesign:RatingBar

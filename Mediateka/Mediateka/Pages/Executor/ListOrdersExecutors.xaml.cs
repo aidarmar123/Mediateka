@@ -126,5 +126,10 @@ namespace Mediateka.Pages
 
             LVEvents.ItemsSource = listEvent;
         }
+
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            RatingBar.Value = 0;
+        }
     }
 }

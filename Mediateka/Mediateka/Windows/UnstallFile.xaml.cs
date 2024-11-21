@@ -38,6 +38,15 @@ namespace Mediateka.Windows
             var openFile = new OpenFileDialog();
             if (openFile.ShowDialog().GetValueOrDefault())
             {
+                FileInfo file = new FileInfo(openFile.FileName);
+                if(file.Length> 104857600)
+                {
+                    MessageBox.Show("Файл слишком большой (более 100 мб)");
+                    return;
+                }
+                else
+                {
+
                 contextMaterialEvent = new MaterialEvent()
                 {
                     CommentFile = contextMaterialEvent.CommentFile,
@@ -51,6 +60,8 @@ namespace Mediateka.Windows
                     contextMaterialEvent.EventId = contextEventExecutor.EventId;
                 DataContext = null;
                 DataContext = contextMaterialEvent;
+                }
+                    
 
 
 
