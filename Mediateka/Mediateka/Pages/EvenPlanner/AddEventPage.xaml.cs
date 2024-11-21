@@ -31,6 +31,7 @@ namespace Mediateka.Pages
             InitializeComponent();
             BCurrency.Content = listCurrency[0];
             CCBSkills.ItemsSource = App.Db.Skill.ToList();
+            
             contextEvent = _event;
             DataContext = contextEvent;
         }
@@ -41,7 +42,7 @@ namespace Mediateka.Pages
             NavigationService.GoBack();
         }
 
-        private async void  BSave_Click(object sender, RoutedEventArgs e)
+        private async void BSave_Click(object sender, RoutedEventArgs e)
         {
             var error = ValidationLine.ValidationObject(contextEvent);
             if (error.Length > 0)
@@ -68,10 +69,14 @@ namespace Mediateka.Pages
                         App.Db.Event.Add(contextEvent);
 
                     App.Db.SaveChanges();
+                    var listEventSkill = App.Db.EventSkill.Where(x => x.EventId == contextEvent.Id);
+                    App.Db.EventSkill.RemoveRange(listEventSkill);
                     foreach (Skill skill in CCBSkills.SelectedItems)
                     {
                         App.Db.EventSkill.Add(new EventSkill() { SkillId = skill.Id, EventId = contextEvent.Id });
                         App.Db.SaveChanges();
+
+
                     }
 
                     NavigationService.GoBack();
@@ -97,7 +102,7 @@ namespace Mediateka.Pages
                 BCurrency.Content = listCurrency[indexCurrency];
 
 
-                var contextCurrency = await NetManager.Get<Currency>(listCurrency[indexCurrency - 1 >= 0 ? indexCurrency - 1 : listCurrency.Count-1]);
+                var contextCurrency = await NetManager.Get<Currency>(listCurrency[indexCurrency - 1 >= 0 ? indexCurrency - 1 : listCurrency.Count - 1]);
                 contextEvent.Salary = contextEvent.Salary * contextCurrency.rates.FirstOrDefault(x => x.Key == BCurrency.Content.ToString()).Value;
 
                 contextEvent.Salary = Math.Round(contextEvent.Salary, 2);
