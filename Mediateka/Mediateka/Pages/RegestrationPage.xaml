@@ -66,7 +66,7 @@ VerticalAlignment="Center"
                     <TextBox Text="{Binding Password}"/>
                     <Expander Header="Портфолио"
                               x:Name="ExPortfolio"
-                              
+                              Visibility="Collapsed"
                               Background="Transparent">
                         <Grid>
                             <Grid.RowDefinitions>

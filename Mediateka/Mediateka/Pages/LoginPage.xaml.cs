@@ -28,20 +28,20 @@ namespace Mediateka.Pages
         public string Login { get; set; }
         public string Password { get; set; }
 
-        
+
 
         public LoginPage()
         {
             InitializeComponent();
-            
+
             DataContext = this;
-            
-            
+
+
         }
 
         private bool ValidationLine()
         {
-           
+
             //Проверяем заполненость полей
             bool isValid = !(string.IsNullOrEmpty(Login) && string.IsNullOrEmpty(Password));
 
@@ -49,18 +49,18 @@ namespace Mediateka.Pages
             if (!isValid)
                 MessageBox.Show("Не все поля заполнены");
 
-            return isValid; 
+            return isValid;
         }
 
-        
+
         private void BLoginPlanning_Click(object sender, RoutedEventArgs e)
         {
             Password = PBPass.Password;
             if (ValidationLine())
             {
-               EventPlanner eventPlanner = App.Db.EventPlanner.FirstOrDefault(ex => ex.Email == Login && ex.Password == Password);
-               Executor executor = App.Db.Executor.FirstOrDefault(x => x.Email == Login && x.Password == Password);
-               Moderators moderator = App.Db.Moderators.FirstOrDefault(x => x.Login == Login && x.Password == Password);
+                EventPlanner eventPlanner = App.Db.EventPlanner.FirstOrDefault(ex => ex.Email == Login && ex.Password == Password);
+                Executor executor = App.Db.Executor.FirstOrDefault(x => x.Email == Login && x.Password == Password);
+                Moderators moderator = App.Db.Moderators.FirstOrDefault(x => x.Login == Login && x.Password == Password);
                 if (eventPlanner != null)
                 {
                     App.contextEventPlanner = eventPlanner;
@@ -70,7 +70,7 @@ namespace Mediateka.Pages
 
                     NavigationService.Navigate(new ListEventPlanner());
                 }
-                else if(executor!=null)
+                else if (executor != null)
                 {
                     App.contextExecutor = executor;
                     App.mainWindow.DataContext = executor;
@@ -102,16 +102,21 @@ namespace Mediateka.Pages
         private void BRegestrationPlanning_Click(object sender, RoutedEventArgs e)
         {
             new SelectRole().ShowDialog();
-            if(App.SelectRoleReg != null)
+            if (App.SelectRoleReg != null)
             {
                 if (App.SelectRoleReg.Id == 1)
-                    NavigationService.Navigate(new RegestrationPage( new EventPlanner()));
+                {
+
+
+                    NavigationService.Navigate(new RegestrationPage(new EventPlanner()));
+                }
+
                 else if (App.SelectRoleReg.Id == 2)
-                    NavigationService.Navigate(new RegestrationPage( new Executor()));
-                else if(App.SelectRoleReg.Id ==3)
+                    NavigationService.Navigate(new RegestrationPage(new Executor()));
+                else if (App.SelectRoleReg.Id == 3)
                     NavigationService.Navigate(new RegestrationModerator(new Moderators()));
 
-                
+
             }
 
         }
