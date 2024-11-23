@@ -1,6 +1,6 @@
 # МЕДИАТЕКА
 <p align="center">
-<img src="https://github.com/user-attachments/assets/c0d0ea21-3048-44f0-86f0-bc05e0827c8f"/>
+   <img src="https://github.com/user-attachments/assets/c0d0ea21-3048-44f0-86f0-bc05e0827c8f"/>
 </p>
 Приложение будет хранить в себе сборник мероприятий, на которые нужны фотографы и видеографы
 
